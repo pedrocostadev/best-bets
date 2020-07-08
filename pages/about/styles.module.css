@@ -1,0 +1,7 @@
+.container {
+	top: 10vh;
+	bottom: 5vh;
+	overflow: auto;
+	position: fixed;
+	width: 100%;
+}

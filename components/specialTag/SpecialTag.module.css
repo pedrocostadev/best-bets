@@ -1,0 +1,17 @@
+.tag {
+	font-weight: bold;
+	font-size: 14px;
+	padding: 2px;
+	background-color: gray;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 1px;
+}
+
+.goodTag {
+	background-color: green;
+}
+
+.badTag {
+	background-color: #c85970;
+}

@@ -1,0 +1,339 @@
+{
+	"data": {
+		"api": {
+			"results": 10,
+			"fixtures": [
+				{
+					"fixture_id": 157317,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-23T17:00:00+00:00",
+					"event_timestamp": 1592931600,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "King Power Stadium",
+					"referee": "L. Mason",
+					"homeTeam": {
+						"team_id": 46,
+						"team_name": "Leicester",
+						"logo": "https://media.api-sports.io/football/teams/46.png"
+					},
+					"awayTeam": {
+						"team_id": 51,
+						"team_name": "Brighton",
+						"logo": "https://media.api-sports.io/football/teams/51.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157323,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-23T19:15:00+00:00",
+					"event_timestamp": 1592939700,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Tottenham Hotspur Stadium",
+					"referee": "C. Pawson",
+					"homeTeam": {
+						"team_id": 47,
+						"team_name": "Tottenham",
+						"logo": "https://media.api-sports.io/football/teams/47.png"
+					},
+					"awayTeam": {
+						"team_id": 48,
+						"team_name": "West Ham",
+						"logo": "https://media.api-sports.io/football/teams/48.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157319,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_timestamp": 1593018000,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Old Trafford",
+					"referee": "A. Taylor",
+					"homeTeam": {
+						"team_id": 33,
+						"team_name": "Manchester United",
+						"logo": "https://media.api-sports.io/football/teams/33.png"
+					},
+					"awayTeam": {
+						"team_id": 62,
+						"team_name": "Sheffield Utd",
+						"logo": "https://media.api-sports.io/football/teams/62.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157320,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_timestamp": 1593018000,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "St. James' Park",
+					"referee": "C. Kavanagh",
+					"homeTeam": {
+						"team_id": 34,
+						"team_name": "Newcastle",
+						"logo": "https://media.api-sports.io/football/teams/34.png"
+					},
+					"awayTeam": {
+						"team_id": 66,
+						"team_name": "Aston Villa",
+						"logo": "https://media.api-sports.io/football/teams/66.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157321,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_timestamp": 1593018000,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Carrow Road",
+					"referee": "A. Madley",
+					"homeTeam": {
+						"team_id": 71,
+						"team_name": "Norwich",
+						"logo": "https://media.api-sports.io/football/teams/71.png"
+					},
+					"awayTeam": {
+						"team_id": 45,
+						"team_name": "Everton",
+						"logo": "https://media.api-sports.io/football/teams/45.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157324,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_timestamp": 1593018000,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Molineux Stadium",
+					"referee": "M. Oliver",
+					"homeTeam": {
+						"team_id": 39,
+						"team_name": "Wolves",
+						"logo": "https://media.api-sports.io/football/teams/39.png"
+					},
+					"awayTeam": {
+						"team_id": 35,
+						"team_name": "Bournemouth",
+						"logo": "https://media.api-sports.io/football/teams/35.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157318,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-24T19:15:00+00:00",
+					"event_timestamp": 1593026100,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Anfield",
+					"referee": "M. Atkinson",
+					"homeTeam": {
+						"team_id": 40,
+						"team_name": "Liverpool",
+						"logo": "https://media.api-sports.io/football/teams/40.png"
+					},
+					"awayTeam": {
+						"team_id": 52,
+						"team_name": "Crystal Palace",
+						"logo": "https://media.api-sports.io/football/teams/52.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157315,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-25T17:00:00+00:00",
+					"event_timestamp": 1593104400,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Turf Moor",
+					"referee": "M. Dean",
+					"homeTeam": {
+						"team_id": 44,
+						"team_name": "Burnley",
+						"logo": "https://media.api-sports.io/football/teams/44.png"
+					},
+					"awayTeam": {
+						"team_id": 38,
+						"team_name": "Watford",
+						"logo": "https://media.api-sports.io/football/teams/38.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157322,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-25T17:00:00+00:00",
+					"event_timestamp": 1593104400,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "St. Mary's Stadium",
+					"referee": "G. Scott",
+					"homeTeam": {
+						"team_id": 41,
+						"team_name": "Southampton",
+						"logo": "https://media.api-sports.io/football/teams/41.png"
+					},
+					"awayTeam": {
+						"team_id": 42,
+						"team_name": "Arsenal",
+						"logo": "https://media.api-sports.io/football/teams/42.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				},
+				{
+					"fixture_id": 157316,
+					"league_id": 524,
+					"league": {
+						"name": "Premier League",
+						"country": "England",
+						"logo": "https://media.api-sports.io/football/leagues/39.png",
+						"flag": "https://media.api-sports.io/flags/gb.svg"
+					},
+					"event_date": "2020-06-25T19:15:00+00:00",
+					"event_timestamp": 1593112500,
+					"firstHalfStart": null,
+					"secondHalfStart": null,
+					"round": "Regular Season - 31",
+					"status": "Not Started",
+					"statusShort": "NS",
+					"elapsed": 0,
+					"venue": "Stamford Bridge",
+					"referee": "S. Attwell",
+					"homeTeam": {
+						"team_id": 49,
+						"team_name": "Chelsea",
+						"logo": "https://media.api-sports.io/football/teams/49.png"
+					},
+					"awayTeam": {
+						"team_id": 50,
+						"team_name": "Manchester City",
+						"logo": "https://media.api-sports.io/football/teams/50.png"
+					},
+					"goalsHomeTeam": null,
+					"goalsAwayTeam": null,
+					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+				}
+			]
+		}
+	}
+}

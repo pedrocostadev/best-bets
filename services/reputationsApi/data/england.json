@@ -1,0 +1,26 @@
+{
+	"country": "England",
+	"lastUpdate": "26/02/2020",
+	"reputations": [
+		{ "teamId": 40, "name": "Liverpool", "reputation": 5 },
+		{ "teamId": 71, "name": "Norwich", "reputation": 3.5 },
+		{ "teamId": 48, "name": "West Ham", "reputation": 4 },
+		{ "teamId": 50, "name": "Manchester City", "reputation": 5 },
+		{ "teamId": 35, "name": "Bournemouth", "reputation": 4 },
+		{ "teamId": 62, "name": "Sheffield Utd", "reputation": 4 },
+		{ "teamId": 44, "name": "Burnley", "reputation": 4 },
+		{ "teamId": 41, "name": "Southampton", "reputation": 4 },
+		{ "teamId": 52, "name": "Crystal Palace", "reputation": 4 },
+		{ "teamId": 45, "name": "Everton", "reputation": 4.5 },
+		{ "teamId": 46, "name": "Leicester", "reputation": 4.5 },
+		{ "teamId": 39, "name": "Wolves", "reputation": 4 },
+		{ "teamId": 38, "name": "Watford", "reputation": 4 },
+		{ "teamId": 51, "name": "Brighton", "reputation": 4 },
+		{ "teamId": 47, "name": "Tottenham", "reputation": 4.5 },
+		{ "teamId": 66, "name": "Aston Villa", "reputation": 4 },
+		{ "teamId": 34, "name": "Newcastle", "reputation": 4 },
+		{ "teamId": 42, "name": "Arsenal", "reputation": 4.5 },
+		{ "teamId": 33, "name": "Manchester United", "reputation": 4.5 },
+		{ "teamId": 49, "name": "Chelsea", "reputation": 4.5 }
+	]
+}

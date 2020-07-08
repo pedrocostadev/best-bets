@@ -1,0 +1,32 @@
+.fixtureInfoContainer {
+	display: flex;
+}
+
+.leagueIcon {
+	object-fit: contain;
+	margin-right: 5px;
+}
+
+.fixtureItemTeams {
+	font-size: 20px;
+	margin: 0 0 2px 0;
+}
+
+.teamNamesContainer {
+	display: flex;
+	align-items: baseline;
+}
+
+.x {
+	margin: 0 2px 0 2px;
+}
+
+.fixtureItemDate {
+	font-size: 12px;
+	margin: 0;
+}
+
+.fixtureItemTime {
+	font-size: 12px;
+	margin: 0;
+}

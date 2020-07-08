@@ -1,0 +1,14 @@
+.victory {
+	color: green;
+	font-weight: bold;
+}
+
+.draw {
+	color: #e6ac00;
+	font-weight: bold;
+}
+
+.lost {
+	color: red;
+	font-weight: bold;
+}

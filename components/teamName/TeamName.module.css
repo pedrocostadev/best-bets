@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+}
+
+.teamName {
+	font-size: 14px;
+	font-weight: bold;
+	line-clamp: 1;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	display: -webkit-box;
+}
+
+.bestBet {
+	text-transform: uppercase;
+	font-weight: 900;
+}

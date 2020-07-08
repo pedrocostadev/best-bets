@@ -1,0 +1,25 @@
+.header {
+	height: 10vh;
+	background-color: #fbffe0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.logoContainer {
+	display: flex;
+	align-items: baseline;
+	font-size: 30px;
+	padding: 10px;
+	margin-left: 5px;
+}
+
+.pl {
+	font-size: 16px;
+	padding: 5px;
+}

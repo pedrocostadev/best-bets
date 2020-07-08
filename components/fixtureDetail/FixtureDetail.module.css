@@ -1,0 +1,33 @@
+.betDetailsList {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+}
+
+.betDetailsItem {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.betDetailsVisible {
+	max-height: 400px;
+	transition: max-height 0.2s ease-in-out;
+}
+
+.betDetailsHidden {
+	max-height: 0;
+	overflow: hidden;
+}
+
+.detailContainer {
+	display: flex;
+	justify-content: space-evenly;
+	margin-right: 5px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+.vs {
+	align-self: center;
+	font-size: 10px;
+}

@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+	padding: 0;
+	color: #5a483d;
+	background-color: #fefff8;
+	font-family: 'Electrolize', sans-serif;
+}
+
+@font-face {
+	font-family: 'Electrolize';
+	src: url('/fonts/Electrolize-Regular.ttf') format('truetype');
+	font-display: swap;
+}

@@ -1,0 +1,17 @@
+.chevronIcon {
+	transition: transform 200ms ease-in-out;
+}
+
+.collapseChevronIcon {
+	transform: rotate(-180deg);
+}
+
+.collapseButton {
+	color: #5a483d;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	-webkit-tap-highlight-color: transparent;
+}

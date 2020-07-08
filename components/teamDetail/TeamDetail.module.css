@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 5px;
+}
+
+.detailItem {
+	margin: 0;
+}
+
+.title {
+	margin: 0;
+}
+
+.itemsContainer {
+	display: grid;
+	grid-template-rows: 0.5fr 0.5fr 0.5fr;
+	align-items: center;
+}
+
+.itemValue {
+	margin-left: 5px;
+	font-weight: bold;
+}
+
+.ratingContainer {
+	display: flex;
+	align-items: center;
+}
+
+.tagsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.teamLogo {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.teamTitleContainer {
+	display: flex;
+}

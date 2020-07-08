@@ -1,0 +1,16 @@
+.bet {
+	font-weight: bold;
+	font-size: 14px;
+	padding: 2px;
+	background-color: #e6ac00;
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 1px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}

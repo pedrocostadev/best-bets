@@ -1,0 +1,22 @@
+{
+	"short_name": "BB",
+	"name": "Best Bets",
+	"description": "A list of the next premier league football games with detailed information about each game and a tip for the best bet",
+	"icons": [
+		{
+			"src": "/pictures/boot-192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/pictures/boot-512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/",
+	"scope": "/",
+	"background_color": "#fbffe0",
+	"theme_color": "#ef8729",
+	"display": "minimal-ui"
+}
