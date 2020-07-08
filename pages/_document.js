@@ -9,7 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <meta name="description" content="A list of the next premier league football games with detailed information about each game and a tip for the best bet"/>
+        <meta name="description" content="BestBets App lists the next Premier League football games with detailed information about each one and gives you the best bet!"/>
         <meta name="theme-color" content="#ef8729"/>
         <link rel="apple-touch-icon" href="pictures/boot.png"></link>
         <Head />

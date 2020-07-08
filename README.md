@@ -1,3 +1,5 @@
+![IphoneX Screen Shot](./screenshots/iPhoneX_v1.png)
+
 TODO:
 
 - styles system
@@ -5,3 +7,4 @@ TODO:
 - light house
 - seo
 - about page
+- tests
