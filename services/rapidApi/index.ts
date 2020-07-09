@@ -11,8 +11,7 @@ const getLeague = async ({
 }: {
   leagueId: number;
 }): Promise<LeagueData> => {
-  const useMockedData = process.env.NEXT_PUBLIC_MOCKED_DATA;
-
+  const useMockedData = process.env.NEXT_PUBLIC_MOCKED_DATA === 'true';
   let data;
 
   if (useMockedData) {
