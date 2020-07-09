@@ -34,7 +34,9 @@ const getBets = async ({
     leagueIds,
   });
 
-  const reputations = await reputationsApi.getReputations();
+  const reputations = await reputationsApi.getReputations({
+    leagueIds,
+  });
 
   return nextFixtures.map((fixture) => {
     const { homeTeam, awayTeam } = fixture;
