@@ -4,4 +4,10 @@
 	overflow: auto;
 	position: fixed;
 	width: 100%;
+	padding: 5px;
+}
+
+.playResponsibly {
+	font-weight: bold;
+	text-align: center;
 }

@@ -11,7 +11,15 @@ const About: React.FC = () => (
       <link rel="icon" href="/pictures/favicon.ico" />
     </Head>
     <Header />
-    <div className={styles.container}>Best Bets about soon</div>
+    <div className={styles.container}>
+      <p>
+        BestBets is not responsible for your bets. The recommended bet is based
+        on real data but can obviously fail.
+      </p>
+      <p className={styles.playResponsibly}>
+        <span>Play responsibly.</span>
+      </p>
+    </div>
     <Footer />
   </div>
 );
