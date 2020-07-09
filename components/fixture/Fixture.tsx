@@ -17,7 +17,6 @@ interface State {
 const Fixture: React.FC<Props> = ({ fixture }: Props) => {
   const [state, setState] = useState<State>({ isCollapsed: false });
   const toggleCollapse = () => setState({ isCollapsed: !state.isCollapsed });
-  console.log(JSON.stringify(fixture));
   return (
     <div className={styles.container}>
       <div className={styles.fixture}>
