@@ -1,7 +1,7 @@
 .container {
 	display: flex;
 	flex-direction: column;
-	margin-top: 5px;
+	margin-top: var(--spacing-s);
 }
 
 .detailItem {
@@ -19,7 +19,7 @@
 }
 
 .itemValue {
-	margin-left: 5px;
+	margin-left: var(--spacing-s);
 	font-weight: bold;
 }
 
@@ -36,7 +36,7 @@
 .teamLogo {
 	width: 20px;
 	height: 20px;
-	margin-right: 5px;
+	margin-right: var(--spacing-s);
 }
 
 .teamTitleContainer {

@@ -1,6 +1,6 @@
 .header {
 	height: 10vh;
-	background-color: #fbffe0;
+	background-color: var(--yellow-light);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -14,12 +14,12 @@
 .logoContainer {
 	display: flex;
 	align-items: baseline;
-	font-size: 30px;
-	padding: 10px;
-	margin-left: 5px;
+	font-size: var(--font-size-xxl);
+	padding: var(--spacing-m);
+	margin-left: var(--spacing-s);
 }
 
 .pl {
-	font-size: 16px;
-	padding: 5px;
+	font-size: var(--font-size-l);
+	padding: var(--spacing-s);
 }

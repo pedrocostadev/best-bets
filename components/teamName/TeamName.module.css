@@ -3,7 +3,7 @@
 }
 
 .teamName {
-	font-size: 14px;
+	font-size: var(--font-size-m);
 	font-weight: bold;
 	line-clamp: 1;
 	-webkit-line-clamp: 1;

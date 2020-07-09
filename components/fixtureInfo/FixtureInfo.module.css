@@ -4,12 +4,12 @@
 
 .leagueIcon {
 	object-fit: contain;
-	margin-right: 5px;
+	margin-right: var(--spacing-s);
 }
 
 .fixtureItemTeams {
-	font-size: 20px;
-	margin: 0 0 2px 0;
+	font-size: var(--font-size-xl);
+	margin: 0 0 var(--spacing-xs) 0;
 }
 
 .teamNamesContainer {
@@ -18,15 +18,15 @@
 }
 
 .x {
-	margin: 0 2px 0 2px;
+	margin: 0 var(--spacing-xs) 0 var(--spacing-xs);
 }
 
 .fixtureItemDate {
-	font-size: 12px;
+	font-size: var(--font-size-s);
 	margin: 0;
 }
 
 .fixtureItemTime {
-	font-size: 12px;
+	font-size: var(--font-size-s);
 	margin: 0;
 }

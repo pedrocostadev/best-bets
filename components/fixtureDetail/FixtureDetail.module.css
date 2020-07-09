@@ -5,13 +5,13 @@
 }
 
 .betDetailsItem {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: var(--spacing-s);
+	margin-bottom: var(--spacing-s);
 }
 
 .betDetailsVisible {
 	max-height: 400px;
-	transition: max-height 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .betDetailsHidden {
@@ -22,12 +22,12 @@
 .detailContainer {
 	display: flex;
 	justify-content: space-evenly;
-	margin-right: 5px;
-	margin-left: 5px;
-	margin-top: 10px;
+	margin-right: var(--spacing-s);
+	margin-left: var(--spacing-s);
+	margin-top: var(--spacing-m);
 }
 
 .vs {
 	align-self: center;
-	font-size: 10px;
+	font-size: var(--font-size-xs);
 }

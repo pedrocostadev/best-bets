@@ -1,11 +1,11 @@
 .bet {
 	font-weight: bold;
-	font-size: 14px;
-	padding: 2px;
-	background-color: #e6ac00;
+	font-size: var(--font-size-m);
+	padding: var(--spacing-xs);
+	background-color: var(--yellow);
 	border: 1px solid gray;
 	border-radius: 5px;
-	margin: 1px;
+	margin: var(--spacing-xxs);
 }
 
 .container {

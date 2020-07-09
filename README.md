@@ -15,10 +15,4 @@ Create a `.env.local` file at your route folder and set `NEXT_PUBLIC_MOCKED_DATA
 or add a `RAPIDAPI_KEY` to run with real data. Run `yarn dev`to start the app in dev mode.
 
 ### TODO
-
-- styles system
-- performance (cache, ...)
-- light house
-- seo
-- tests
 - add light house badges

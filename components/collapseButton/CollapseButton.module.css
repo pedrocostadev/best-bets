@@ -7,7 +7,7 @@
 }
 
 .collapseButton {
-	color: #5a483d;
+	color: var(--brown);
 	cursor: pointer;
 	background-color: transparent;
 	border: none;

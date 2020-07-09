@@ -3,8 +3,8 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: #fbffe0;
+	background-color: var(--yellow-light);
 	text-align: center;
 	overflow: hidden;
-	font-size: 10px;
+	font-size: var(--font-size-xs);
 }

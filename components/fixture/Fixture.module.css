@@ -1,10 +1,10 @@
 .container {
-	border-bottom: 1px solid #ef8729;
-	color: #5a483d;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-right: 10px;
-	margin-left: 10px;
+	border-bottom: 1px solid var(--orange);
+	color: var(--brown);
+	padding-top: var(--spacing-m);
+	padding-bottom: var(--spacing-m);
+	margin-right: var(--spacing-m);
+	margin-left: var(--spacing-m);
 }
 
 .fixture {

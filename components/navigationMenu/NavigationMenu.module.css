@@ -1,18 +1,18 @@
 .mobileContainer {
-	background-color: #f6bc88;
+	background-color: var(--orange-light);
 	width: 75%;
 	position: fixed;
 	right: 0;
 	height: 85%;
 	top: 0;
 	z-index: 1;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: var(--spacing-m);
+	padding-bottom: var(--spacing-m);
 	transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
 	.mobileContainer {
 		display: none;
 	}
@@ -22,11 +22,11 @@
 	position: fixed;
 	right: 0;
 	top: 0;
-	padding-bottom: 10px;
+	padding-bottom: var(--spacing-m);
 	display: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
 	.desktopContainer {
 		display: flex;
 	}
@@ -38,7 +38,7 @@
 }
 
 .closeButton {
-	color: #fbe4d0;
+	color: var(--yellow);
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
@@ -68,10 +68,10 @@
 	text-transform: uppercase;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 575px) {
 	.linkContainer {
-		background-color: #ef8729;
-		margin-bottom: 10px;
+		background-color: var(--yellow);
+		margin-bottom: var(--spacing-m);
 		height: 5vh;
 		display: flex;
 		align-items: center;
@@ -81,10 +81,11 @@
 
 .link {
 	text-decoration: none;
-	color: #5a483d;
+	color: var(--brown);
+	font-size: var(--font-size-xl);
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 575px) {
 	.link {
 		display: flex;
 		align-items: center;
@@ -94,8 +95,8 @@
 	}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
 	.link {
-		margin-right: 5px;
+		margin-right: var(--spacing-s);
 	}
 }
