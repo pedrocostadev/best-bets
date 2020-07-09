@@ -7,10 +7,6 @@ import {
   SpecialPointTypes,
 } from '../../types';
 
-// jest.mock('../rapidApi').mockReturnValue(Promise.resolve(new Response('4')));
-//import rapidApi from '../rapidApi';
-//rapidApi.mockReturnValue(Promise.resolve(new Response('4')));
-
 const standings: Standing[] = [
   {
     teamId: 40,
