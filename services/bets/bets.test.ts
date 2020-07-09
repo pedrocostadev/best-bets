@@ -1,5 +1,11 @@
-import getBets from './bets';
-import { Standing, LeagueData, Reputation } from '../../types';
+import bets from './bets';
+import {
+  Standing,
+  LeagueData,
+  Reputation,
+  FixtureWithBets,
+  SpecialPointTypes,
+} from '../../types';
 
 // jest.mock('../rapidApi').mockReturnValue(Promise.resolve(new Response('4')));
 //import rapidApi from '../rapidApi';
@@ -233,7 +239,7 @@ jest.mock('../reputationsApi', () => ({
 describe('Bets', () => {
   describe('getBets', () => {
     test('should return true when the team have one of the best 3 attacks', async () => {
-      const result = await getBets({ leagueIds: [524] });
+      const result = await bets.getBets({ leagueIds: [524] });
       const firstGame = result[0];
       const secondGame = result[1];
 
@@ -248,6 +254,77 @@ describe('Bets', () => {
       expect(secondGame).toHaveProperty('awayTeamPoints', 0.777);
       expect(secondGame).toHaveProperty('awayTeam.teamName', 'Manchester City');
       expect(secondGame).toHaveProperty('betDetails');
+    });
+  });
+  describe('getBets', () => {
+    const fixtureMock: FixtureWithBets = {
+      homeTeam: {
+        teamId: 46,
+        teamName: 'Leicester',
+        logo: 'https://media.api-sports.io/football/teams/46.png',
+        founded: '',
+        country: '',
+        venueCapacity: 10000,
+        venueName: '',
+      },
+      awayTeam: {
+        teamId: 51,
+        teamName: 'Brighton',
+        logo: 'https://media.api-sports.io/football/teams/51.png',
+        founded: '',
+        country: '',
+        venueCapacity: 10000,
+        venueName: '',
+      },
+      venue: 'King Power Stadium',
+      eventDate: '2020-06-23T17:00:00+00:00',
+      leagueId: 524,
+      homeTeamPoints: 0.802,
+      awayTeamPoints: 0.498,
+      betDetails: {
+        homeTeam: {
+          reputation: { value: 4.5, points: 0.889 },
+          standing: { value: 3, points: 0.6 },
+          shape: { value: 'DWLLD', points: 0.333 },
+          extra: {
+            value: [
+              { label: 'oneOf3BestAttacks', type: SpecialPointTypes.GOOD },
+              { label: 'oneOf3BestDefenses', type: SpecialPointTypes.GOOD },
+            ],
+            points: 0.1,
+          },
+        },
+        awayTeam: {
+          reputation: { value: 4, points: 0.778 },
+          standing: { value: 15, points: 0.356 },
+          shape: { value: 'WDLDD', points: 0.4 },
+          extra: { value: [], points: 0 },
+        },
+      },
+    };
+
+    test('should return true when the team have one of the best 3 attacks', async () => {
+      const fixture1 = {
+        ...fixtureMock,
+        homeTeamPoints: 0.802,
+        awayTeamPoints: 0.498,
+      };
+
+      const fixture2 = {
+        ...fixtureMock,
+        homeTeamPoints: 0.802,
+        awayTeamPoints: 0.804,
+      };
+
+      const fixture3 = {
+        ...fixtureMock,
+        homeTeamPoints: 0.802,
+        awayTeamPoints: 1.498,
+      };
+
+      expect(bets.getBestBet(fixture1)).toBe('Leicester wins!');
+      expect(bets.getBestBet(fixture2)).toBe('DRAW!');
+      expect(bets.getBestBet(fixture3)).toBe('Brighton wins!');
     });
   });
 });

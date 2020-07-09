@@ -1,48 +1,28 @@
-import {
-  FixtureWithBets,
-  Team,
-  Standing,
-  SPECIAL_POINTS_TYPES,
-  SpecialPoint,
-} from '../../types';
+import { FixtureWithBets } from '../../types';
 import rapidApi from '../rapidApi';
 import reputationsApi from '../reputationsApi';
 import { getTeamReputationPoints } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
-import {
-  getTeamExtraPoints,
-  isOneOfBestDefenses,
-  isOneOfBestAttacks,
-  isOneOfWorstAttacks,
-  isOneOfWorstDefenses,
-} from './extraPoints';
+import { getTeamExtraPoints, getTeamExtraPointsTags } from './extraPoints';
 import { round } from './utils';
 import {
   TEAM_RATING_WEIGHT,
   TEAM_STANDING_WEIGHT,
   TEAM_FORME_WEIGHT,
   HOME_WEIGHT,
+  CONFIDENCE_MARGIN,
 } from './weights';
 
-const getTeamExtraPointsTags = (
-  team: Team,
-  standings: Standing[],
-): SpecialPoint[] => {
-  const tags = [];
-  if (isOneOfBestAttacks(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfBestAttacks);
+const getBestBet = (fixture: FixtureWithBets): string => {
+  if (fixture.homeTeamPoints > fixture.awayTeamPoints + CONFIDENCE_MARGIN) {
+    return `${fixture.homeTeam.teamName} wins!`;
   }
-  if (isOneOfBestDefenses(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfBestDefenses);
+
+  if (fixture.awayTeamPoints > fixture.homeTeamPoints + CONFIDENCE_MARGIN) {
+    return `${fixture.awayTeam.teamName} wins!`;
   }
-  if (isOneOfWorstAttacks(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstAttacks);
-  }
-  if (isOneOfWorstDefenses(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstDefenses);
-  }
-  return tags;
+  return 'DRAW!';
 };
 
 const getBets = async ({
@@ -143,4 +123,7 @@ const getBets = async ({
   });
 };
 
-export default getBets;
+export default {
+  getBets,
+  getBestBet,
+};

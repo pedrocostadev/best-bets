@@ -1,4 +1,4 @@
-import getBets from './bets';
+import bets from './bets';
 import {
   isOneOfWorstAttacks,
   isOneOfWorstDefenses,
@@ -7,9 +7,9 @@ import {
 } from './extraPoints';
 
 export default {
-  getBets,
   isOneOfWorstAttacks,
   isOneOfWorstDefenses,
   isOneOfBestAttacks,
   isOneOfBestDefenses,
+  ...bets,
 };

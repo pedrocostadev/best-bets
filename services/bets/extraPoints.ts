@@ -1,4 +1,9 @@
-import { Standing, Team } from '../../types';
+import {
+  Standing,
+  Team,
+  SPECIAL_POINTS_TYPES,
+  SpecialPoint,
+} from '../../types';
 
 const getCompareFn = (compareField: string) => (a: Standing, b: Standing) => {
   const numberOfGoalsForA =
@@ -91,7 +96,28 @@ const getTeamExtraPoints = (team: Team, standings: Standing[]): number => {
   return extraPoints;
 };
 
+const getTeamExtraPointsTags = (
+  team: Team,
+  standings: Standing[],
+): SpecialPoint[] => {
+  const tags = [];
+  if (isOneOfBestAttacks(team, standings)) {
+    tags.push(SPECIAL_POINTS_TYPES.oneOfBestAttacks);
+  }
+  if (isOneOfBestDefenses(team, standings)) {
+    tags.push(SPECIAL_POINTS_TYPES.oneOfBestDefenses);
+  }
+  if (isOneOfWorstAttacks(team, standings)) {
+    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstAttacks);
+  }
+  if (isOneOfWorstDefenses(team, standings)) {
+    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstDefenses);
+  }
+  return tags;
+};
+
 export {
+  getTeamExtraPointsTags,
   getTeamExtraPoints,
   isOneOfBestDefenses,
   isOneOfBestAttacks,
