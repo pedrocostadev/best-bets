@@ -4,6 +4,8 @@ BestBets App uses NextJS to give you an ultra fast app.
 
 It uses data from [RapidApi](https://rapidapi.com/).
 
+Demo [here](https://best-bets.vercel.app/).
+
 ### Iphone X Screenshot
 
 ![IphoneX Screen Shot](./screenshots/iPhoneX_v1.png)
