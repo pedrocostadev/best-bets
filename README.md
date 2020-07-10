@@ -16,4 +16,4 @@ or add a `RAPIDAPI_KEY` to run with real data. Run `yarn dev`to start the app in
 
 ### Contributions
 
-Contributions are welcome :-) Just open a PR and feel free to contact me.
+Contributions are welcome. Just open a PR and feel free to contact me :-).
