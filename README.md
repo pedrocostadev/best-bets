@@ -1,6 +1,6 @@
 # BestBets App
 
-BestBets App uses NextJS to give you an ultra fast app.
+BestBets App uses NextJS to give you an ultra fast PWA.
 
 It uses data from [RapidApi](https://rapidapi.com/).
 
