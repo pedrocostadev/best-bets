@@ -1,0 +1,16 @@
+.message {
+	font-size: var(--font-size-xl);
+	top: 50%;
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+@media only screen and (min-width: 576px) {
+	.message {
+		font-size: var(--font-size-xxl);
+	}
+}
