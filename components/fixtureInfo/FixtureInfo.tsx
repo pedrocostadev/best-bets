@@ -11,11 +11,11 @@ interface Props {
 
 const getBestBetTeam = (fixture: FixtureWithBets) => {
   if (fixture.homeTeamPoints > fixture.awayTeamPoints) {
-    return fixture.homeTeam.teamId;
+    return fixture.homeTeam.teamName;
   }
 
   if (fixture.awayTeamPoints > fixture.homeTeamPoints) {
-    return fixture.awayTeam.teamId;
+    return fixture.awayTeam.teamName;
   }
   return undefined;
 };
@@ -23,7 +23,7 @@ const getBestBetTeam = (fixture: FixtureWithBets) => {
 const FixtureInfo: React.FC<Props> = ({ fixture }: Props) => {
   const eventDate = new Date(fixture.eventDate);
   const inXdays = formatDistance(eventDate, new Date());
-  const bestBetTeamId = getBestBetTeam(fixture);
+  const bestBetTeamName = getBestBetTeam(fixture);
   const { homeTeam, awayTeam } = fixture;
 
   return (
@@ -39,12 +39,12 @@ const FixtureInfo: React.FC<Props> = ({ fixture }: Props) => {
         >
           <TeamName
             team={homeTeam}
-            isBestBet={bestBetTeamId === homeTeam.teamId}
+            isBestBet={bestBetTeamName === homeTeam.teamName}
           />
           <span className={styles.x}>x</span>
           <TeamName
             team={fixture.awayTeam}
-            isBestBet={bestBetTeamId === awayTeam.teamId}
+            isBestBet={bestBetTeamName === awayTeam.teamName}
           />
         </p>
         <p className={styles.fixtureItemDate}>

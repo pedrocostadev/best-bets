@@ -42,14 +42,29 @@ export interface Fixture {
   leagueId: number;
 }
 
-export interface Config {
-  leagues: number[];
+export interface ConfigLeague {
+  id: number;
+  rapidApiId: number;
+  name: string;
 }
 
-export interface Reputation {
+export interface Config {
+  season: string;
+  leagues: ConfigLeague[];
+}
+
+export interface TeamReputation {
   teamId: number;
   name: string;
   reputation: number;
+}
+
+export interface LeagueReputation {
+  id: number;
+  name: string;
+  country: string;
+  season: string;
+  reputations: TeamReputation[];
 }
 
 export interface LeagueData {

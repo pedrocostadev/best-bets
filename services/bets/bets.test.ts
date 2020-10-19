@@ -2,9 +2,10 @@ import bets from './bets';
 import {
   Standing,
   LeagueData,
-  Reputation,
   FixtureWithBets,
   SpecialPointTypes,
+  Config,
+  LeagueReputation,
 } from '../../types';
 
 const standings: Standing[] = [
@@ -122,7 +123,7 @@ const standings: Standing[] = [
 
 const arsenal = {
   teamId: 50,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Arsenal',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -132,7 +133,7 @@ const arsenal = {
 
 const manCity = {
   teamId: 40,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Manchester City',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -142,7 +143,7 @@ const manCity = {
 
 const chelsea = {
   teamId: 47,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Chelsea',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -152,7 +153,7 @@ const chelsea = {
 
 const westHam = {
   teamId: 1,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'West Ham',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -164,7 +165,7 @@ const nextFixtures = [
   {
     homeTeam: {
       teamId: 1,
-      teamName: 'westHam',
+      teamName: 'West Ham',
       logo: 'https://media.api-sports.io/football/teams/41.png',
       venueName: '',
       venueCapacity: 1,
@@ -209,18 +210,39 @@ const nextFixtures = [
   },
 ];
 
-const getLeaguesMockResult: LeagueData = {
-  standings,
-  teams: [arsenal, manCity, chelsea, westHam],
-  nextFixtures,
-};
-
-const getReputationsMockResult: Reputation[] = [
-  { teamId: 50, name: 'arsenal', reputation: 5 },
-  { teamId: 47, name: 'chelsea', reputation: 3.5 },
-  { teamId: 1, name: 'West Ham', reputation: 4 },
-  { teamId: 40, name: 'Manchester City', reputation: 5 },
+const getLeaguesMockResult: LeagueData[] = [
+  {
+    standings,
+    teams: [arsenal, manCity, chelsea, westHam],
+    nextFixtures,
+  },
 ];
+
+const getReputationsMockResult: LeagueReputation[] = [
+  {
+    id: 1,
+    name: 'Premier League',
+    country: 'England',
+    season: '2020-21',
+    reputations: [
+      { teamId: 50, name: 'Arsenal', reputation: 5 },
+      { teamId: 47, name: 'Chelsea', reputation: 3.5 },
+      { teamId: 1, name: 'West Ham', reputation: 4 },
+      { teamId: 40, name: 'Manchester City', reputation: 5 },
+    ],
+  },
+];
+
+const configMock: Config = {
+  season: '2020_21',
+  leagues: [
+    {
+      id: 1,
+      rapidApiId: 524,
+      name: 'England Premier League',
+    },
+  ],
+};
 
 jest.mock('../rapidApi', () => ({
   getLeagues: () =>
@@ -235,13 +257,13 @@ jest.mock('../reputationsApi', () => ({
 describe('Bets', () => {
   describe('getBets', () => {
     test('should return true when the team have one of the best 3 attacks', async () => {
-      const result = await bets.getBets({ leagueIds: [524] });
+      const result = await bets.getBets(configMock);
       const firstGame = result[0];
       const secondGame = result[1];
 
       expect(firstGame).toHaveProperty('homeTeamPoints', 0.688);
-      expect(firstGame).toHaveProperty('homeTeam.teamName', 'westHam');
-      expect(firstGame).toHaveProperty('awayTeamPoints', 0.827);
+      expect(firstGame).toHaveProperty('homeTeam.teamName', 'West Ham');
+      expect(firstGame).toHaveProperty('awayTeamPoints', 0.827); // TODO: HERE
       expect(firstGame).toHaveProperty('awayTeam.teamName', 'Arsenal');
       expect(firstGame).toHaveProperty('betDetails');
 
@@ -299,7 +321,7 @@ describe('Bets', () => {
       },
     };
 
-    test('should return true when the team have one of the best 3 attacks', async () => {
+    test('should return true when the team have one of the best 3 attacks 2', async () => {
       const fixture1 = {
         ...fixtureMock,
         homeTeamPoints: 0.802,

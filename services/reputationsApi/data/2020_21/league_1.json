@@ -1,17 +1,13 @@
 {
+	"id": 1,
+	"name": "Premier League",
 	"country": "England",
-	"lastUpdate": "10/07/2020",
-	"leagueId": 2790,
+	"season": "2020-21",
 	"reputations": [
 		{
 			"teamId": 40,
 			"name": "Liverpool",
 			"reputation": 5
-		},
-		{
-			"teamId": 71,
-			"name": "Norwich",
-			"reputation": 2
 		},
 		{
 			"teamId": 48,
@@ -22,11 +18,6 @@
 			"teamId": 50,
 			"name": "Manchester City",
 			"reputation": 5
-		},
-		{
-			"teamId": 35,
-			"name": "Bournemouth",
-			"reputation": 2
 		},
 		{
 			"teamId": 62,
@@ -64,11 +55,6 @@
 			"reputation": 3
 		},
 		{
-			"teamId": 38,
-			"name": "Watford",
-			"reputation": 2
-		},
-		{
 			"teamId": 51,
 			"name": "Brighton",
 			"reputation": 2
@@ -91,17 +77,17 @@
 		{
 			"teamId": 42,
 			"name": "Arsenal",
-			"reputation": 4.5
+			"reputation": 4
 		},
 		{
 			"teamId": 33,
 			"name": "Manchester United",
-			"reputation": 5
+			"reputation": 4.5
 		},
 		{
 			"teamId": 49,
 			"name": "Chelsea",
-			"reputation": 5
+			"reputation": 4.5
 		},
 		{
 			"teamId": 36,

@@ -1,15 +1,29 @@
-import { Team, Reputation } from '../../types';
+import { Team, TeamReputation } from '../../types';
 import { normalize } from './utils';
+
+const TEAM_REPUTATIONS_MIN = 0.5;
+const TEAM_REPUTATIONS_MAX = 5;
+
+const getTeamReputation = (
+  team: Team,
+  reputations: TeamReputation[],
+): number => {
+  const reputation = reputations.find(
+    (reputation) => reputation.name === team.teamName,
+  );
+  if (!reputation) {
+    console.error('No reputation found for team', team.teamName);
+    return 0;
+  }
+  return reputation.reputation;
+};
 
 const getTeamReputationPoints = (
   team: Team,
-  reputations: Reputation[],
+  reputations: TeamReputation[],
 ): number => {
-  const teamRating = reputations.find((rating) => rating.teamId === team.teamId)
-    .reputation;
-  const teamReputationsMin = 0.5;
-  const teamReputationsMax = 5;
-  return normalize(teamRating, teamReputationsMin, teamReputationsMax);
+  const teamReputation = getTeamReputation(team, reputations);
+  return normalize(teamReputation, TEAM_REPUTATIONS_MIN, TEAM_REPUTATIONS_MAX);
 };
 
-export { getTeamReputationPoints };
+export { getTeamReputationPoints, getTeamReputation };

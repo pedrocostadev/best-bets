@@ -25,7 +25,7 @@ const getShapePoints = (forme: string): number => {
 
 const getTeamShapePoints = (team: Team, standings: Standing[]): number => {
   const teamStanding = standings.find(
-    (teamStanding) => teamStanding.teamId === team.teamId,
+    (teamStanding) => teamStanding.teamName === team.teamName,
   );
   const formePoints = getShapePoints(teamStanding.forme);
   const maxFormePoints = VICTORY_POINTS * teamStanding.forme.length;

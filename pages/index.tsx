@@ -13,7 +13,9 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async () => ({
-  props: { nextFixtures: await betsApi.getBets({ leagueIds: config.leagues }) },
+  props: {
+    nextFixtures: await betsApi.getBets(config),
+  },
 });
 
 const Home: React.FC<Props> = ({ nextFixtures }) => {
@@ -30,7 +32,7 @@ const Home: React.FC<Props> = ({ nextFixtures }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Best Bets</title>
         <link rel="icon" href="/pictures/favicon.ico" />
@@ -39,7 +41,7 @@ const Home: React.FC<Props> = ({ nextFixtures }) => {
       <Header />
       <Dashboard nextFixtures={nextFixtures} />
       <Footer />
-    </div>
+    </>
   );
 };
 

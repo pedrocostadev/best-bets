@@ -45,26 +45,30 @@ const getFirstFn = (
 
 const isOneOfBestDefenses = (team: Team, standings: Standing[]): boolean => {
   const getLast = getLastFn(TOP, compareByGoalsAgainst);
-  return getLast(standings).some((standing) => standing.teamId === team.teamId);
+  return getLast(standings).some(
+    (standing) => standing.teamName === team.teamName,
+  );
 };
 
 const isOneOfBestAttacks = (team: Team, standings: Standing[]): boolean => {
   const getFirst = getFirstFn(TOP, compareByGoalsFor);
   return getFirst(standings).some(
-    (standing) => standing.teamId === team.teamId,
+    (standing) => standing.teamName === team.teamName,
   );
 };
 
 const isOneOfWorstDefenses = (team: Team, standings: Standing[]): boolean => {
   const getFirst = getFirstFn(TOP, compareByGoalsAgainst);
   return getFirst(standings).some(
-    (standing) => standing.teamId === team.teamId,
+    (standing) => standing.teamName === team.teamName,
   );
 };
 
 const isOneOfWorstAttacks = (team: Team, standings: Standing[]): boolean => {
   const getLast = getLastFn(TOP, compareByGoalsFor);
-  return getLast(standings).some((standing) => standing.teamId === team.teamId);
+  return getLast(standings).some(
+    (standing) => standing.teamName === team.teamName,
+  );
 };
 
 const SPECIAL_POINT = 0.05;

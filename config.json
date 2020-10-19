@@ -1,5 +1,10 @@
 {
+    "season": "2020_21",
     "leagues": [
-        2790
+        {
+            "id": 1,
+            "rapidApiId": 2790,
+            "name": "England Premier League"
+        }
     ]
 }

@@ -72,7 +72,7 @@ const standings: Standing[] = [
 
 const arsenal = {
   teamId: 50,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Arsenal',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -82,7 +82,7 @@ const arsenal = {
 
 const manCity = {
   teamId: 40,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Manchester City',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,
@@ -92,7 +92,7 @@ const manCity = {
 
 const chelsea = {
   teamId: 47,
-  teamName: 'name not need, these methods use team Id',
+  teamName: 'Chelsea',
   logo: 'https://media.api-sports.io/football/teams/50.png',
   venueName: 'Etihad Stadium',
   venueCapacity: 55097,

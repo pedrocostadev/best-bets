@@ -15,7 +15,7 @@ const getLeague = async ({
   let data;
 
   if (useMockedData) {
-    console.info('Using mocked data...');
+    console.info('Using rapidApi mocked data...');
     data = [nextFixturesMock, standingsMock, teamsMock];
   } else {
     data = await Promise.all([
@@ -33,27 +33,15 @@ const getLeague = async ({
 };
 
 const getLeagues = async ({
-  leagueIds,
+  leaguesIds,
 }: {
-  leagueIds: number[];
-}): Promise<LeagueData> => {
-  const getAllLeaguesPromises = leagueIds.map((leagueId) =>
+  leaguesIds: number[];
+}): Promise<LeagueData[]> => {
+  const getAllLeaguesPromises = leaguesIds.map((leagueId) =>
     getLeague({ leagueId }),
   );
   const allLeaguesArrays = await Promise.all(getAllLeaguesPromises);
-  const footballData = allLeaguesArrays.reduce(
-    (allLeagues: LeagueData, current: LeagueData) => ({
-      nextFixtures: [...allLeagues.nextFixtures, ...current.nextFixtures],
-      teams: [...allLeagues.teams, ...current.teams],
-      standings: [...allLeagues.standings, ...current.standings],
-    }),
-    {
-      nextFixtures: [],
-      teams: [],
-      standings: [],
-    },
-  );
-  return footballData as LeagueData;
+  return allLeaguesArrays as LeagueData[];
 };
 
 export default {

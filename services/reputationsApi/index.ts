@@ -1,16 +1,19 @@
-import england from './data/england.json';
-import { Reputation } from '../../types.js';
+import { LeagueReputation } from '../../types.js';
 
 const getReputations = async ({
-  leagueIds,
+  leaguesIds,
+  season,
 }: {
-  leagueIds: number[];
-}): Promise<Reputation[]> => {
-  const leaguesReputations = [england];
+  leaguesIds: number[];
+  season: string;
+}): Promise<LeagueReputation[]> => {
+  const filesPromises = leaguesIds.map((leagueId: number) =>
+    require(`./data/${season}/league_${leagueId}.json`),
+  );
 
-  return leaguesReputations
-    .filter((league) => leagueIds.includes(league.leagueId))
-    .flatMap((league) => league.reputations);
+  const allLeaguesReputations = await Promise.all(filesPromises);
+
+  return allLeaguesReputations;
 };
 
 export default {

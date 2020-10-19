@@ -7,7 +7,7 @@ const getStatsPoints = (stats: LeagueStats) =>
 
 const getTeamRankingPoints = (team: Team, standings: Standing[]): number => {
   const teamStanding = standings.find(
-    (teamStanding) => teamStanding.teamId === team.teamId,
+    (teamStanding) => teamStanding.teamName === team.teamName,
   );
 
   const { leagueHomeStats, leagueAwayStats } = teamStanding;
