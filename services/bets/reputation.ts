@@ -1,10 +1,11 @@
-import { Team, TeamReputation } from '../../types';
+import { Team } from '../../types';
+import { TeamReputation } from '../reputationsApi/types';
 import { normalize } from './utils';
 
 const TEAM_REPUTATIONS_MIN = 0.5;
 const TEAM_REPUTATIONS_MAX = 5;
 
-const getTeamReputation = (
+const getTeamReputationValue = (
   team: Team,
   reputations: TeamReputation[],
 ): number => {
@@ -22,8 +23,8 @@ const getTeamReputationPoints = (
   team: Team,
   reputations: TeamReputation[],
 ): number => {
-  const teamReputation = getTeamReputation(team, reputations);
+  const teamReputation = getTeamReputationValue(team, reputations);
   return normalize(teamReputation, TEAM_REPUTATIONS_MIN, TEAM_REPUTATIONS_MAX);
 };
 
-export { getTeamReputationPoints, getTeamReputation };
+export { getTeamReputationPoints, getTeamReputationValue };

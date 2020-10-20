@@ -5,8 +5,8 @@ import {
   FixtureWithBets,
   SpecialPointTypes,
   Config,
-  LeagueReputation,
 } from '../../types';
+import { LeagueReputation } from '../reputationsApi/types';
 
 const standings: Standing[] = [
   {
@@ -256,14 +256,14 @@ jest.mock('../reputationsApi', () => ({
 
 describe('Bets', () => {
   describe('getBets', () => {
-    test('should return true when the team have one of the best 3 attacks', async () => {
+    test('should return the right points for each team', async () => {
       const result = await bets.getBets(configMock);
       const firstGame = result[0];
       const secondGame = result[1];
 
       expect(firstGame).toHaveProperty('homeTeamPoints', 0.688);
       expect(firstGame).toHaveProperty('homeTeam.teamName', 'West Ham');
-      expect(firstGame).toHaveProperty('awayTeamPoints', 0.827); // TODO: HERE
+      expect(firstGame).toHaveProperty('awayTeamPoints', 0.827);
       expect(firstGame).toHaveProperty('awayTeam.teamName', 'Arsenal');
       expect(firstGame).toHaveProperty('betDetails');
 
@@ -321,7 +321,7 @@ describe('Bets', () => {
       },
     };
 
-    test('should return true when the team have one of the best 3 attacks 2', async () => {
+    test('should return the right best bet', async () => {
       const fixture1 = {
         ...fixtureMock,
         homeTeamPoints: 0.802,

@@ -1,5 +1,6 @@
-import { getTeamReputationPoints } from './reputation';
-import { Team, TeamReputation } from '../../types';
+import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
+import { Team } from '../../types';
+import { TeamReputation } from '../reputationsApi/types';
 
 describe('Reputation', () => {
   const manCity: Team = {
@@ -43,6 +44,10 @@ describe('Reputation', () => {
       expect(getTeamReputationPoints(manCity, reputations)).toBe(1);
       expect(getTeamReputationPoints(norwich, reputations)).toBe(0.667);
       expect(getTeamReputationPoints(westHam, reputations)).toBe(0.778);
+    });
+
+    test('should return the right reputation value', () => {
+      expect(getTeamReputationValue(manCity, reputations)).toBe(5);
     });
   });
 });

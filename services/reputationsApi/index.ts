@@ -1,4 +1,4 @@
-import { LeagueReputation } from '../../types.js';
+import { LeagueReputation } from './types.js';
 
 const getReputations = async ({
   leaguesIds,

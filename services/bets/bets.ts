@@ -4,11 +4,10 @@ import {
   FixtureWithBets,
   Standing,
   Team,
-  TeamReputation,
 } from '../../types';
 import rapidApi from '../rapidApi';
 import reputationsApi from '../reputationsApi';
-import { getTeamReputationPoints, getTeamReputation } from './reputation';
+import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
 import { getTeamExtraPoints, getTeamExtraPointsTags } from './extraPoints';
@@ -20,6 +19,7 @@ import {
   TEAM_SHAPE_WEIGHT,
   HOME_WEIGHT,
 } from './weights';
+import { TeamReputation } from '../reputationsApi/types';
 
 const getBestBet = (fixture: FixtureWithBets): string => {
   const drawMargin = getConfindenceMargin(fixture);
@@ -49,7 +49,7 @@ const getBetDetail = (
 
   return {
     reputation: {
-      value: getTeamReputation(team, reputations),
+      value: getTeamReputationValue(team, reputations),
       points: getTeamReputationPoints(team, reputations),
     },
     standing: {
