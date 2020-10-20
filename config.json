@@ -4,7 +4,8 @@
         {
             "id": 1,
             "rapidApiId": 2790,
-            "name": "England Premier League"
+            "name": "Premier League",
+            "country": "England"
         }
     ]
 }

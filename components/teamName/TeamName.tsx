@@ -1,6 +1,6 @@
 import React from 'react';
+import { Team } from '../../services/fixtures/types';
 import styles from './TeamName.module.css';
-import { Team } from '../../types';
 
 interface Props {
   team: Team;

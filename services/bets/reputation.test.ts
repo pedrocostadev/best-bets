@@ -1,6 +1,6 @@
 import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
-import { Team } from '../../types';
-import { TeamReputation } from '../reputationsApi/types';
+import { TeamReputation } from '../reputations/types';
+import { Team } from '../fixtures/types';
 
 describe('Reputation', () => {
   const manCity: Team = {

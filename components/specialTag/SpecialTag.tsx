@@ -1,6 +1,6 @@
 import React from 'react';
+import { SpecialPoint, SpecialPointTypes } from '../../services/bets/types';
 import styles from './SpecialTag.module.css';
-import { SpecialPoint, SpecialPointTypes } from '../../types';
 
 interface Props {
   tag: SpecialPoint;

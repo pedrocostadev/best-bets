@@ -1,9 +1,6 @@
-import {
-  Standing,
-  Team,
-  SPECIAL_POINTS_TYPES,
-  SpecialPoint,
-} from '../../types';
+import { Team } from '../fixtures/types';
+import { Standing } from '../standings/types';
+import { SpecialPoint, SPECIAL_POINTS_TYPES } from './types';
 
 const getCompareFn = (compareField: string) => (a: Standing, b: Standing) => {
   const numberOfGoalsForA =

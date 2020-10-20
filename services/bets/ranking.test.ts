@@ -1,4 +1,4 @@
-import { Standing } from '../../types';
+import { Standing } from '../standings/types';
 import { getTeamRankingPoints } from './ranking';
 
 const standings: Standing[] = [

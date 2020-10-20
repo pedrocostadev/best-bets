@@ -1,5 +1,5 @@
+import { Standing } from '../standings/types';
 import { getShapePoints, getTeamShapePoints } from './shape';
-import { Standing } from '../../types';
 
 const standings: Standing[] = [
   {

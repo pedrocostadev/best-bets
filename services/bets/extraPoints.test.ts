@@ -1,3 +1,4 @@
+import { Standing } from '../standings/types';
 import {
   isOneOfBestAttacks,
   isOneOfBestDefenses,
@@ -5,7 +6,6 @@ import {
   isOneOfWorstDefenses,
   getTeamExtraPoints,
 } from './extraPoints';
-import { Standing } from '../../types';
 
 /*
   goalsFor

@@ -3,7 +3,8 @@ import styles from './TeamDetail.module.css';
 import StarsRating from '../starsRating/StarsRating';
 import Shape from '../shape/Shape';
 import SpecialTag from '../specialTag/SpecialTag';
-import { SpecialPoint, BetDetail, Team } from '../../types';
+import { Team } from '../../services/fixtures/types';
+import { BetDetail, SpecialPoint } from '../../services/bets/types';
 
 interface Props {
   title: string;

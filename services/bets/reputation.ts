@@ -1,5 +1,5 @@
-import { Team } from '../../types';
-import { TeamReputation } from '../reputationsApi/types';
+import { Team } from '../fixtures/types';
+import { TeamReputation } from '../reputations/types';
 import { normalize } from './utils';
 
 const TEAM_REPUTATIONS_MIN = 0.5;

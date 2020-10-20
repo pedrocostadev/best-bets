@@ -1,50 +1,11 @@
-import rapidApiClient from './rapidApi.client';
-import rapidApiParser from './rapidApi.parser';
-import { LeagueData } from '../../types';
+import axios from 'axios';
 
-import nextFixturesMock from './mocks/nextFixtures.json';
-import standingsMock from './mocks/standings.json';
-import teamsMock from './mocks/teams.json';
+const rapidApiClient = axios.create({
+  baseURL: 'https://api-football-v1.p.rapidapi.com/v2/',
+  headers: {
+    'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+    'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+  },
+});
 
-const getLeague = async ({
-  leagueId,
-}: {
-  leagueId: number;
-}): Promise<LeagueData> => {
-  const useMockedData = process.env.NEXT_PUBLIC_MOCKED_DATA === 'true';
-  let data;
-
-  if (useMockedData) {
-    console.info('Using rapidApi mocked data...');
-    data = [nextFixturesMock, standingsMock, teamsMock];
-  } else {
-    data = await Promise.all([
-      rapidApiClient.get(`fixtures/league/${leagueId}/next/10`),
-      rapidApiClient.get(`leagueTable/${leagueId}`),
-      rapidApiClient.get(`teams/league/${leagueId}`),
-    ]);
-  }
-
-  return {
-    nextFixtures: rapidApiParser.parseFixtures(data[0].data.api),
-    standings: rapidApiParser.parseStandings(data[1].data.api.standings[0]),
-    teams: rapidApiParser.parseTeams(data[2].data.api),
-  };
-};
-
-const getLeagues = async ({
-  leaguesIds,
-}: {
-  leaguesIds: number[];
-}): Promise<LeagueData[]> => {
-  const getAllLeaguesPromises = leaguesIds.map((leagueId) =>
-    getLeague({ leagueId }),
-  );
-  const allLeaguesArrays = await Promise.all(getAllLeaguesPromises);
-  return allLeaguesArrays as LeagueData[];
-};
-
-export default {
-  getLeague,
-  getLeagues,
-};
+export default rapidApiClient;

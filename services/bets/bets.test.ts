@@ -1,12 +1,9 @@
 import bets from './bets';
-import {
-  Standing,
-  LeagueData,
-  FixtureWithBets,
-  SpecialPointTypes,
-  Config,
-} from '../../types';
-import { LeagueReputation } from '../reputationsApi/types';
+import { FixtureWithBets, Config } from '../../types';
+import { LeagueReputation } from '../reputations/types';
+import { LeagueStandings, Standing } from '../standings/types';
+import { LeagueFixtures } from '../fixtures/types';
+import { SpecialPointTypes } from './types';
 
 const standings: Standing[] = [
   {
@@ -121,65 +118,17 @@ const standings: Standing[] = [
   },
 ];
 
-const arsenal = {
-  teamId: 50,
-  teamName: 'Arsenal',
-  logo: 'https://media.api-sports.io/football/teams/50.png',
-  venueName: 'Etihad Stadium',
-  venueCapacity: 55097,
-  country: 'England',
-  founded: '1880',
-};
-
-const manCity = {
-  teamId: 40,
-  teamName: 'Manchester City',
-  logo: 'https://media.api-sports.io/football/teams/50.png',
-  venueName: 'Etihad Stadium',
-  venueCapacity: 55097,
-  country: 'England',
-  founded: '1880',
-};
-
-const chelsea = {
-  teamId: 47,
-  teamName: 'Chelsea',
-  logo: 'https://media.api-sports.io/football/teams/50.png',
-  venueName: 'Etihad Stadium',
-  venueCapacity: 55097,
-  country: 'England',
-  founded: '1880',
-};
-
-const westHam = {
-  teamId: 1,
-  teamName: 'West Ham',
-  logo: 'https://media.api-sports.io/football/teams/50.png',
-  venueName: 'Etihad Stadium',
-  venueCapacity: 55097,
-  country: 'England',
-  founded: '1880',
-};
-
-const nextFixtures = [
+const fixtures = [
   {
     homeTeam: {
       teamId: 1,
       teamName: 'West Ham',
       logo: 'https://media.api-sports.io/football/teams/41.png',
-      venueName: '',
-      venueCapacity: 1,
-      country: '',
-      founded: '',
     },
     awayTeam: {
       teamId: 50,
       teamName: 'Arsenal',
       logo: 'https://media.api-sports.io/football/teams/42.png',
-      venueName: '',
-      venueCapacity: 1,
-      country: '',
-      founded: '',
     },
     venue: "St. Mary's Stadium",
     eventDate: '2020-06-25T17:00:00+00:00',
@@ -190,19 +139,11 @@ const nextFixtures = [
       teamId: 47,
       teamName: 'Chelsea',
       logo: 'https://media.api-sports.io/football/teams/49.png',
-      venueName: '',
-      venueCapacity: 1,
-      country: '',
-      founded: '',
     },
     awayTeam: {
       teamId: 40,
       teamName: 'Manchester City',
       logo: 'https://media.api-sports.io/football/teams/50.png',
-      venueName: '',
-      venueCapacity: 1,
-      country: '',
-      founded: '',
     },
     venue: 'Stamford Bridge',
     eventDate: '2020-06-25T19:15:00+00:00',
@@ -210,14 +151,8 @@ const nextFixtures = [
   },
 ];
 
-const getLeaguesMockResult: LeagueData[] = [
-  {
-    standings,
-    teams: [arsenal, manCity, chelsea, westHam],
-    nextFixtures,
-  },
-];
-
+const getStandingsMockResult: LeagueStandings[] = [{ leagueId: 1, standings }];
+const getFixturesMockResult: LeagueFixtures[] = [{ leagueId: 1, fixtures }];
 const getReputationsMockResult: LeagueReputation[] = [
   {
     id: 1,
@@ -239,19 +174,25 @@ const configMock: Config = {
     {
       id: 1,
       rapidApiId: 524,
-      name: 'England Premier League',
+      name: 'Premier League',
+      country: 'England',
     },
   ],
 };
 
-jest.mock('../rapidApi', () => ({
-  getLeagues: () =>
-    new Promise((resolutionFunc) => resolutionFunc(getLeaguesMockResult)),
-}));
-
-jest.mock('../reputationsApi', () => ({
+jest.mock('../reputations', () => ({
   getReputations: () =>
     new Promise((resolutionFunc) => resolutionFunc(getReputationsMockResult)),
+}));
+
+jest.mock('../standings', () => ({
+  getStandings: () =>
+    new Promise((resolutionFunc) => resolutionFunc(getStandingsMockResult)),
+}));
+
+jest.mock('../fixtures', () => ({
+  getFixtures: () =>
+    new Promise((resolutionFunc) => resolutionFunc(getFixturesMockResult)),
 }));
 
 describe('Bets', () => {
@@ -280,19 +221,11 @@ describe('Bets', () => {
         teamId: 46,
         teamName: 'Leicester',
         logo: 'https://media.api-sports.io/football/teams/46.png',
-        founded: '',
-        country: '',
-        venueCapacity: 10000,
-        venueName: '',
       },
       awayTeam: {
         teamId: 51,
         teamName: 'Brighton',
         logo: 'https://media.api-sports.io/football/teams/51.png',
-        founded: '',
-        country: '',
-        venueCapacity: 10000,
-        venueName: '',
       },
       venue: 'King Power Stadium',
       eventDate: '2020-06-23T17:00:00+00:00',

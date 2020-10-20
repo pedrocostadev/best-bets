@@ -1,12 +1,4 @@
-import {
-  BetDetail,
-  Config,
-  FixtureWithBets,
-  Standing,
-  Team,
-} from '../../types';
-import rapidApi from '../rapidApi';
-import reputationsApi from '../reputationsApi';
+import { Config, FixtureWithBets } from '../../types';
 import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
@@ -19,7 +11,13 @@ import {
   TEAM_SHAPE_WEIGHT,
   HOME_WEIGHT,
 } from './weights';
-import { TeamReputation } from '../reputationsApi/types';
+import { TeamReputation } from '../reputations/types';
+import { Standing } from '../standings/types';
+import fixturesService from '../fixtures';
+import standingsService from '../standings';
+import reputationsService from '../reputations';
+import { BetDetail } from './types';
+import { Team } from '../fixtures/types';
 
 const getBestBet = (fixture: FixtureWithBets): string => {
   const drawMargin = getConfindenceMargin(fixture);
@@ -81,16 +79,17 @@ const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
   const fixturesWithBets = [];
 
   for (const league of leaguesToGetBets) {
-    const [{ nextFixtures, standings }] = await rapidApi.getLeagues({
-      leaguesIds: [league.rapidApiId],
-    });
+    // TODO: Use same interface for all services
+    const [{ fixtures }] = await fixturesService.getFixtures([league]);
 
-    const [{ reputations }] = await reputationsApi.getReputations({
+    const [{ standings }] = await standingsService.getStandings([league]);
+
+    const [{ reputations }] = await reputationsService.getReputations({
       leaguesIds: [league.id],
       season: config.season,
     });
 
-    const bets = nextFixtures.map((fixture) => {
+    const bets = fixtures.map((fixture) => {
       const { homeTeam, awayTeam } = fixture;
 
       const betDetails = {

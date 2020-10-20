@@ -1,4 +1,5 @@
-import { Team, Standing, LeagueStats } from '../../types';
+import { Team } from '../fixtures/types';
+import { LeagueStats, Standing } from '../standings/types';
 import { normalize } from './utils';
 import { VICTORY_POINTS, DRAW_POINTS } from './weights';
 

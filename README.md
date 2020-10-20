@@ -23,3 +23,4 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 ### TODO
 
 - Find team by name method?, alias?...
+- Dynamic load on mocks
