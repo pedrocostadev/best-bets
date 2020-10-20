@@ -1,0 +1,93 @@
+{
+    "lastUpdate": "2020-10-20",
+    "best3FifaPlayers": {
+        "2019": {
+            "players": [
+                {
+                    "name": "Lionel Messi",
+                    "teamName": "Barcelona",
+                    "place": 1,
+                    "currentTeam": "Barcelona"
+                },
+                {
+                    "name": "Virgil van Dijk",
+                    "teamName": "Liverpool",
+                    "place": 2,
+                    "currentTeam": "Liverpool"
+                },
+                {
+                    "name": "Cristiano Ronaldo",
+                    "teamName": "Juventus",
+                    "place": 3,
+                    "currentTeam": "Juventus"
+                }
+            ]
+        },
+        "2018": {
+            "players": [
+                {
+                    "name": "Luka Modrić",
+                    "teamName": "Real Madrid",
+                    "place": 1,
+                    "currentTeam": "Real Madrid"
+                },
+                {
+                    "name": "Cristiano Ronaldo",
+                    "teamName": "Juventus",
+                    "place": 2,
+                    "currentTeam": "Juventus"
+                },
+                {
+                    "name": "Mohamed Salah",
+                    "teamName": "Liverpool",
+                    "place": 3,
+                    "currentTeam": "Liverpool"
+                }
+            ]
+        },
+        "2017": {
+            "players": [
+                {
+                    "name": "Cristiano Ronaldo",
+                    "teamName": "Real Madrid",
+                    "place": 1,
+                    "currentTeam": "Juventus"
+                },
+                {
+                    "name": " Lionel Messi",
+                    "teamName": "Barcelona",
+                    "place": 2,
+                    "currentTeam": "Barcelona"
+                },
+                {
+                    "name": "Neymar",
+                    "teamName": "Paris Saint-Germain",
+                    "place": 3,
+                    "currentTeam": "Paris Saint-Germain"
+                }
+            ]
+        },
+        "2016": {
+            "players": [
+                {
+                    "name": "Cristiano Ronaldo",
+                    "teamName": "Real Madrid",
+                    "place": 1,
+                    "currentTeam": "Juventus"
+                },
+                {
+                    "name": " Lionel Messi",
+                    "teamName": "Barcelona",
+                    "place": 2,
+                    "currentTeam": "Barcelona"
+                },
+                {
+                    "name": "Antoine Griezmann",
+                    "teamName": "Atlético Madrid",
+                    "place": 3,
+                    "currentTeam": "Barcelona"
+                }
+            ]
+        }
+    }
+}
