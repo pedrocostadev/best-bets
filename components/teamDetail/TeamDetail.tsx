@@ -5,6 +5,7 @@ import Shape from '../shape/Shape';
 import SpecialTag from '../specialTag/SpecialTag';
 import { Team } from '../../services/fixtures/types';
 import { BetDetail, SpecialPoint } from '../../services/bets/types';
+import WorldPlayerTag from '../worldPlayer/WorldPlayerTag';
 
 interface Props {
   title: string;
@@ -43,6 +44,13 @@ const TeamDetail: React.FC<Props> = ({ title, team, betDetails }) => (
         {(betDetails.extra.value as SpecialPoint[]).map((tag, i) => (
           <SpecialTag key={i} tag={tag} />
         ))}
+      </p>
+      <p className={`${styles.detailItem} ${styles.tagsContainer}`}>
+        {(betDetails.fifaBestWorldPlayers.value as string[]).map(
+          (playerName: string) => (
+            <WorldPlayerTag key={playerName} playerName={playerName} />
+          ),
+        )}
       </p>
     </section>
   </section>

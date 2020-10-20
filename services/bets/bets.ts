@@ -4,6 +4,10 @@ import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
 import { getTeamExtraPoints, getTeamExtraPointsTags } from './extraPoints';
 import { getConfindenceMargin } from './confidence';
+import {
+  getTeamBestWorldPlayersPoints,
+  getTeamBestWorldPlayersNames,
+} from './bestWorldPlayers';
 import { round } from './utils';
 import {
   TEAM_REPUTATION_WEIGHT,
@@ -13,11 +17,13 @@ import {
 } from './weights';
 import { TeamReputation } from '../reputations/types';
 import { Standing } from '../standings/types';
+import { BetDetail } from './types';
+import { Team } from '../fixtures/types';
 import fixturesService from '../fixtures';
 import standingsService from '../standings';
 import reputationsService from '../reputations';
-import { BetDetail } from './types';
-import { Team } from '../fixtures/types';
+import fifaBestWorldPlayersService from '../fifaBestWorldPlayers';
+import { BestFifaPlayersByYear } from '../fifaBestWorldPlayers/types';
 
 const getBestBet = (fixture: FixtureWithBets): string => {
   const drawMargin = getConfindenceMargin(fixture);
@@ -36,6 +42,7 @@ const getBetDetail = (
   team: Team,
   reputations: TeamReputation[],
   standings: Standing[],
+  fifaBestWorldPlayers: BestFifaPlayersByYear,
 ): BetDetail => {
   const teamStanding = standings.find(
     (standing) => standing.teamName === team.teamName,
@@ -62,6 +69,10 @@ const getBetDetail = (
       value: getTeamExtraPointsTags(team, standings),
       points: getTeamExtraPoints(team, standings),
     },
+    fifaBestWorldPlayers: {
+      value: getTeamBestWorldPlayersNames(team, fifaBestWorldPlayers),
+      points: getTeamBestWorldPlayersPoints(team, fifaBestWorldPlayers),
+    },
   };
 };
 
@@ -71,7 +82,8 @@ const getWeightedPoints = (teamBet: BetDetail, isHomeTeam?: boolean) =>
       teamBet.standing.points * TEAM_STANDING_WEIGHT +
       teamBet.shape.points * TEAM_SHAPE_WEIGHT +
       teamBet.extra.points +
-      ((isHomeTeam && HOME_WEIGHT) || 0),
+      ((isHomeTeam && HOME_WEIGHT) || 0) +
+      teamBet.fifaBestWorldPlayers.points,
   );
 
 const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
@@ -89,12 +101,24 @@ const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
       season: config.season,
     });
 
+    const fifaBestWorldPlayers = await fifaBestWorldPlayersService.getBestWorldFifaPlayers();
+
     const bets = fixtures.map((fixture) => {
       const { homeTeam, awayTeam } = fixture;
 
       const betDetails = {
-        homeTeam: getBetDetail(homeTeam, reputations, standings),
-        awayTeam: getBetDetail(awayTeam, reputations, standings),
+        homeTeam: getBetDetail(
+          homeTeam,
+          reputations,
+          standings,
+          fifaBestWorldPlayers,
+        ),
+        awayTeam: getBetDetail(
+          awayTeam,
+          reputations,
+          standings,
+          fifaBestWorldPlayers,
+        ),
       };
 
       return {

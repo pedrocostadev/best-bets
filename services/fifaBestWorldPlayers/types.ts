@@ -3,6 +3,7 @@ export interface BestPlayer {
   teamName: string;
   place: number;
   currentTeam: string;
+  retired: boolean;
 }
 
 export interface BestFifaPlayersByYear {

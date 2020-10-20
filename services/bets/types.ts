@@ -31,6 +31,10 @@ export const SPECIAL_POINTS_TYPES = {
     label: 'oneOf3WorstDefenses',
     type: SpecialPointTypes.BAD,
   },
+  oneOfBestWorldPlayersInTeam: {
+    label: 'oneOfBestWorldPlayersInTeam',
+    type: SpecialPointTypes.GOOD,
+  },
 };
 
 export interface BetItemDetail {
@@ -43,6 +47,7 @@ export interface BetDetail {
   standing: BetItemDetail;
   shape: BetItemDetail;
   extra: BetItemDetail;
+  fifaBestWorldPlayers: BetItemDetail;
 }
 
 export interface Bet {

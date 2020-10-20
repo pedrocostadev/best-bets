@@ -24,3 +24,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 
 - Find team by name method?, alias?...
 - Dynamic load on mocks
+- Use DB
+- rename extra points
+- team details rendering two times why?
