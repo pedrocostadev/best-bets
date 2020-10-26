@@ -4,6 +4,7 @@ import { FixtureWithBets } from '../../../../types';
 import ExtraDetails from './components/extraDetails/ExtraDetails';
 import PlayersDetails from './components/playersDetails/PlayersDetails';
 import styles from './AditionalDetails.module.css';
+import Heading from '../../../heading/Heading';
 
 interface Props {
   fixture: FixtureWithBets;
@@ -34,7 +35,7 @@ const AditionalDetails: React.FC<Props> = ({ fixture }) => {
 
   return (
     <div className={styles.container}>
-      <h4 className={styles.title}>Aditional info</h4>
+      <Heading variant="subtitle" text="Aditional info" />
       <ExtraDetails team={fixture.homeTeam} extra={homeTeam.extra} />
       <PlayersDetails
         team={fixture.homeTeam}

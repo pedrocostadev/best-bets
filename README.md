@@ -31,3 +31,8 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - Best bet on front page
 - utils css margins and flex
 - breakpoints as vars
+- tests for best players module
+- TeamName and TeamNameWith Logo: USE ONLY ONE
+- initial render layout
+- h4 component
+- players with more goals

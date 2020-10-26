@@ -14,7 +14,7 @@ const TeamWithLogo: React.FC<Props> = ({ team }) => (
       src={team.logo}
       alt={`${team.teamName} logo`}
     />
-    <h4>{team.teamName}</h4>
+    <span>{team.teamName}</span>
   </div>
 );
 

@@ -23,6 +23,7 @@ const ExtraDetails: React.FC<Props> = ({ team, extra }) => {
           <IconBall className={styles.icon} />
           {`${team.teamName} has`}
           <SpecialTag tag={detail} />
+          {'in league.'}
         </p>
       ))}
     </>

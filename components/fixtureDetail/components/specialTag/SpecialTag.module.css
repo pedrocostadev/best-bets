@@ -2,16 +2,13 @@
 	font-weight: bold;
 	font-size: var(--font-size-m);
 	padding: var(--spacing-xs);
-	background-color: var(--gray);
-	border: 1px solid var(--gray);
-	border-radius: 5px;
 	margin: var(--spacing-xxs);
 }
 
 .goodTag {
-	background-color: var(--green);
+	color: var(--green);
 }
 
 .badTag {
-	background-color: var(--red);
+	color: var(--red);
 }

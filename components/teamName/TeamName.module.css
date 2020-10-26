@@ -13,7 +13,12 @@
 	display: -webkit-box;
 }
 
-.bestBet {
+.bestBetTeamName {
 	text-transform: uppercase;
 	font-weight: 900;
+}
+
+.bestBetTag {
+	font-size: var(--font-size-xxs);
+	font-weight: bold;
 }

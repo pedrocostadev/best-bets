@@ -8,7 +8,7 @@ import Message from '../message/Message';
 
 const FixturesList: React.FC = () => {
   const { fixtures } = useBets();
-  const noFixtures = fixtures.length === 0;
+  const noFixtures = !fixtures || fixtures.length === 0;
 
   if (noFixtures) {
     return <Message text="No games available" Icon={IconSadFace} />;

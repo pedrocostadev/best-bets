@@ -3,9 +3,5 @@
 	flex-direction: column;
 	gap: var(--spacing-s);
 	margin: var(--spacing-xl) 0;
-}
-
-.title {
-	margin-bottom: var(--spacing-s);
-	text-align: center;
+	font-size: 14px;
 }
