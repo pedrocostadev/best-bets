@@ -7,30 +7,18 @@ describe('Reputation', () => {
     teamId: 40,
     teamName: 'Man City',
     logo: 'https://media.api-sports.io/football/teams/50.png',
-    venueName: 'Etihad Stadium',
-    venueCapacity: 55097,
-    country: 'England',
-    founded: '1880',
   };
 
   const norwich: Team = {
     teamId: 71,
     teamName: 'Norwich',
     logo: 'https://media.api-sports.io/football/teams/50.png',
-    venueName: 'Etihad Stadium',
-    venueCapacity: 55097,
-    country: 'England',
-    founded: '1880',
   };
 
   const westHam: Team = {
     teamId: 48,
     teamName: 'West Ham',
     logo: 'https://media.api-sports.io/football/teams/50.png',
-    venueName: 'Etihad Stadium',
-    venueCapacity: 55097,
-    country: 'England',
-    founded: '1880',
   };
 
   const reputations: TeamReputation[] = [

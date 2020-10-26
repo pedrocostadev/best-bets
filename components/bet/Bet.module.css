@@ -13,4 +13,5 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	margin: var(--spacing-l) 0;
 }

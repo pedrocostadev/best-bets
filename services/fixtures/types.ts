@@ -10,6 +10,7 @@ export interface Fixture {
   venue: string;
   eventDate: string;
   leagueId: number;
+  fixtureId: number;
 }
 
 export interface LeagueFixtures {

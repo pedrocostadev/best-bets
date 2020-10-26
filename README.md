@@ -27,3 +27,7 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - Use DB
 - rename extra points
 - team details rendering two times why?
+- shape, evaluate sequences WW != WDW
+- Best bet on front page
+- utils css margins and flex
+- breakpoints as vars

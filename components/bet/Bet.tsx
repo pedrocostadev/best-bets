@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './Bet.module.css';
 import { FixtureWithBets } from '../../types';
 import betsApi from '../../services/bets';
@@ -10,9 +11,6 @@ interface Props {
 const Bet: React.FC<Props> = ({ fixture }: Props) => (
   <p className={styles.container}>
     <span className={styles.bet}>BEST BET: {betsApi.getBestBet(fixture)}</span>
-    <span className={styles.bet}>
-      {fixture.homeTeamPoints * 1000}PTS vs {fixture.awayTeamPoints * 1000}PTS
-    </span>
   </p>
 );
 

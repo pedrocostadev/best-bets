@@ -1,24 +1,7 @@
 import React, { useEffect } from 'react';
-import Head from 'next/head';
-import Dashboard from '../components/dashboard/Dashboard';
-import Header from '../components/header/Header';
-import Footer from '../components/footer/Footer';
-import { GetStaticProps } from 'next';
-import { FixtureWithBets } from '../types';
-import config from '../config.json';
-import betsApi from '../services/bets';
+import FixturesList from '../components/fixturesList/FixturesList';
 
-interface Props {
-  nextFixtures: FixtureWithBets[];
-}
-
-export const getStaticProps: GetStaticProps = async () => ({
-  props: {
-    nextFixtures: await betsApi.getBets(config),
-  },
-});
-
-const Home: React.FC<Props> = ({ nextFixtures }) => {
+const Home: React.FC = () => {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -31,18 +14,7 @@ const Home: React.FC<Props> = ({ nextFixtures }) => {
     }
   }, []);
 
-  return (
-    <>
-      <Head>
-        <title>Best Bets</title>
-        <link rel="icon" href="/pictures/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-      </Head>
-      <Header />
-      <Dashboard nextFixtures={nextFixtures} />
-      <Footer />
-    </>
-  );
+  return <FixturesList />;
 };
 
 export default Home;

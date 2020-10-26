@@ -1,31 +1,3 @@
-:root {
-	/* Colors */
-	--red: #c85970;
-	--green: green;
-	--brown: #5a483d;
-	--orange: #ef8729;
-	--orange-light: #f6bc88;
-	--yellow: #e6ac00;
-	--yellow-light: #fbffe0;
-	--gray: gray;
-	--white: #fefff8;
-
-	/* Spacing */
-	--spacing-xxs: 1px;
-	--spacing-xs: 2px;
-	--spacing-s: 5px;
-	--spacing-m: 10px;
-	--spacing-l: 20px;
-
-	/* Font size */
-	--font-size-xs: 10px;
-	--font-size-s: 12px;
-	--font-size-m: 14px;
-	--font-size-l: 16px;
-	--font-size-xl: 20px;
-	--font-size-xxl: 30px;
-}
-
 @font-face {
 	font-family: 'Electrolize';
 	src: url('/fonts/Electrolize-Regular.ttf') format('truetype');
@@ -38,4 +10,10 @@ body {
 	color: var(--brown);
 	background-color: var(--white);
 	font-family: 'Electrolize', sans-serif;
+}
+
+p,
+h4,
+div {
+	margin: 0;
 }

@@ -39,7 +39,7 @@ export const SPECIAL_POINTS_TYPES = {
 
 export interface BetItemDetail {
   points: number;
-  value: number | string | string[] | SpecialPoint[];
+  value: number | string | string[] | SpecialPoint[] | string[][]; // TODO: Check best approach
 }
 
 export interface BetDetail {

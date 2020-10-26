@@ -1,6 +1,9 @@
 import React from 'react';
+import classnames from 'classnames';
+
 import styles from './CollapseButton.module.css';
 import IconChevron from '../../Icons/IconChevron';
+import Button from '../button/Button';
 
 interface Props {
   onClick(): void;
@@ -8,17 +11,17 @@ interface Props {
 }
 
 const CollapseButton: React.FC<Props> = ({ onClick, isCollapsed }: Props) => (
-  <button
+  <Button
     className={styles.collapseButton}
     onClick={onClick}
     aria-label="Collapse button"
   >
     <IconChevron
-      className={`${styles.chevronIcon} ${
-        isCollapsed ? styles.collapseChevronIcon : ''
-      }`}
+      className={classnames(styles.chevronIcon, {
+        [styles.collapseChevronIcon]: isCollapsed,
+      })}
     />
-  </button>
+  </Button>
 );
 
 export default React.memo(CollapseButton);

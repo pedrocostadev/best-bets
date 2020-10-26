@@ -19,6 +19,7 @@ const parseFixtures = ({ fixturesData }: any): Fixture[] => {
     venue: fixture.venue,
     eventDate: fixture.event_date,
     leagueId: fixture.league_id, // TODO: Check if needded??
+    fixtureId: fixture.fixture_id,
   }));
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
+
 import IconBurguer from '../../Icons/IconBurguer';
+import Button from '../button/Button';
 import styles from './BurguerButton.module.css';
 
 interface Props {
@@ -7,13 +9,13 @@ interface Props {
 }
 
 const BurguerButton: React.FC<Props> = ({ onClick }: Props) => (
-  <button
+  <Button
     onClick={onClick}
     className={styles.burguerButton}
     aria-label="Menu button"
   >
     <IconBurguer />
-  </button>
+  </Button>
 );
 
 export default React.memo(BurguerButton);

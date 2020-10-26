@@ -1,4 +1,4 @@
-.fixtureInfoContainer {
+.container {
 	display: flex;
 }
 
@@ -7,26 +7,23 @@
 	margin-right: var(--spacing-s);
 }
 
-.fixtureItemTeams {
-	font-size: var(--font-size-xl);
-	margin: 0 0 var(--spacing-xs) 0;
-}
-
 .teamNamesContainer {
 	display: flex;
 	align-items: baseline;
+	font-size: var(--font-size-xl);
+	margin: 0 0 var(--spacing-xs) 0;
 }
 
 .x {
 	margin: 0 var(--spacing-xs) 0 var(--spacing-xs);
 }
 
-.fixtureItemDate {
+.date {
 	font-size: var(--font-size-s);
 	margin: 0;
 }
 
-.fixtureItemTime {
+.time {
 	font-size: var(--font-size-s);
 	margin: 0;
 }

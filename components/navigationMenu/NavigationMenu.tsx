@@ -1,24 +1,17 @@
 import React from 'react';
-import Link from 'next/link';
 
 import styles from './NavigationMenu.module.css';
 import IconClose from '../../Icons/IconClose';
+import Link, { LinkProps } from '../link/Link';
 
 interface Props {
   onClose(): void;
   show: boolean;
 }
 
-interface ListLinkProps {
-  name: string;
-  path: string;
-}
-
-const ListLink: React.FC<ListLinkProps> = ({ name, path }: ListLinkProps) => (
+const ListLink: React.FC<LinkProps> = (props: LinkProps) => (
   <li className={styles.linkContainer}>
-    <Link href={path}>
-      <a className={styles.link}>{name}</a>
-    </Link>
+    <Link {...props} className={styles.link} />
   </li>
 );
 

@@ -30,7 +30,7 @@ const getTeamBestWorldPlayersPoints = (
 const getTeamBestWorldPlayersNames = (
   team: Team,
   bestPlayers: BestFifaPlayersByYear,
-): string[] => {
+): string[][] => {
   const allYears = Object.keys(bestPlayers);
   return allYears.flatMap((year: string) =>
     bestPlayers[year].players
@@ -38,7 +38,7 @@ const getTeamBestWorldPlayersNames = (
         (player: BestPlayer) =>
           !player.retired && player.teamName === team.teamName,
       )
-      .map((player: BestPlayer) => `${player.name} (${year})`),
+      .map((player: BestPlayer) => [player.name, year]),
   );
 };
 

@@ -1,0 +1,11 @@
+.container {
+	display: grid;
+	grid-template-columns: 40% 20% 40%;
+	justify-items: center;
+	align-items: center;
+	margin-bottom: var(--spacing-l);
+}
+
+.vs {
+	font-size: var(--font-size-xs);
+}

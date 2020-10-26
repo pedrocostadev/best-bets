@@ -2,7 +2,7 @@ import bets from './bets';
 import { FixtureWithBets, Config } from '../../types';
 import { LeagueReputation } from '../reputations/types';
 import { LeagueStandings, Standing } from '../standings/types';
-import { LeagueFixtures } from '../fixtures/types';
+import { Fixture, LeagueFixtures } from '../fixtures/types';
 import { SpecialPointTypes } from './types';
 
 const standings: Standing[] = [
@@ -118,7 +118,7 @@ const standings: Standing[] = [
   },
 ];
 
-const fixtures = [
+const fixtures: Fixture[] = [
   {
     homeTeam: {
       teamId: 1,
@@ -133,6 +133,7 @@ const fixtures = [
     venue: "St. Mary's Stadium",
     eventDate: '2020-06-25T17:00:00+00:00',
     leagueId: 524,
+    fixtureId: 1,
   },
   {
     homeTeam: {
@@ -148,6 +149,7 @@ const fixtures = [
     venue: 'Stamford Bridge',
     eventDate: '2020-06-25T19:15:00+00:00',
     leagueId: 524,
+    fixtureId: 2,
   },
 ];
 
@@ -169,6 +171,7 @@ const getReputationsMockResult: LeagueReputation[] = [
 ];
 
 const configMock: Config = {
+  appName: 'Best bets',
   season: '2020_21',
   leagues: [
     {
@@ -232,6 +235,7 @@ describe('Bets', () => {
       leagueId: 524,
       homeTeamPoints: 0.802,
       awayTeamPoints: 0.498,
+      fixtureId: 1,
       betDetails: {
         homeTeam: {
           reputation: { value: 4.5, points: 0.889 },
@@ -244,12 +248,14 @@ describe('Bets', () => {
             ],
             points: 0.1,
           },
+          fifaBestWorldPlayers: { value: undefined, points: 0 },
         },
         awayTeam: {
           reputation: { value: 4, points: 0.778 },
           standing: { value: 15, points: 0.356 },
           shape: { value: 'WDLDD', points: 0.4 },
           extra: { value: [], points: 0 },
+          fifaBestWorldPlayers: { value: undefined, points: 0 },
         },
       },
     };

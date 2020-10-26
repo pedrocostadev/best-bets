@@ -9,7 +9,7 @@ interface Props {
   fixture: FixtureWithBets;
 }
 
-const getBestBetTeam = (fixture: FixtureWithBets) => {
+const getBestBetTeam = (fixture: FixtureWithBets): string => {
   if (fixture.homeTeamPoints > fixture.awayTeamPoints) {
     return fixture.homeTeam.teamName;
   }
@@ -27,16 +27,14 @@ const FixtureInfo: React.FC<Props> = ({ fixture }: Props) => {
   const { homeTeam, awayTeam } = fixture;
 
   return (
-    <div className={styles.fixtureInfoContainer}>
+    <div className={styles.container}>
       <img
         className={styles.leagueIcon}
         src="/pictures/premier-league.png"
         alt="Premier League Symbol"
       />
       <div>
-        <p
-          className={`${styles.fixtureItemTeams} ${styles.teamNamesContainer}`}
-        >
+        <p className={styles.teamNamesContainer}>
           <TeamName
             team={homeTeam}
             isBestBet={bestBetTeamName === homeTeam.teamName}
@@ -47,10 +45,10 @@ const FixtureInfo: React.FC<Props> = ({ fixture }: Props) => {
             isBestBet={bestBetTeamName === awayTeam.teamName}
           />
         </p>
-        <p className={styles.fixtureItemDate}>
+        <p className={styles.date}>
           {format(eventDate, 'd/MM/yyyy')} ({inXdays})
         </p>
-        <p className={styles.fixtureItemTime}>{format(eventDate, 'hh:mm')}H</p>
+        <p className={styles.time}>{format(eventDate, 'hh:mm')}H</p>
       </div>
     </div>
   );

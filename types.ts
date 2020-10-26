@@ -9,6 +9,7 @@ export interface ConfigLeague {
 }
 
 export interface Config {
+  appName: string;
   season: string;
   leagues: ConfigLeague[];
 }
