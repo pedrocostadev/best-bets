@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styles from './CollapseButton.module.css';
+import styles from './CollapseButton.module.scss';
 import IconChevron from '../../Icons/IconChevron';
 import Button from '../button/Button';
 

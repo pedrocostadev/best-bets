@@ -1,0 +1,16 @@
+@import 'colors';
+
+.victory {
+  color: $green;
+  font-weight: bold;
+}
+
+.draw {
+  color: $yellow;
+  font-weight: bold;
+}
+
+.lost {
+  color: $red;
+  font-weight: bold;
+}

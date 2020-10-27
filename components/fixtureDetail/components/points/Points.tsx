@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Points.module.css';
+import styles from './Points.module.scss';
 
 interface Props {
   points: number;

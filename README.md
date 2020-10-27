@@ -34,5 +34,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - tests for best players module
 - TeamName and TeamNameWith Logo: USE ONLY ONE
 - initial render layout
-- h4 component
 - players with more goals
+- fontsize units
+- stylelint?? remove?

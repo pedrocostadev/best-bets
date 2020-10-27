@@ -2,7 +2,7 @@ import React from 'react';
 
 import IconBurguer from '../../Icons/IconBurguer';
 import Button from '../button/Button';
-import styles from './BurguerButton.module.css';
+import styles from './BurguerButton.module.scss';
 
 interface Props {
   onClick(): void;

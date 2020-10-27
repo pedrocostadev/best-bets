@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BetItemDetail } from '../../../../services/bets/types';
-import styles from './Shape.module.css';
+import styles from './Shape.module.scss';
 
 interface Props {
   shape: BetItemDetail;

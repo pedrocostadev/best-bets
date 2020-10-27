@@ -3,7 +3,7 @@ import React from 'react';
 import { FixtureWithBets } from '../../../../types';
 import ExtraDetails from './components/extraDetails/ExtraDetails';
 import PlayersDetails from './components/playersDetails/PlayersDetails';
-import styles from './AditionalDetails.module.css';
+import styles from './AditionalDetails.module.scss';
 import Heading from '../../../heading/Heading';
 
 interface Props {

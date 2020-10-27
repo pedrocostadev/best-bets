@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { FixtureWithBets } from '../../../../types';
-import styles from './FixtureListItem.module.css';
+import styles from './FixtureListItem.module.scss';
 import FixtureInfo from '../fixtureInfo/FixtureInfo';
 
 interface Props {

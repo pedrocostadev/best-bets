@@ -16,23 +16,23 @@ export enum GameResult {
 
 export const SPECIAL_POINTS_TYPES = {
   oneOfBestDefenses: {
-    label: 'oneOf3BestDefenses',
+    label: 'oneOfThe3BestDefenses',
     type: SpecialPointTypes.GOOD,
   },
   oneOfBestAttacks: {
-    label: 'oneOf3BestAttacks',
+    label: 'oneOfThe3BestAttacks',
     type: SpecialPointTypes.GOOD,
   },
   oneOfWorstAttacks: {
-    label: 'oneOf3WorstAttacks',
+    label: 'oneOfThe3WorstAttacks',
     type: SpecialPointTypes.BAD,
   },
   oneOfWorstDefenses: {
-    label: 'oneOf3WorstDefenses',
+    label: 'oneOfThe3WorstDefenses',
     type: SpecialPointTypes.BAD,
   },
   oneOfBestWorldPlayersInTeam: {
-    label: 'oneOfBestWorldPlayersInTeam',
+    label: 'oneOfTheBestWorldPlayersInTeam',
     type: SpecialPointTypes.GOOD,
   },
 };

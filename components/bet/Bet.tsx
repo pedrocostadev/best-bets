@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Bet.module.css';
+import styles from './Bet.module.scss';
 import { FixtureWithBets } from '../../types';
 import betsApi from '../../services/bets';
 

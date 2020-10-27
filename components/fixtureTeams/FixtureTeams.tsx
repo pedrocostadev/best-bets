@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './FixtureTeams.module.css';
+import styles from './FixtureTeams.module.scss';
 import { FixtureWithBets } from '../../types';
 import TeamWithLogo from './components/teamWithLogo/TeamWithLogo';
 

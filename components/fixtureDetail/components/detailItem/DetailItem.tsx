@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './DetailItem.module.css';
+import styles from './DetailItem.module.scss';
 
 interface ItemProps {
   homeTeam: React.ReactElement;

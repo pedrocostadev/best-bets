@@ -1,10 +1,12 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
+import type { AppProps, AppContext } from 'next/app';
+
 import './styles.css';
 import './utils.css';
+// import './styles/breakpoints.scss';
 import config from '../config.json';
-import type { AppProps, AppContext } from 'next/app';
 import { UseBetsContext } from '../hooks/useBets';
 import betsApi from '../services/bets';
 import { FixtureWithBets } from '../types';

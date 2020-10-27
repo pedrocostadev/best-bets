@@ -2,7 +2,7 @@ import React from 'react';
 import { format, formatDistance } from 'date-fns';
 
 import { FixtureWithBets } from '../../../../types';
-import styles from './FixtureInfo.module.css';
+import styles from './FixtureInfo.module.scss';
 import TeamName from './components/teamName/TeamName';
 
 interface Props {

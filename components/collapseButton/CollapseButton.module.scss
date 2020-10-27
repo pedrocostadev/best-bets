@@ -1,0 +1,19 @@
+@import 'colors';
+
+.chevronIcon {
+  transition: transform 200ms ease-in-out;
+}
+
+.collapseChevronIcon {
+  transform: rotate(-180deg);
+}
+
+.collapseButton {
+  color: $brown;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}

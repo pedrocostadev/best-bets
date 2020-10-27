@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Main.module.css';
+import styles from './Main.module.scss';
 
 interface Props {
   children: React.ReactElement;

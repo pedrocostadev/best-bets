@@ -1,8 +1,6 @@
 .tag {
 	font-weight: bold;
-	font-size: var(--font-size-m);
 	padding: var(--spacing-xs);
-	margin: var(--spacing-xxs);
 }
 
 .goodTag {

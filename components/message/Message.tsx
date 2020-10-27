@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Message.module.css';
+import styles from './Message.module.scss';
 
 interface Props {
   text: string;

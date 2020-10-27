@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import BurguerButton from '../burguerButton/BurguerButton';
 import NavigationMenu from '../navigationMenu/NavigationMenu';
 

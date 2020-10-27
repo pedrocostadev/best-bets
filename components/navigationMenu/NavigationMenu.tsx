@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './NavigationMenu.module.css';
+import styles from './NavigationMenu.module.scss';
 import IconClose from '../../Icons/IconClose';
 import Link, { LinkProps } from '../link/Link';
 import Button from '../button/Button';

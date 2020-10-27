@@ -3,7 +3,7 @@ import React from 'react';
 import IconGoldenBall from '../../../../../../Icons/IconGoldenBall';
 import { BetItemDetail } from '../../../../../../services/bets/types';
 import { Team } from '../../../../../../services/fixtures/types';
-import styles from './PlayerDetails.module.css';
+import styles from './PlayerDetails.module.scss';
 
 interface Props {
   team: Team;

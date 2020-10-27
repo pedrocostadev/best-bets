@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 
 interface Props extends React.ComponentProps<'button'> {
   children: React.ReactElement;

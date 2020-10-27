@@ -7,7 +7,7 @@ import {
 } from '../../../../../../services/bets/types';
 import { Team } from '../../../../../../services/fixtures/types';
 import SpecialTag from '../../../specialTag/SpecialTag';
-import styles from './ExtraDetails.module.css';
+import styles from './ExtraDetails.module.scss';
 
 interface Props {
   team: Team;
