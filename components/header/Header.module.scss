@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'sizes';
 
 .header {
   height: 10vh;
@@ -16,12 +17,12 @@
 .logoContainer {
   display: flex;
   align-items: baseline;
-  font-size: var(--font-size-xxl);
-  padding: var(--spacing-m);
-  margin-left: var(--spacing-s);
+  font-size: $font-size-xxl;
+  padding: $spacing-m;
+  margin-left: $spacing-s;
 }
 
 .pl {
-  font-size: var(--font-size-l);
-  padding: var(--spacing-s);
+  font-size: $font-size-l;
+  padding: $spacing-s;
 }

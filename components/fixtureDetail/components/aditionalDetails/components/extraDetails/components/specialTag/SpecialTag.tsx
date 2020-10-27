@@ -4,8 +4,8 @@ import classnames from 'classnames';
 import {
   SpecialPoint,
   SpecialPointTypes,
-} from '../../../../services/bets/types';
-import styles from './SpecialTag.module.css';
+} from '../../../../../../../../services/bets/types';
+import styles from './SpecialTag.module.scss';
 
 interface Props {
   tag: SpecialPoint;

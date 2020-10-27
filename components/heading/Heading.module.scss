@@ -1,11 +1,13 @@
+@import 'sizes';
+
 .title {
-	font-size: var(--font-size-l);
-	text-align: center;
-	margin-bottom: var(--spacing-l);
+  font-size: $font-size-l;
+  text-align: center;
+  margin-bottom: $spacing-l;
 }
 
 .subtitle {
-	font-size: var(--font-size-m);
-	text-align: center;
-	margin-bottom: var(--spacing-m);
+  font-size: $font-size-m;
+  text-align: center;
+  margin-bottom: $spacing-m;
 }

@@ -1,7 +1,8 @@
 @import 'breakpoints';
+@import 'sizes';
 
 .message {
-  font-size: var(--font-size-xl);
+  font-size: $font-size-xl;
   top: 50%;
   position: fixed;
   left: 50%;
@@ -11,6 +12,6 @@
   align-items: center;
 
   @include breakpoint_m {
-    font-size: var(--font-size-xxl);
+    font-size: $font-size-xxl;
   }
 }

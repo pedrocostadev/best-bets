@@ -1,17 +1,15 @@
 @import 'colors';
+@import 'sizes';
 
-.shape {
+.tag {
   font-weight: bold;
+  padding: $spacing-xs;
 }
 
-.victory {
+.goodTag {
   color: $green;
 }
 
-.draw {
-  color: $yellow;
-}
-
-.lost {
+.badTag {
   color: $red;
 }

@@ -1,7 +1,9 @@
+@import 'sizes';
+
 .container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-s);
-  margin: var(--spacing-xl) 0;
+  gap: $spacing-s;
+  margin: $spacing-xl 0;
   font-size: 14px;
 }

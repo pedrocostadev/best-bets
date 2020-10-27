@@ -1,4 +1,6 @@
+@import 'sizes';
+
 .points {
-	font-weight: bold;
-	font-size: var(--font-size-m);
+  font-weight: bold;
+  font-size: $font-size-m;
 }

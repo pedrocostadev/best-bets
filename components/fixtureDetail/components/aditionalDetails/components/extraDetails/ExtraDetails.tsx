@@ -6,8 +6,8 @@ import {
   SpecialPoint,
 } from '../../../../../../services/bets/types';
 import { Team } from '../../../../../../services/fixtures/types';
-import SpecialTag from '../../../specialTag/SpecialTag';
-import styles from './ExtraDetails.module.scss';
+import SpecialTag from './components/specialTag/SpecialTag';
+import Text from '../../../../../text/Text';
 
 interface Props {
   team: Team;
@@ -19,12 +19,14 @@ const ExtraDetails: React.FC<Props> = ({ team, extra }) => {
   return (
     <>
       {details.map((detail: SpecialPoint, index: number) => (
-        <p className={styles.container} key={index}>
-          <IconBall className={styles.icon} />
-          {`${team.teamName} has`}
-          <SpecialTag tag={detail} />
-          {'in league.'}
-        </p>
+        <Text small key={index}>
+          <>
+            <IconBall />
+            {`${team.teamName} has`}
+            <SpecialTag tag={detail} />
+            {'in league.'}
+          </>
+        </Text>
       ))}
     </>
   );

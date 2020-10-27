@@ -1,10 +1,10 @@
 @import 'colors';
+@import 'sizes';
 
 .container {
   color: $brown;
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
-  margin-bottom: var(--spacing-m);
+  padding-top: $spacing-m 0;
+  margin-bottom: $spacing-m;
   background-color: $white;
   border-radius: 5px;
 }

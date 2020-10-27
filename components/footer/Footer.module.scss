@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'sizes';
 
 .footer {
   position: fixed;
@@ -8,7 +9,7 @@
   background-color: $yellow-light;
   text-align: center;
   overflow: hidden;
-  font-size: var(--font-size-xs);
+  font-size: $font-size-xs;
   height: 3vh;
   display: flex;
   justify-content: center;

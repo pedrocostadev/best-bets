@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import { BetItemDetail } from '../../../../services/bets/types';
 import styles from './Shape.module.scss';
@@ -24,7 +25,10 @@ const getClassName = (letter: string) => {
 const Shape: React.FC<Props> = ({ shape, className }: Props) => (
   <span className={className}>
     {(shape.value as string).split('').map((letter, i) => (
-      <span className={styles[getClassName(letter)]} key={i}>
+      <span
+        className={classnames(styles.shape, styles[getClassName(letter)])}
+        key={i}
+      >
         {letter}
       </span>
     ))}

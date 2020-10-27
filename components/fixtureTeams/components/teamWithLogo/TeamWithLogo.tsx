@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './TeamWithLogo.module.css';
+import styles from './TeamWithLogo.module.scss';
 import { Team } from '../../../../services/fixtures/types';
 
 interface Props {

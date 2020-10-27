@@ -1,10 +1,11 @@
 @import 'breakpoints';
+@import 'sizes';
 
 .burguerButton {
   background: none;
   color: inherit;
   border: none;
-  padding: var(--spacing-m);
+  padding: $spacing-m;
   cursor: pointer;
 
   @include breakpoint_m {

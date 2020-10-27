@@ -1,13 +1,14 @@
+@import 'sizes';
+
 .container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	align-items: center;
-	justify-items: center;
-	column-gap: 15%;
-	margin-bottom: var(--spacing-s);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  column-gap: 15%;
+  margin-bottom: $spacing-s;
 }
 
 .title {
-	/* TODO: Use var */
-	font-size: 10px;
+  font-size: $font-size-xs;
 }

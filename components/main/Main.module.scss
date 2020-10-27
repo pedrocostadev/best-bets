@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'sizes';
 
 .mainContainer {
   top: 10vh;
@@ -10,5 +11,5 @@
 }
 
 .content {
-  margin: var(--spacing-m);
+  margin: $spacing-m;
 }

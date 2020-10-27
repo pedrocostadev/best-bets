@@ -37,3 +37,4 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - players with more goals
 - fontsize units
 - stylelint?? remove?
+- use abosulute imports

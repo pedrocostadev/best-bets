@@ -1,5 +1,6 @@
 @import 'breakpoints';
 @import 'colors';
+@import 'sizes';
 
 .mobileContainer {
   background-color: $orange-light;
@@ -9,8 +10,8 @@
   height: 85%;
   top: 0;
   z-index: 1;
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  padding-top: $spacing-m;
+  padding-bottom: $spacing-m;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
 
@@ -23,7 +24,7 @@
   position: fixed;
   right: 0;
   top: 0;
-  padding-bottom: var(--spacing-m);
+  padding-bottom: $spacing-m;
   display: none;
 
   @include breakpoint_m {
@@ -66,7 +67,7 @@
 .linkContainer {
   text-transform: uppercase;
   background-color: $yellow;
-  margin-bottom: var(--spacing-m);
+  margin-bottom: $spacing-m;
   height: 5vh;
   display: flex;
   align-items: center;
@@ -82,7 +83,7 @@
 .link {
   text-decoration: none;
   color: $brown;
-  font-size: var(--font-size-xl);
+  font-size: $font-size-xl;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,6 +91,6 @@
   height: 100%;
 
   @include breakpoint_m {
-    margin-right: var(--spacing-s);
+    margin-right: $spacing-s;
   }
 }
