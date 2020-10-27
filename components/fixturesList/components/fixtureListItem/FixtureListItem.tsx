@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { FixtureWithBets } from '../../types';
+import { FixtureWithBets } from '../../../../types';
 import styles from './FixtureListItem.module.css';
 import FixtureInfo from '../fixtureInfo/FixtureInfo';
 

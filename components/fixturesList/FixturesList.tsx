@@ -3,7 +3,7 @@ import React from 'react';
 import useBets from '../../hooks/useBets';
 import IconSadFace from '../../Icons/IconSadFace';
 import { FixtureWithBets } from '../../types';
-import FixtureListItem from '../fixtureListItem/FixtureListItem';
+import FixtureListItem from './components/fixtureListItem/FixtureListItem';
 import Message from '../message/Message';
 
 const FixturesList: React.FC = () => {

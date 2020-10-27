@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './NavigationMenu.module.css';
 import IconClose from '../../Icons/IconClose';
 import Link, { LinkProps } from '../link/Link';
+import Button from '../button/Button';
 
 interface Props {
   onClose(): void;
@@ -18,13 +19,13 @@ const ListLink: React.FC<LinkProps> = (props: LinkProps) => (
 const NavigationMenu: React.FC<Props> = ({ onClose, show }) => (
   <>
     <div className={`${styles.mobileContainer} ${show ? '' : styles.hide}`}>
-      <button
+      <Button
         className={styles.closeButton}
         onClick={onClose}
         aria-label="Close navigation menu"
       >
         <IconClose />
-      </button>
+      </Button>
       <ul className={styles.mobileLinksList}>
         <ListLink name="Home" path="/" />
         <ListLink name="About" path="/about" />

@@ -3,7 +3,7 @@
 }
 
 .teamName {
-	font-size: var(--font-size-m);
+	font-size: var(--font-size-s);
 	font-weight: bold;
 	line-clamp: 1;
 	-webkit-line-clamp: 1;
@@ -16,6 +16,7 @@
 .bestBetTeamName {
 	text-transform: uppercase;
 	font-weight: 900;
+	color: var(--orange);
 }
 
 .bestBetTag {
