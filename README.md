@@ -32,7 +32,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - tests for best players module
 - initial render layout
 - players with more goals
-- stylelint?? remove?
 - upgrade to next10
 - image optimization with next10
 - update react import 
