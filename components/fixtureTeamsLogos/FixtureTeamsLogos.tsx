@@ -1,9 +1,10 @@
 import React from 'react';
 
-import styles from './FixtureTeamsLogos.module.scss';
+import Text from '@/components/text/Text';
+
 import { FixtureWithBets } from '../../types';
 import TeamWithLogo from './components/teamWithLogo/TeamWithLogo';
-import Text from '../text/Text';
+import styles from './FixtureTeamsLogos.module.scss';
 
 interface Props {
   fixture: FixtureWithBets;

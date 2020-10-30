@@ -1,8 +1,9 @@
 import React from 'react';
 
-import Text from '../../../../../text/Text';
+import Text from '@/components/text/Text';
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+
 import { FixtureWithBets } from '../../../../../../types';
-import FlexContainer from '../../../../../flexContainer/FlexContainer';
 
 interface Props {
   fixture: FixtureWithBets;

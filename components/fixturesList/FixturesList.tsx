@@ -1,17 +1,26 @@
 import React from 'react';
 
-import useBets from '../../hooks/useBets';
-import IconSadFace from '../../Icons/IconSadFace';
+import useBets from '@/hooks/useBets';
+import IconSadFace from '@/icons/IconSadFace';
+import Text from '@/components/text/Text';
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+
 import { FixtureWithBets } from '../../types';
 import FixtureListItem from './components/fixtureListItem/FixtureListItem';
-import Message from '../message/Message';
 
 const FixturesList: React.FC = () => {
   const { fixtures } = useBets();
   const noFixtures = !fixtures || fixtures.length === 0;
 
   if (noFixtures) {
-    return <Message text="No games available" Icon={IconSadFace} />;
+    return (
+      <FlexContainer>
+        <>
+          <IconSadFace />
+          <Text variant="body1" text="No games available" />
+        </>
+      </FlexContainer>
+    );
   }
 
   return (

@@ -29,16 +29,11 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - team details rendering two times why?
 - shape, evaluate sequences WW != WDW
 - Best bet on front page
-- utils css margins and flex
-- breakpoints as vars
 - tests for best players module
-- TeamName and TeamNameWith Logo: USE ONLY ONE
 - initial render layout
 - players with more goals
-- fontsize units
 - stylelint?? remove?
 - use abosulute imports
 - upgrade to next10
 - image optimization with next10
-- study fontsize
-- update react import  
+- update react import 

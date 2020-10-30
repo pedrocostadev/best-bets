@@ -1,7 +1,8 @@
 import React from 'react';
 
+import Text from '@/components/text/Text';
+
 import { BetItemDetail } from '../../../../services/bets/types';
-import Text from '../../../text/Text';
 
 interface Props {
   rank: BetItemDetail;

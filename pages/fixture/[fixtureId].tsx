@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import useBets from '../../hooks/useBets';
-import FixtureDetail from '../../components/fixtureDetail/FixtureDetail';
-import FixtureTeamsLogos from '../../components/fixtureTeamsLogos/FixtureTeamsLogos';
-import Bet from '../../components/bet/Bet';
+import useBets from '@/hooks/useBets';
+import FixtureDetail from '@/components/fixtureDetail/FixtureDetail';
+import FixtureTeamsLogos from '@/components/fixtureTeamsLogos/FixtureTeamsLogos';
+import Bet from '@/components/bet/Bet';
 
 const getFixtureId = (query): number => parseInt(query.fixtureId);
 

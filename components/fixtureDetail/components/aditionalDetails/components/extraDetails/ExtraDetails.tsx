@@ -1,14 +1,15 @@
 import React from 'react';
 
-import IconBall from '../../../../../../Icons/IconBall';
+import IconBall from '@/icons/IconBall';
 import {
   BetItemDetail,
   SpecialPoint,
   SpecialPointTypes,
-} from '../../../../../../services/bets/types';
-import { Team } from '../../../../../../services/fixtures/types';
-import FlexContainer from '../../../../../flexContainer/FlexContainer';
-import Text from '../../../../../text/Text';
+} from '@/services/bets/types';
+import { Team } from '@/services/fixtures/types';
+import FlexContainer from '@/components//flexContainer/FlexContainer';
+import Text from '@/components/text/Text';
+
 import styles from './ExtraDetails.module.scss';
 
 interface Props {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { format, formatDistance } from 'date-fns';
 
+import Text from '@/components/text/Text';
+
 import { FixtureWithBets } from '../../../../../../types';
-import Text from '../../../../../text/Text';
 
 interface Props {
   fixture: FixtureWithBets;

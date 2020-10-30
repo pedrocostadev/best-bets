@@ -3,14 +3,16 @@ import App from 'next/app';
 import Head from 'next/head';
 import type { AppProps, AppContext } from 'next/app';
 
-import './styles.css';
+import { UseBetsContext } from '@/hooks/useBets';
+import betsApi from '@/services/bets';
+
+import Header from '@/components/header/Header';
+import Footer from '@/components/footer/Footer';
+import Main from '@/components/main/Main';
+
 import config from '../config.json';
-import { UseBetsContext } from '../hooks/useBets';
-import betsApi from '../services/bets';
 import { FixtureWithBets } from '../types';
-import Header from '../components/header/Header';
-import Footer from '../components/footer/Footer';
-import Main from '../components/main/Main';
+import './styles.css';
 
 type BestBetsProps = AppProps & { fixtures: FixtureWithBets[] };
 

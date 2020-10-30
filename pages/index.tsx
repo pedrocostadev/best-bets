@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import FixturesList from '../components/fixturesList/FixturesList';
+import FixturesList from '@/components/fixturesList/FixturesList';
 
 const Home: React.FC = () => {
   // useEffect(() => {

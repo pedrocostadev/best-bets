@@ -1,7 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 
-import Text from '../text/Text';
+import Text from '@/components/text/Text';
 
 export interface LinkProps {
   name: string;

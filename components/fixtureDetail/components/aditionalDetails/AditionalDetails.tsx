@@ -1,10 +1,11 @@
 import React from 'react';
 
+import Heading from '@/components/heading/Heading';
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+
 import { FixtureWithBets } from '../../../../types';
 import ExtraDetails from './components/extraDetails/ExtraDetails';
 import PlayersDetails from './components/playersDetails/PlayersDetails';
-import Heading from '../../../heading/Heading';
-import FlexContainer from '../../../flexContainer/FlexContainer';
 
 interface Props {
   fixture: FixtureWithBets;

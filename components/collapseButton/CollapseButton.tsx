@@ -1,9 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import IconChevron from '@/icons/IconChevron';
+import Button from '@/components/button/Button';
+
 import styles from './CollapseButton.module.scss';
-import IconChevron from '../../Icons/IconChevron';
-import Button from '../button/Button';
 
 interface Props {
   onClick(): void;

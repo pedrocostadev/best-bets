@@ -1,12 +1,13 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+
 import { FixtureWithBets } from '../../../../types';
 import styles from './FixtureListItem.module.scss';
 import FixtureLeagueIcon from './components/fixtureLeagueIcon/FixtureLeagueIcon';
 import FixtureDate from './components/fixtureDate/FixtureDate';
 import FixtureTeams from './components/fixtureTeams/FixtureTeams';
-import FlexContainer from '../../../flexContainer/FlexContainer';
 
 interface Props {
   fixture: FixtureWithBets;

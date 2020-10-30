@@ -1,10 +1,12 @@
 import React from 'react';
 
+import betsApi from '@/services/bets';
+import Text from '@/components/text/Text';
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+
 import styles from './Bet.module.scss';
 import { FixtureWithBets } from '../../types';
-import betsApi from '../../services/bets';
-import Text from '../text/Text';
-import FlexContainer from '../flexContainer/FlexContainer';
+
 interface Props {
   fixture: FixtureWithBets;
 }

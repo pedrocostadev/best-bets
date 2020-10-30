@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
+import BurguerButton from '@/components/burguerButton/BurguerButton';
+import NavigationMenu from '@/components/navigationMenu/NavigationMenu';
+import Heading from '@/components/heading/Heading';
+
 import styles from './Header.module.scss';
-import BurguerButton from '../burguerButton/BurguerButton';
-import NavigationMenu from '../navigationMenu/NavigationMenu';
-import Heading from '../heading/Heading';
 
 interface State {
   showNavigationMenu: boolean;

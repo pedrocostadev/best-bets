@@ -1,17 +1,20 @@
 import React from 'react';
 
-import styles from './styles.module.css';
+import Text from '@/components/text/Text';
 
 const About: React.FC = () => (
   <>
-    <p>
-      BestBets is not responsible for your bets. The recommended bet is based on
-      real data but can obviously fail.
-    </p>
-    <p>For now we only support Premier League games.</p>
-    <p className={styles.playResponsibly}>
-      <span>Play responsibly.</span>
-    </p>
+    <Text
+      variant="body1"
+      text="BestBets is not responsible for your bets. The recommended bet is based on
+      real data but can obviously fail."
+    />
+
+    <Text
+      variant="body1"
+      text="For now we only support Premier League games."
+    />
+    <Text variant="body1" bold textAlignCenter text="Play responsibly." />
   </>
 );
 

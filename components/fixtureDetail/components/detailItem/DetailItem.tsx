@@ -1,7 +1,8 @@
 import React from 'react';
 
+import Text from '@/components/text/Text';
+
 import styles from './DetailItem.module.scss';
-import Text from '../../../text/Text';
 
 interface ItemProps {
   homeTeam: React.ReactElement;

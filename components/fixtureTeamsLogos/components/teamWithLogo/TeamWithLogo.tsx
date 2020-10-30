@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Team } from '@/services/fixtures/types';
+import FlexContainer from '@/components/flexContainer/FlexContainer';
+import Heading from '@/components/heading/Heading';
+
 import styles from './TeamWithLogo.module.scss';
-import { Team } from '../../../../services/fixtures/types';
-import FlexContainer from '../../../flexContainer/FlexContainer';
-import Heading from '../../../heading/Heading';
 
 interface Props {
   team: Team;
