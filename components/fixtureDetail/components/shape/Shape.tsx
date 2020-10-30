@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 import { BetItemDetail } from '../../../../services/bets/types';
 import styles from './Shape.module.scss';
+import Text from '../../../text/Text';
 
 interface Props {
   shape: BetItemDetail;
@@ -22,17 +23,17 @@ const getClassName = (letter: string) => {
   }
 };
 
-const Shape: React.FC<Props> = ({ shape, className }: Props) => (
-  <span className={className}>
+const Shape: React.FC<Props> = ({ shape }: Props) => (
+  <div className={styles.container}>
     {(shape.value as string).split('').map((letter, i) => (
-      <span
+      <Text
+        key={`${letter}_${i}`}
         className={classnames(styles.shape, styles[getClassName(letter)])}
-        key={i}
-      >
-        {letter}
-      </span>
+        variant="body2"
+        text={letter}
+      />
     ))}
-  </span>
+  </div>
 );
 
 export default React.memo(Shape);

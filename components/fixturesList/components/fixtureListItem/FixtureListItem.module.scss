@@ -2,9 +2,8 @@
 @import 'sizes';
 
 .container {
-  color: $brown;
-  padding-top: $spacing-m 0;
+  padding: $spacing-m;
   margin-bottom: $spacing-m;
   background-color: $white;
-  border-radius: 5px;
+  border-radius: $spacing-s;
 }

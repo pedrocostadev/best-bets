@@ -1,0 +1,45 @@
+@import 'sizes';
+
+.flex {
+  display: flex;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.directionColumn {
+  flex-direction: column;
+}
+
+.padding {
+  padding: $spacing-m;
+}
+
+.paddingTop {
+  padding-top: $spacing-m;
+}
+
+.paddingRight {
+  padding-right: $spacing-m;
+}
+
+.paddingBottom {
+  padding-bottom: $spacing-m;
+}
+
+.paddingLeft {
+  padding-left: $spacing-m;
+}
+
+.columnGap {
+  column-gap: $spacing-xs;
+}
+
+.rowGap {
+  row-gap: $spacing-xs;
+}

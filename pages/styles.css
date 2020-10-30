@@ -7,12 +7,12 @@
 body {
 	margin: 0;
 	padding: 0;
-	color: var(--brown);
-	background-color: var(--white);
 	font-family: 'Electrolize', sans-serif;
+	font-size: 100%;
 }
 
 p,
+h1,
 h2,
 h3,
 h4,

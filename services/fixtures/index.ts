@@ -21,7 +21,7 @@ const getLeagueFixtures = async (
   }
   return {
     leagueId: league.id,
-    fixtures: parser.parseFixtures({ fixturesData }),
+    fixtures: parser.parseFixtures({ fixturesData, league }),
   };
 };
 
@@ -32,7 +32,6 @@ const getFixtures = async (
     getLeagueFixtures(league),
   );
   const allFixtures = await Promise.all(allFixturesPromises);
-
   return allFixtures;
 };
 

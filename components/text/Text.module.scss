@@ -1,12 +1,36 @@
 @import 'sizes';
+@import 'colors';
 
 .text {
-  display: flex;
-  align-items: center;
-  text-align: left;
-  font-size: $font-size-m;
+  color: $brown;
 }
 
-.small {
+.caption {
+  font-size: $font-size-xxs;
+}
+
+.body2 {
+  font-size: $font-size-xs;
+}
+
+.body1 {
   font-size: $font-size-s;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

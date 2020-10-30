@@ -4,6 +4,7 @@ import IconGoldenBall from '../../../../../../Icons/IconGoldenBall';
 import Text from '../../../../../text/Text';
 import { BetItemDetail } from '../../../../../../services/bets/types';
 import { Team } from '../../../../../../services/fixtures/types';
+import FlexContainer from '../../../../../flexContainer/FlexContainer';
 
 interface Props {
   team: Team;
@@ -17,12 +18,15 @@ const PlayersDetails: React.FC<Props> = ({ team, bestPlayers }) => {
       {playersWithYear.map((playerWithYear: string[]) => {
         const [name, year] = playerWithYear;
         return (
-          <Text key={`${name}_${year}}`}>
+          <FlexContainer key={`${name}_${year}}`} columnGap>
             <>
               <IconGoldenBall />
-              {`${team.teamName} has ${name} in the team, one of the 3 FIFA best players of the world in ${year}.`}
+              <Text
+                variant="body1"
+                text={`${team.teamName} has ${name} in the team, one of the 3 FIFA best players of the world in ${year}.`}
+              />
             </>
-          </Text>
+          </FlexContainer>
         );
       })}
     </>

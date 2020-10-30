@@ -3,8 +3,8 @@ import React from 'react';
 import { FixtureWithBets } from '../../../../types';
 import ExtraDetails from './components/extraDetails/ExtraDetails';
 import PlayersDetails from './components/playersDetails/PlayersDetails';
-import styles from './AditionalDetails.module.scss';
 import Heading from '../../../heading/Heading';
+import FlexContainer from '../../../flexContainer/FlexContainer';
 
 interface Props {
   fixture: FixtureWithBets;
@@ -34,19 +34,21 @@ const AditionalDetails: React.FC<Props> = ({ fixture }) => {
   } = fixture;
 
   return (
-    <div className={styles.container}>
-      <Heading variant="subtitle" text="Aditional info" />
-      <ExtraDetails team={fixture.homeTeam} extra={homeTeam.extra} />
-      <PlayersDetails
-        team={fixture.homeTeam}
-        bestPlayers={homeTeam.fifaBestWorldPlayers}
-      />
-      <ExtraDetails team={fixture.awayTeam} extra={awayTeam.extra} />
-      <PlayersDetails
-        team={fixture.awayTeam}
-        bestPlayers={awayTeam.fifaBestWorldPlayers}
-      />
-    </div>
+    <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
+      <>
+        <Heading variant="h3" text="Aditional info" />
+        <ExtraDetails team={fixture.homeTeam} extra={homeTeam.extra} />
+        <PlayersDetails
+          team={fixture.homeTeam}
+          bestPlayers={homeTeam.fifaBestWorldPlayers}
+        />
+        <ExtraDetails team={fixture.awayTeam} extra={awayTeam.extra} />
+        <PlayersDetails
+          team={fixture.awayTeam}
+          bestPlayers={awayTeam.fifaBestWorldPlayers}
+        />
+      </>
+    </FlexContainer>
   );
 };
 

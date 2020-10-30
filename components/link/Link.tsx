@@ -1,6 +1,8 @@
 import React from 'react';
 import NextLink from 'next/link';
 
+import Text from '../text/Text';
+
 export interface LinkProps {
   name: string;
   path: string;
@@ -9,7 +11,9 @@ export interface LinkProps {
 
 const Link: React.FC<LinkProps> = ({ name, path, className }: LinkProps) => (
   <NextLink href={path}>
-    <a className={className}>{name}</a>
+    <a className={className}>
+      <Text variant="body1" text={name} />
+    </a>
   </NextLink>
 );
 

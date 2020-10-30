@@ -7,10 +7,11 @@ $spacing-l: 20px;
 $spacing-xl: 30px;
 
 /* Font size */
-$font-size-xxs: 8px;
-$font-size-xs: 10px;
-$font-size-s: 12px;
-$font-size-m: 14px;
-$font-size-l: 16px;
-$font-size-xl: 20px;
-$font-size-xxl: 30px;
+$VIEW_PORT_FACTOR: 1.8vw;
+
+$font-size-xxs: calc(0.2rem + #{$VIEW_PORT_FACTOR});
+$font-size-xs: calc(0.3rem + #{$VIEW_PORT_FACTOR});
+$font-size-s: calc(0.5rem + #{$VIEW_PORT_FACTOR});
+$font-size-m: calc(0.6rem + #{$VIEW_PORT_FACTOR});
+$font-size-l: calc(1rem + #{$VIEW_PORT_FACTOR});
+$font-size-xl: calc(1.3rem + #{$VIEW_PORT_FACTOR});

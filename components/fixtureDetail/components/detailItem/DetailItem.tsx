@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './DetailItem.module.scss';
+import Text from '../../../text/Text';
 
 interface ItemProps {
   homeTeam: React.ReactElement;
@@ -9,11 +10,11 @@ interface ItemProps {
 }
 
 const DetailItem: React.FC<ItemProps> = ({ title, homeTeam, awayTeam }) => (
-  <p className={styles.container}>
+  <div className={styles.container}>
     {homeTeam}
-    <span className={styles.title}>{title}</span>
+    <Text variant="caption" text={title} />
     {awayTeam}
-  </p>
+  </div>
 );
 
 export default DetailItem;

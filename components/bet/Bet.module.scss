@@ -1,17 +1,9 @@
 @import 'colors';
 @import 'sizes';
 
-.container {
-  margin: $spacing-l 0;
-  text-align: center;
-}
-
 .bet {
-  font-weight: bold;
-  font-size: $font-size-m;
-  padding: $spacing-xs;
+  padding: $spacing-s;
   background-color: $yellow;
   border: 1px solid $gray;
-  border-radius: 5px;
-  margin: $spacing-xxs;
+  border-radius: $spacing-s;
 }

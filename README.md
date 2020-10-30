@@ -38,3 +38,7 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - fontsize units
 - stylelint?? remove?
 - use abosulute imports
+- upgrade to next10
+- image optimization with next10
+- study fontsize
+- update react import  

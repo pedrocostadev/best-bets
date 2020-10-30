@@ -1,10 +1,14 @@
 import React from 'react';
 
 import styles from './Footer.module.scss';
+import Text from '../text/Text';
 
 const Footer: React.FC = () => (
   <footer className={styles.footer}>
-    <span>Copyright © 2020 Best Bets. All rights reserved.</span>
+    <Text
+      variant="caption"
+      text="Copyright © 2020 Best Bets. All rights reserved."
+    />
   </footer>
 );
 

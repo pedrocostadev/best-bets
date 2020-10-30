@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import useBets from '../../hooks/useBets';
 import FixtureDetail from '../../components/fixtureDetail/FixtureDetail';
-import FixtureTeams from '../../components/fixtureTeams/FixtureTeams';
+import FixtureTeamsLogos from '../../components/fixtureTeamsLogos/FixtureTeamsLogos';
 import Bet from '../../components/bet/Bet';
 
 const getFixtureId = (query): number => parseInt(query.fixtureId);
@@ -20,7 +20,7 @@ const Fixture: React.FC = () => {
       {!fixture && <p>Not a valid fixture</p>}
       {fixture && (
         <>
-          <FixtureTeams fixture={fixture} />
+          <FixtureTeamsLogos fixture={fixture} />
           <FixtureDetail fixture={fixture} />
           <Bet fixture={fixture} />
         </>

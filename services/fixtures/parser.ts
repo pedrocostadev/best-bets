@@ -2,7 +2,7 @@ import { Fixture } from './types';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-const parseFixtures = ({ fixturesData }: any): Fixture[] => {
+const parseFixtures = ({ fixturesData, league }: any): Fixture[] => {
   const { fixtures } = fixturesData.data.api;
 
   return fixtures.map((fixture: any) => ({
@@ -18,7 +18,8 @@ const parseFixtures = ({ fixturesData }: any): Fixture[] => {
     },
     venue: fixture.venue,
     eventDate: fixture.event_date,
-    leagueId: fixture.league_id, // TODO: Check if needded??
+    // leagueId: fixture.league_id, // TODO: Check if needded??
+    leagueId: league.id,
     fixtureId: fixture.fixture_id,
   }));
 };

@@ -5,13 +5,10 @@ import { BetItemDetail } from '../../../../services/bets/types';
 
 interface Props {
   reputation: BetItemDetail;
-  className?: string;
 }
 
-const Reputation: React.FC<Props> = ({ reputation, className }: Props) => (
-  <span className={className}>
-    <Stars stars={reputation.value as number} />
-  </span>
+const Reputation: React.FC<Props> = ({ reputation }: Props) => (
+  <Stars stars={reputation.value as number} />
 );
 
 export default React.memo(Reputation);

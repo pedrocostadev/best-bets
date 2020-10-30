@@ -4,7 +4,6 @@ import Head from 'next/head';
 import type { AppProps, AppContext } from 'next/app';
 
 import './styles.css';
-// import './styles/breakpoints.scss';
 import config from '../config.json';
 import { UseBetsContext } from '../hooks/useBets';
 import betsApi from '../services/bets';
@@ -13,9 +12,9 @@ import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import Main from '../components/main/Main';
 
-type MyAppProps = AppProps & { fixtures: FixtureWithBets[] };
+type BestBetsProps = AppProps & { fixtures: FixtureWithBets[] };
 
-const MyApp = (props: MyAppProps): React.ReactElement => {
+const BestBetsApp = (props: BestBetsProps): React.ReactElement => {
   const { Component, pageProps, fixtures } = props;
   return (
     <>
@@ -35,10 +34,10 @@ const MyApp = (props: MyAppProps): React.ReactElement => {
   );
 };
 
-MyApp.getInitialProps = async (appContext: AppContext) => {
+BestBetsApp.getInitialProps = async (appContext: AppContext) => {
   const appProps = await App.getInitialProps(appContext);
   const fixtures = await betsApi.getBets(config);
   return { ...appProps, fixtures };
 };
 
-export default MyApp;
+export default BestBetsApp;

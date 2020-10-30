@@ -3,7 +3,10 @@ import { useRouter } from 'next/router';
 
 import { FixtureWithBets } from '../../../../types';
 import styles from './FixtureListItem.module.scss';
-import FixtureInfo from '../fixtureInfo/FixtureInfo';
+import FixtureLeagueIcon from './components/fixtureLeagueIcon/FixtureLeagueIcon';
+import FixtureDate from './components/fixtureDate/FixtureDate';
+import FixtureTeams from './components/fixtureTeams/FixtureTeams';
+import FlexContainer from '../../../flexContainer/FlexContainer';
 
 interface Props {
   fixture: FixtureWithBets;
@@ -14,9 +17,15 @@ const FixtureListItem: React.FC<Props> = ({ fixture }: Props) => {
   const goToFixtureDetailPage = () =>
     router.push(`/fixture/${fixture.fixtureId}`);
   return (
-    <div className={styles.container} onClick={goToFixtureDetailPage}>
-      <FixtureInfo fixture={fixture} />
-    </div>
+    <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
+      <>
+        <FixtureLeagueIcon fixture={fixture} />
+        <div>
+          <FixtureTeams fixture={fixture} />
+          <FixtureDate fixture={fixture} />
+        </div>
+      </>
+    </FlexContainer>
   );
 };
 

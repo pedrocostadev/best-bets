@@ -1,13 +1,19 @@
 @import 'sizes';
+@import 'colors';
 
-.title {
-  font-size: $font-size-l;
+.heading {
+  color: $brown;
   text-align: center;
-  margin-bottom: $spacing-l;
 }
 
-.subtitle {
+.h1 {
+  font-size: $font-size-xl;
+}
+
+.h2 {
+  font-size: $font-size-l;
+}
+
+.h3 {
   font-size: $font-size-m;
-  text-align: center;
-  margin-bottom: $spacing-m;
 }

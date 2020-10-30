@@ -2,7 +2,6 @@
 @import 'sizes';
 
 .message {
-  font-size: $font-size-xl;
   top: 50%;
   position: fixed;
   left: 50%;
@@ -12,6 +11,5 @@
   align-items: center;
 
   @include breakpoint_m {
-    font-size: $font-size-xxl;
   }
 }
