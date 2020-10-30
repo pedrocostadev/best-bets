@@ -9,7 +9,7 @@
 		"start": "next start",
 		"lint": "eslint ./ --ext .ts,.tsx",
 		"lint:fix": "yarn run lint --fix",
-		"stylelint": "npx stylelint \"**/*.css\"",
+		"stylelint": "npx stylelint \"**/*.scss\" --syntax scss",
 		"test": "jest",
 		"test:watch": "jest --watch"
 	},
@@ -41,6 +41,7 @@
 		"prettier": "^2.0.5",
 		"stylelint": "^13.6.1",
 		"stylelint-config-standard": "^20.0.0",
+		"stylelint-scss": "^3.18.0",
 		"typescript": "^3.9.6"
 	},
 	"husky": {

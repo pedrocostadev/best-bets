@@ -33,7 +33,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - initial render layout
 - players with more goals
 - stylelint?? remove?
-- use abosulute imports
 - upgrade to next10
 - image optimization with next10
 - update react import 
