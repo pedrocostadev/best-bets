@@ -8,7 +8,7 @@ import FlexContainer from '@/components/flexContainer/FlexContainer';
 import styles from './Shape.module.scss';
 
 interface Props {
-  shape: BetItemDetail;
+  shape: BetItemDetail<string>;
   className?: string;
 }
 
@@ -28,7 +28,7 @@ const getClassName = (letter: string) => {
 const Shape: React.FC<Props> = ({ shape }: Props) => (
   <FlexContainer>
     <>
-      {(shape.value as string).split('').map((letter, i) => (
+      {shape.value.split('').map((letter, i) => (
         <Text
           key={`${letter}_${i}`}
           className={classnames(styles.shape, styles[getClassName(letter)])}

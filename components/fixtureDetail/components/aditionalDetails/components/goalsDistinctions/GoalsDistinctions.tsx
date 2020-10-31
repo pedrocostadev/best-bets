@@ -14,7 +14,7 @@ import styles from './GoalsDistinctions.module.scss';
 
 interface Props {
   team: Team;
-  goalsDistinctions: BetItemDetail;
+  goalsDistinctions: BetItemDetail<GoalsDistinctionItem[]>;
 }
 
 const getSpecialPointStyle = (tag: GoalsDistinctionItem) => {
@@ -25,7 +25,7 @@ const getSpecialPointStyle = (tag: GoalsDistinctionItem) => {
 };
 
 const GoalsDistinctions: React.FC<Props> = ({ team, goalsDistinctions }) => {
-  const tags = goalsDistinctions.value as GoalsDistinctionItem[];
+  const { value: tags } = goalsDistinctions;
   return (
     <>
       {tags.map((tag: GoalsDistinctionItem, index: number) => (

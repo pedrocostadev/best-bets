@@ -33,17 +33,17 @@ export const GOALS_DISTINCTION_TYPES = {
   },
 };
 
-export interface BetItemDetail {
+export interface BetItemDetail<T> {
   points: number;
-  value: number | string | string[] | GoalsDistinctionItem[] | string[][]; // TODO: Check better approach
+  value: T;
 }
 
 export interface BetDetail {
-  reputation: BetItemDetail;
-  standing: BetItemDetail;
-  shape: BetItemDetail;
-  goalsDistinctions: BetItemDetail;
-  fifaBestWorldPlayers: BetItemDetail;
+  reputation: BetItemDetail<number>;
+  standing: BetItemDetail<number>;
+  shape: BetItemDetail<string>;
+  goalsDistinctions: BetItemDetail<GoalsDistinctionItem[]>;
+  fifaBestWorldPlayers: BetItemDetail<string[][]>;
 }
 
 export interface Bet {

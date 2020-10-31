@@ -5,7 +5,7 @@ import Text from '@/components/text/Text';
 import { BetItemDetail } from '../../../../services/bets/types';
 
 interface Props {
-  rank: BetItemDetail;
+  rank: BetItemDetail<number>;
 }
 
 const Rank: React.FC<Props> = ({ rank }) => (

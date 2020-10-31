@@ -8,11 +8,11 @@ import { Team } from '@/services/fixtures/types';
 
 interface Props {
   team: Team;
-  bestPlayers: BetItemDetail;
+  bestPlayers: BetItemDetail<string[][]>;
 }
 
 const PlayersDistinctions: React.FC<Props> = ({ team, bestPlayers }) => {
-  const playersWithYear = bestPlayers.value as string[][];
+  const { value: playersWithYear } = bestPlayers;
   return (
     <>
       {playersWithYear.map((playerWithYear: string[]) => {

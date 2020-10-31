@@ -39,3 +39,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - Initial re-renders
 - Upgrade to next10
 - Image optimization with next10
+
+#### UI
+- Show goalsFor and goalsAgainst
