@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import IconBall from '@/icons/IconBall';
 import {
@@ -32,11 +33,18 @@ const GoalsDistinctions: React.FC<Props> = ({ team, goalsDistinctions }) => {
         <FlexContainer key={index} alignCenter columnGap>
           <>
             <IconBall />
-            <Text
-              className={getSpecialPointStyle(tag)}
-              variant="body1"
-              text={`${team.teamName} has ${tag.label} in league.`}
-            />
+            <Text variant="body1">
+              <>
+                {`${team.teamName} has `}
+                <Text
+                  variant="body1"
+                  as="span"
+                  text={tag.label}
+                  className={classnames(styles.tag, getSpecialPointStyle(tag))}
+                />
+                {' in league.'}
+              </>
+            </Text>
           </>
         </FlexContainer>
       ))}

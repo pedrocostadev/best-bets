@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
 import styles from './Text.module.scss';
@@ -8,12 +8,13 @@ type VARIANT = 'caption' | 'body2' | 'body1';
 interface Props {
   as?: 'span' | 'p';
   className?: string;
-  text: string;
+  text?: string;
   variant: VARIANT;
   ellipsis?: boolean;
   textAlignCenter?: boolean;
   bold?: boolean;
   uppercase?: boolean;
+  children?: ReactElement;
 }
 
 const Text: React.FC<Props> = ({
@@ -25,6 +26,7 @@ const Text: React.FC<Props> = ({
   textAlignCenter,
   bold,
   uppercase,
+  children,
 }) => {
   const ElementTag = as ? as : 'p';
   return (
@@ -37,6 +39,7 @@ const Text: React.FC<Props> = ({
       })}
     >
       {text}
+      {children}
     </ElementTag>
   );
 };
