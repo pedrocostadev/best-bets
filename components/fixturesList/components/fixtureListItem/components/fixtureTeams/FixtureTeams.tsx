@@ -25,21 +25,19 @@ const FixtureTeams: React.FC<Props> = ({ fixture }: Props) => {
   const bestBetTeamName = getBestBetTeam(fixture);
   return (
     <FlexContainer alignCenter columnGap>
-      <>
-        <Text
-          variant="body1"
-          text={homeTeam.teamName}
-          ellipsis
-          uppercase={bestBetTeamName === homeTeam.teamName}
-        />
-        <Text variant="caption" text="x" />
-        <Text
-          variant="body1"
-          text={awayTeam.teamName}
-          ellipsis
-          uppercase={bestBetTeamName === awayTeam.teamName}
-        />
-      </>
+      <Text
+        variant="body1"
+        text={homeTeam.teamName}
+        ellipsis
+        uppercase={bestBetTeamName === homeTeam.teamName}
+      />
+      <Text variant="caption" text="x" />
+      <Text
+        variant="body1"
+        text={awayTeam.teamName}
+        ellipsis
+        uppercase={bestBetTeamName === awayTeam.teamName}
+      />
     </FlexContainer>
   );
 };

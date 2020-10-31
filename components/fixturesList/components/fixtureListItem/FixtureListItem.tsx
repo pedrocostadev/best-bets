@@ -19,13 +19,11 @@ const FixtureListItem: React.FC<Props> = ({ fixture }: Props) => {
     router.push(`/fixture/${fixture.fixtureId}`);
   return (
     <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
-      <>
-        <FixtureLeagueIcon fixture={fixture} />
-        <div>
-          <FixtureTeams fixture={fixture} />
-          <FixtureDate fixture={fixture} />
-        </div>
-      </>
+      <FixtureLeagueIcon fixture={fixture} />
+      <div>
+        <FixtureTeams fixture={fixture} />
+        <FixtureDate fixture={fixture} />
+      </div>
     </FlexContainer>
   );
 };

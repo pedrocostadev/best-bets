@@ -36,25 +36,23 @@ const AditionalDetails: React.FC<Props> = ({ fixture }) => {
 
   return (
     <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
-      <>
-        <Heading variant="h3" text="Aditional info" />
-        <GoalsDistinctions
-          team={fixture.homeTeam}
-          goalsDistinctions={homeTeam.goalsDistinctions}
-        />
-        <PlayersDistinctions
-          team={fixture.homeTeam}
-          bestPlayers={homeTeam.fifaBestWorldPlayers}
-        />
-        <GoalsDistinctions
-          team={fixture.awayTeam}
-          goalsDistinctions={awayTeam.goalsDistinctions}
-        />
-        <PlayersDistinctions
-          team={fixture.awayTeam}
-          bestPlayers={awayTeam.fifaBestWorldPlayers}
-        />
-      </>
+      <Heading variant="h3" text="Aditional info" />
+      <GoalsDistinctions
+        team={fixture.homeTeam}
+        goalsDistinctions={homeTeam.goalsDistinctions}
+      />
+      <PlayersDistinctions
+        team={fixture.homeTeam}
+        bestPlayers={homeTeam.fifaBestWorldPlayers}
+      />
+      <GoalsDistinctions
+        team={fixture.awayTeam}
+        goalsDistinctions={awayTeam.goalsDistinctions}
+      />
+      <PlayersDistinctions
+        team={fixture.awayTeam}
+        bestPlayers={awayTeam.fifaBestWorldPlayers}
+      />
     </FlexContainer>
   );
 };

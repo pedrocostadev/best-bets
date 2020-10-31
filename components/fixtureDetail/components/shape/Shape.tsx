@@ -27,16 +27,14 @@ const getClassName = (letter: string) => {
 
 const Shape: React.FC<Props> = ({ shape }: Props) => (
   <FlexContainer>
-    <>
-      {shape.value.split('').map((letter, i) => (
-        <Text
-          key={`${letter}_${i}`}
-          className={classnames(styles.shape, styles[getClassName(letter)])}
-          variant="body2"
-          text={letter}
-        />
-      ))}
-    </>
+    {shape.value.split('').map((letter, i) => (
+      <Text
+        key={`${letter}_${i}`}
+        className={classnames(styles.shape, styles[getClassName(letter)])}
+        variant="body2"
+        text={letter}
+      />
+    ))}
   </FlexContainer>
 );
 

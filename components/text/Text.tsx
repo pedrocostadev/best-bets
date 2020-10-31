@@ -14,7 +14,7 @@ interface Props {
   textAlignCenter?: boolean;
   bold?: boolean;
   uppercase?: boolean;
-  children?: ReactElement;
+  children?: ReactElement | ReactElement[];
 }
 
 const Text: React.FC<Props> = ({
@@ -39,7 +39,7 @@ const Text: React.FC<Props> = ({
       })}
     >
       {text}
-      {children}
+      {React.Children.toArray(children)}
     </ElementTag>
   );
 };

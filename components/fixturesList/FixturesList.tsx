@@ -15,10 +15,8 @@ const FixturesList: React.FC = () => {
   if (noFixtures) {
     return (
       <FlexContainer>
-        <>
-          <IconSadFace />
-          <Text variant="body1" text="No games available" />
-        </>
+        <IconSadFace />
+        <Text variant="body1" text="No games available" />
       </FlexContainer>
     );
   }

@@ -19,13 +19,11 @@ const PlayersDistinctions: React.FC<Props> = ({ team, bestPlayers }) => {
         const [name, year] = playerWithYear;
         return (
           <FlexContainer key={`${name}_${year}}`} columnGap>
-            <>
-              <IconGoldenBall />
-              <Text
-                variant="body1"
-                text={`${team.teamName} has ${name} in the team, one of the 3 FIFA best players of the world in ${year}.`}
-              />
-            </>
+            <IconGoldenBall />
+            <Text
+              variant="body1"
+              text={`${team.teamName} has ${name} in the team, one of the 3 FIFA best players of the world in ${year}.`}
+            />
           </FlexContainer>
         );
       })}

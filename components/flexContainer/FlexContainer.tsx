@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './FlexContainer.module.scss';
 
 interface Props extends React.ComponentProps<'div'> {
-  children: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
   alignCenter?: boolean;
   justifyCenter?: boolean;
   directionColumn?: boolean;
@@ -48,7 +48,7 @@ const FlexContainer: React.FC<Props> = ({
   );
   return (
     <div {...rest} className={classes}>
-      {children}
+      {React.Children.toArray(children)}
     </div>
   );
 };

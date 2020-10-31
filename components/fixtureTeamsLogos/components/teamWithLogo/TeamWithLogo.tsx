@@ -12,14 +12,12 @@ interface Props {
 
 const TeamWithLogo: React.FC<Props> = ({ team }) => (
   <FlexContainer directionColumn alignCenter>
-    <>
-      <img
-        className={styles.logo}
-        src={team.logo}
-        alt={`${team.teamName} logo`}
-      />
-      <Heading variant="h3" text={team.teamName} />
-    </>
+    <img
+      className={styles.logo}
+      src={team.logo}
+      alt={`${team.teamName} logo`}
+    />
+    <Heading variant="h3" text={team.teamName} />
   </FlexContainer>
 );
 
