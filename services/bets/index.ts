@@ -4,7 +4,7 @@ import {
   isOneOfWorstDefenses,
   isOneOfBestAttacks,
   isOneOfBestDefenses,
-} from './extraPoints';
+} from './goalsDistinctions';
 
 export default {
   isOneOfWorstAttacks,

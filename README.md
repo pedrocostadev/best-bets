@@ -32,7 +32,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - Dynamic load on mocks
 
 #### Others
-- Rename extra points
 - Best bet on front page
 - Update react import 
 

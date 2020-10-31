@@ -4,8 +4,8 @@ import {
   isOneOfBestDefenses,
   isOneOfWorstAttacks,
   isOneOfWorstDefenses,
-  getTeamExtraPoints,
-} from './extraPoints';
+  getTeamGoalsDistinctionsPoints,
+} from './goalsDistinctions';
 
 /*
   goalsFor
@@ -214,18 +214,18 @@ describe('ExtraPoints', () => {
     });
   });
 
-  describe('getTeamExtraPoints', () => {
+  describe('getTeamGoalsDistinctionsPoints', () => {
     test('should return 0.1 for teams with one of the best attacks and one of the best defenses', () => {
-      expect(getTeamExtraPoints(arsenal, standings)).toBe(0.1);
+      expect(getTeamGoalsDistinctionsPoints(arsenal, standings)).toBe(0.1);
     });
     test('should return 0.05 for teams with one of the best attacks or one of the best defenses', () => {
-      expect(getTeamExtraPoints(manCity, standings)).toBe(0.05);
+      expect(getTeamGoalsDistinctionsPoints(manCity, standings)).toBe(0.05);
     });
     test('should return -0.05 for teams with one of the worst attacks or one of the worst defenses', () => {
-      expect(getTeamExtraPoints(westHam, standings)).toBe(-0.05);
+      expect(getTeamGoalsDistinctionsPoints(westHam, standings)).toBe(-0.05);
     });
     test('should return 0 for teams with one of the worst attacks or one of the worst defenses and with one of the best attacks/defenses', () => {
-      expect(getTeamExtraPoints(chelsea, standings)).toBe(0);
+      expect(getTeamGoalsDistinctionsPoints(chelsea, standings)).toBe(0);
     });
   });
 });

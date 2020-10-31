@@ -3,7 +3,7 @@ import { FixtureWithBets, Config } from '../../types';
 import { LeagueReputation } from '../reputations/types';
 import { LeagueStandings, Standing } from '../standings/types';
 import { Fixture, LeagueFixtures } from '../fixtures/types';
-import { SpecialPointTypes } from './types';
+import { GoalsDistinctionType } from './types';
 
 const standings: Standing[] = [
   {
@@ -243,8 +243,8 @@ describe('Bets', () => {
           shape: { value: 'DWLLD', points: 0.333 },
           extra: {
             value: [
-              { label: 'oneOf3BestAttacks', type: SpecialPointTypes.GOOD },
-              { label: 'oneOf3BestDefenses', type: SpecialPointTypes.GOOD },
+              { label: 'oneOf3BestAttacks', type: GoalsDistinctionType.GOOD },
+              { label: 'oneOf3BestDefenses', type: GoalsDistinctionType.GOOD },
             ],
             points: 0.1,
           },

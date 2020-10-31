@@ -1,52 +1,48 @@
-export enum SpecialPointTypes {
-  GOOD = 'good',
-  BAD = 'bad',
-}
-
-export interface SpecialPoint {
-  label: string;
-  type: SpecialPointTypes;
-}
-
 export enum GameResult {
   WIN = 'W',
   DRAW = 'D',
   LOST = 'L',
 }
 
-export const SPECIAL_POINTS_TYPES = {
+export enum GoalsDistinctionType {
+  GOOD = 'good',
+  BAD = 'bad',
+}
+
+export interface GoalsDistinctionItem {
+  label: string;
+  type: GoalsDistinctionType;
+}
+
+export const GOALS_DISTINCTION_TYPES = {
   oneOfBestDefenses: {
     label: 'oneOfThe3BestDefenses',
-    type: SpecialPointTypes.GOOD,
+    type: GoalsDistinctionType.GOOD,
   },
   oneOfBestAttacks: {
     label: 'oneOfThe3BestAttacks',
-    type: SpecialPointTypes.GOOD,
+    type: GoalsDistinctionType.GOOD,
   },
   oneOfWorstAttacks: {
     label: 'oneOfThe3WorstAttacks',
-    type: SpecialPointTypes.BAD,
+    type: GoalsDistinctionType.BAD,
   },
   oneOfWorstDefenses: {
     label: 'oneOfThe3WorstDefenses',
-    type: SpecialPointTypes.BAD,
-  },
-  oneOfBestWorldPlayersInTeam: {
-    label: 'oneOfTheBestWorldPlayersInTeam',
-    type: SpecialPointTypes.GOOD,
+    type: GoalsDistinctionType.BAD,
   },
 };
 
 export interface BetItemDetail {
   points: number;
-  value: number | string | string[] | SpecialPoint[] | string[][]; // TODO: Check best approach
+  value: number | string | string[] | GoalsDistinctionItem[] | string[][]; // TODO: Check better approach
 }
 
 export interface BetDetail {
   reputation: BetItemDetail;
   standing: BetItemDetail;
   shape: BetItemDetail;
-  extra: BetItemDetail;
+  goalsDistinctions: BetItemDetail;
   fifaBestWorldPlayers: BetItemDetail;
 }
 

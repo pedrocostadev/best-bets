@@ -1,6 +1,6 @@
 import { Team } from '../fixtures/types';
 import { Standing } from '../standings/types';
-import { SpecialPoint, SPECIAL_POINTS_TYPES } from './types';
+import { GoalsDistinctionItem, GOALS_DISTINCTION_TYPES } from './types';
 
 const getCompareFn = (compareField: string) => (a: Standing, b: Standing) => {
   const numberOfGoalsForA =
@@ -68,9 +68,12 @@ const isOneOfWorstAttacks = (team: Team, standings: Standing[]): boolean => {
   );
 };
 
-const SPECIAL_POINT = 0.05;
+const GOALS_DISTINCTION_POINTS = 0.05;
 
-const getTeamExtraPoints = (team: Team, standings: Standing[]): number => {
+const getTeamGoalsDistinctionsPoints = (
+  team: Team,
+  standings: Standing[],
+): number => {
   let extraPoints = 0;
 
   const oneOfBestDefenses = isOneOfBestDefenses(team, standings);
@@ -79,51 +82,49 @@ const getTeamExtraPoints = (team: Team, standings: Standing[]): number => {
   const oneOfWorstAttacks = isOneOfWorstAttacks(team, standings);
 
   if (oneOfBestDefenses) {
-    extraPoints += SPECIAL_POINT;
+    extraPoints += GOALS_DISTINCTION_POINTS;
   }
 
   if (oneOfBestAttacks) {
-    extraPoints += SPECIAL_POINT;
+    extraPoints += GOALS_DISTINCTION_POINTS;
   }
 
   if (oneOfWorstDefenses) {
-    extraPoints -= SPECIAL_POINT;
+    extraPoints -= GOALS_DISTINCTION_POINTS;
   }
 
   if (oneOfWorstAttacks) {
-    extraPoints -= SPECIAL_POINT;
+    extraPoints -= GOALS_DISTINCTION_POINTS;
   }
 
   return extraPoints;
 };
 
-const getTeamExtraPointsTags = (
+const getTeamGoalsDistinctions = (
   team: Team,
   standings: Standing[],
-): SpecialPoint[] => {
+): GoalsDistinctionItem[] => {
   const tags = [];
   if (isOneOfBestAttacks(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfBestAttacks);
+    tags.push(GOALS_DISTINCTION_TYPES.oneOfBestAttacks);
   }
   if (isOneOfBestDefenses(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfBestDefenses);
+    tags.push(GOALS_DISTINCTION_TYPES.oneOfBestDefenses);
   }
   if (isOneOfWorstAttacks(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstAttacks);
+    tags.push(GOALS_DISTINCTION_TYPES.oneOfWorstAttacks);
   }
   if (isOneOfWorstDefenses(team, standings)) {
-    tags.push(SPECIAL_POINTS_TYPES.oneOfWorstDefenses);
+    tags.push(GOALS_DISTINCTION_TYPES.oneOfWorstDefenses);
   }
   return tags;
 };
 
 export {
-  getTeamExtraPointsTags,
-  getTeamExtraPoints,
+  getTeamGoalsDistinctions,
+  getTeamGoalsDistinctionsPoints,
   isOneOfBestDefenses,
   isOneOfBestAttacks,
   isOneOfWorstDefenses,
   isOneOfWorstAttacks,
 };
-
-// TODO: best players in/out

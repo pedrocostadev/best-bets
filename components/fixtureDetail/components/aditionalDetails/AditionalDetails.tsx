@@ -4,8 +4,8 @@ import Heading from '@/components/heading/Heading';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
 import { FixtureWithBets } from '../../../../types';
-import ExtraDetails from './components/extraDetails/ExtraDetails';
-import PlayersDetails from './components/playersDetails/PlayersDetails';
+import GoalsDistinctions from './components/goalsDistinctions/GoalsDistinctions';
+import PlayersDistinctions from './components/playersDistinctions/PlayersDistinctions';
 
 interface Props {
   fixture: FixtureWithBets;
@@ -17,8 +17,8 @@ const noAditialDetailsToShow = ({ fixture }: Props) => {
   } = fixture;
   return (
     [
-      ...(homeTeam.extra.value as []),
-      ...(awayTeam.extra.value as []),
+      ...(homeTeam.goalsDistinctions.value as []),
+      ...(awayTeam.goalsDistinctions.value as []),
       ...(homeTeam.fifaBestWorldPlayers.value as []),
       ...(awayTeam.fifaBestWorldPlayers.value as []),
     ].length === 0
@@ -38,13 +38,19 @@ const AditionalDetails: React.FC<Props> = ({ fixture }) => {
     <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
       <>
         <Heading variant="h3" text="Aditional info" />
-        <ExtraDetails team={fixture.homeTeam} extra={homeTeam.extra} />
-        <PlayersDetails
+        <GoalsDistinctions
+          team={fixture.homeTeam}
+          goalsDistinctions={homeTeam.goalsDistinctions}
+        />
+        <PlayersDistinctions
           team={fixture.homeTeam}
           bestPlayers={homeTeam.fifaBestWorldPlayers}
         />
-        <ExtraDetails team={fixture.awayTeam} extra={awayTeam.extra} />
-        <PlayersDetails
+        <GoalsDistinctions
+          team={fixture.awayTeam}
+          goalsDistinctions={awayTeam.goalsDistinctions}
+        />
+        <PlayersDistinctions
           team={fixture.awayTeam}
           bestPlayers={awayTeam.fifaBestWorldPlayers}
         />

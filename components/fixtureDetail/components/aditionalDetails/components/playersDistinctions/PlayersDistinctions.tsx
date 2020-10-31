@@ -11,7 +11,7 @@ interface Props {
   bestPlayers: BetItemDetail;
 }
 
-const PlayersDetails: React.FC<Props> = ({ team, bestPlayers }) => {
+const PlayersDistinctions: React.FC<Props> = ({ team, bestPlayers }) => {
   const playersWithYear = bestPlayers.value as string[][];
   return (
     <>
@@ -33,4 +33,4 @@ const PlayersDetails: React.FC<Props> = ({ team, bestPlayers }) => {
   );
 };
 
-export default React.memo(PlayersDetails);
+export default React.memo(PlayersDistinctions);

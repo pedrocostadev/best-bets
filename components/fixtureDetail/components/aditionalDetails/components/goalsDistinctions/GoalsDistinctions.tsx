@@ -3,32 +3,32 @@ import React from 'react';
 import IconBall from '@/icons/IconBall';
 import {
   BetItemDetail,
-  SpecialPoint,
-  SpecialPointTypes,
+  GoalsDistinctionItem,
+  GoalsDistinctionType,
 } from '@/services/bets/types';
 import { Team } from '@/services/fixtures/types';
 import FlexContainer from '@/components//flexContainer/FlexContainer';
 import Text from '@/components/text/Text';
 
-import styles from './ExtraDetails.module.scss';
+import styles from './GoalsDistinctions.module.scss';
 
 interface Props {
   team: Team;
-  extra: BetItemDetail;
+  goalsDistinctions: BetItemDetail;
 }
 
-const getSpecialPointStyle = (tag: SpecialPoint) => {
-  if (tag.type === SpecialPointTypes.GOOD) {
+const getSpecialPointStyle = (tag: GoalsDistinctionItem) => {
+  if (tag.type === GoalsDistinctionType.GOOD) {
     return styles.goodTag;
   }
   return styles.badTag;
 };
 
-const ExtraDetails: React.FC<Props> = ({ team, extra }) => {
-  const tags = extra.value as SpecialPoint[];
+const GoalsDistinctions: React.FC<Props> = ({ team, goalsDistinctions }) => {
+  const tags = goalsDistinctions.value as GoalsDistinctionItem[];
   return (
     <>
-      {tags.map((tag: SpecialPoint, index: number) => (
+      {tags.map((tag: GoalsDistinctionItem, index: number) => (
         <FlexContainer key={index} alignCenter columnGap>
           <>
             <IconBall />
@@ -44,4 +44,4 @@ const ExtraDetails: React.FC<Props> = ({ team, extra }) => {
   );
 };
 
-export default React.memo(ExtraDetails);
+export default React.memo(GoalsDistinctions);

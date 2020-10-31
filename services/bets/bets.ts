@@ -2,7 +2,10 @@ import { Config, FixtureWithBets } from '../../types';
 import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
-import { getTeamExtraPoints, getTeamExtraPointsTags } from './extraPoints';
+import {
+  getTeamGoalsDistinctionsPoints,
+  getTeamGoalsDistinctions,
+} from './goalsDistinctions';
 import { getConfindenceMargin } from './confidence';
 import {
   getTeamBestFifaPlayersPoints,
@@ -65,9 +68,9 @@ const getBetDetail = (
       value: teamStanding.forme,
       points: getTeamShapePoints(team, standings),
     },
-    extra: {
-      value: getTeamExtraPointsTags(team, standings),
-      points: getTeamExtraPoints(team, standings),
+    goalsDistinctions: {
+      value: getTeamGoalsDistinctions(team, standings),
+      points: getTeamGoalsDistinctionsPoints(team, standings),
     },
     fifaBestWorldPlayers: {
       value: getTeamBestFifaPlayersNames(team, fifaBestWorldPlayers),
@@ -81,7 +84,7 @@ const getWeightedPoints = (teamBet: BetDetail, isHomeTeam?: boolean) =>
     teamBet.reputation.points * TEAM_REPUTATION_WEIGHT +
       teamBet.standing.points * TEAM_STANDING_WEIGHT +
       teamBet.shape.points * TEAM_SHAPE_WEIGHT +
-      teamBet.extra.points +
+      teamBet.goalsDistinctions.points +
       ((isHomeTeam && HOME_WEIGHT) || 0) +
       teamBet.fifaBestWorldPlayers.points,
   );
