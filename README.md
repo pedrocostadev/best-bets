@@ -22,16 +22,21 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 
 ### TODO
 
+#### Algorithm
+- Players with more goals
+- Evaluate sequences on shape DWW != WDW
+
+#### Arquitectural
+- Move data to DB
 - Find team by name method?, alias?...
 - Dynamic load on mocks
-- Use DB
-- rename extra points
-- team details rendering two times why?
-- shape, evaluate sequences WW != WDW
+
+#### Others
+- Rename extra points
 - Best bet on front page
-- tests for best players module
-- initial render layout
-- players with more goals
-- upgrade to next10
-- image optimization with next10
-- update react import 
+- Update react import 
+
+#### Performance
+- Initial re-renders
+- Upgrade to next10
+- Image optimization with next10

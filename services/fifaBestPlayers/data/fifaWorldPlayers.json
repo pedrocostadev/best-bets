@@ -5,21 +5,21 @@
             "players": [
                 {
                     "name": "Lionel Messi",
-                    "teamName": "Barcelona",
+                    "awardTeamName": "Barcelona",
                     "place": 1,
                     "currentTeam": "Barcelona",
                     "retired": false
                 },
                 {
                     "name": "Virgil van Dijk",
-                    "teamName": "Liverpool",
+                    "awardTeamName": "Liverpool",
                     "place": 2,
                     "currentTeam": "Liverpool",
                     "retired": false
                 },
                 {
                     "name": "Cristiano Ronaldo",
-                    "teamName": "Juventus",
+                    "awardTeamName": "Juventus",
                     "place": 3,
                     "currentTeam": "Juventus",
                     "retired": false
@@ -30,21 +30,21 @@
             "players": [
                 {
                     "name": "Luka Modrić",
-                    "teamName": "Real Madrid",
+                    "awardTeamName": "Real Madrid",
                     "place": 1,
                     "currentTeam": "Real Madrid",
                     "retired": false
                 },
                 {
                     "name": "Cristiano Ronaldo",
-                    "teamName": "Juventus",
+                    "awardTeamName": "Juventus",
                     "place": 2,
                     "currentTeam": "Juventus",
                     "retired": false
                 },
                 {
                     "name": "Mohamed Salah",
-                    "teamName": "Liverpool",
+                    "awardTeamName": "Liverpool",
                     "place": 3,
                     "currentTeam": "Liverpool",
                     "retired": false
@@ -55,21 +55,21 @@
             "players": [
                 {
                     "name": "Cristiano Ronaldo",
-                    "teamName": "Real Madrid",
+                    "awardTeamName": "Real Madrid",
                     "place": 1,
                     "currentTeam": "Juventus",
                     "retired": false
                 },
                 {
                     "name": " Lionel Messi",
-                    "teamName": "Barcelona",
+                    "awardTeamName": "Barcelona",
                     "place": 2,
                     "currentTeam": "Barcelona",
                     "retired": false
                 },
                 {
                     "name": "Neymar",
-                    "teamName": "Paris Saint-Germain",
+                    "awardTeamName": "Paris Saint-Germain",
                     "place": 3,
                     "currentTeam": "Paris Saint-Germain",
                     "retired": false
@@ -80,21 +80,21 @@
             "players": [
                 {
                     "name": "Cristiano Ronaldo",
-                    "teamName": "Real Madrid",
+                    "awardTeamName": "Real Madrid",
                     "place": 1,
                     "currentTeam": "Juventus",
                     "retired": false
                 },
                 {
                     "name": " Lionel Messi",
-                    "teamName": "Barcelona",
+                    "awardTeamName": "Barcelona",
                     "place": 2,
                     "currentTeam": "Barcelona",
                     "retired": false
                 },
                 {
                     "name": "Antoine Griezmann",
-                    "teamName": "Atlético Madrid",
+                    "awardTeamName": "Atlético Madrid",
                     "place": 3,
                     "currentTeam": "Barcelona",
                     "retired": false

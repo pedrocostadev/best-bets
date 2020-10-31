@@ -1,33 +1,33 @@
 import {
   BestFifaPlayersByYear,
-  BestPlayer,
-} from '../fifaBestWorldPlayers/types';
+  BestFifaPlayer,
+} from '../fifaBestPlayers/types';
 import { Team } from '../fixtures/types';
 
 const BEST_PLAYER_TEAM_POINTS = 0.05;
 
-const getTeamBestWorldPlayers = (
+const getTeamBestFifaPlayers = (
   team: Team,
   bestPlayers: BestFifaPlayersByYear,
-): BestPlayer[] => {
+): BestFifaPlayer[] => {
   const allYears = Object.keys(bestPlayers);
   return allYears.flatMap((year: string) =>
     bestPlayers[year].players.filter(
-      (player: BestPlayer) =>
-        !player.retired && player.teamName === team.teamName,
+      (player: BestFifaPlayer) =>
+        !player.retired && player.awardTeamName === team.teamName,
     ),
   );
 };
 
-const getTeamBestWorldPlayersPoints = (
+const getTeamBestFifaPlayersPoints = (
   team: Team,
   bestPlayers: BestFifaPlayersByYear,
 ): number => {
-  const teamBestPlayers = getTeamBestWorldPlayers(team, bestPlayers);
+  const teamBestPlayers = getTeamBestFifaPlayers(team, bestPlayers);
   return teamBestPlayers.length * BEST_PLAYER_TEAM_POINTS;
 };
 
-const getTeamBestWorldPlayersNames = (
+const getTeamBestFifaPlayersNames = (
   team: Team,
   bestPlayers: BestFifaPlayersByYear,
 ): string[][] => {
@@ -35,11 +35,11 @@ const getTeamBestWorldPlayersNames = (
   return allYears.flatMap((year: string) =>
     bestPlayers[year].players
       .filter(
-        (player: BestPlayer) =>
-          !player.retired && player.teamName === team.teamName,
+        (player: BestFifaPlayer) =>
+          !player.retired && player.awardTeamName === team.teamName,
       )
-      .map((player: BestPlayer) => [player.name, year]),
+      .map((player: BestFifaPlayer) => [player.name, year]),
   );
 };
 
-export { getTeamBestWorldPlayersPoints, getTeamBestWorldPlayersNames };
+export { getTeamBestFifaPlayersPoints, getTeamBestFifaPlayersNames };

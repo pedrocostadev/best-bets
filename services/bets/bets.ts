@@ -5,9 +5,9 @@ import { getTeamShapePoints } from './shape';
 import { getTeamExtraPoints, getTeamExtraPointsTags } from './extraPoints';
 import { getConfindenceMargin } from './confidence';
 import {
-  getTeamBestWorldPlayersPoints,
-  getTeamBestWorldPlayersNames,
-} from './bestWorldPlayers';
+  getTeamBestFifaPlayersPoints,
+  getTeamBestFifaPlayersNames,
+} from './fifaBestPlayers';
 import { round } from './utils';
 import {
   TEAM_REPUTATION_WEIGHT,
@@ -22,8 +22,8 @@ import { Team } from '../fixtures/types';
 import fixturesService from '../fixtures';
 import standingsService from '../standings';
 import reputationsService from '../reputations';
-import fifaBestWorldPlayersService from '../fifaBestWorldPlayers';
-import { BestFifaPlayersByYear } from '../fifaBestWorldPlayers/types';
+import fifaBestWorldPlayersService from '../fifaBestPlayers';
+import { BestFifaPlayersByYear } from '../fifaBestPlayers/types';
 
 const getBestBet = (fixture: FixtureWithBets): string => {
   const drawMargin = getConfindenceMargin(fixture);
@@ -70,8 +70,8 @@ const getBetDetail = (
       points: getTeamExtraPoints(team, standings),
     },
     fifaBestWorldPlayers: {
-      value: getTeamBestWorldPlayersNames(team, fifaBestWorldPlayers),
-      points: getTeamBestWorldPlayersPoints(team, fifaBestWorldPlayers),
+      value: getTeamBestFifaPlayersNames(team, fifaBestWorldPlayers),
+      points: getTeamBestFifaPlayersPoints(team, fifaBestWorldPlayers),
     },
   };
 };
