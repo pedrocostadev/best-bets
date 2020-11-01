@@ -241,7 +241,7 @@ describe('Bets', () => {
           reputation: { value: 4.5, points: 0.889 },
           standing: { value: 3, points: 0.6 },
           shape: { value: 'DWLLD', points: 0.333 },
-          extra: {
+          goalsDistinctions: {
             value: [
               { label: 'oneOf3BestAttacks', type: GoalsDistinctionType.GOOD },
               { label: 'oneOf3BestDefenses', type: GoalsDistinctionType.GOOD },
@@ -254,7 +254,7 @@ describe('Bets', () => {
           reputation: { value: 4, points: 0.778 },
           standing: { value: 15, points: 0.356 },
           shape: { value: 'WDLDD', points: 0.4 },
-          extra: { value: [], points: 0 },
+          goalsDistinctions: { value: [], points: 0 },
           fifaBestWorldPlayers: { value: undefined, points: 0 },
         },
       },
