@@ -37,8 +37,9 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 
 #### Performance
 - Initial re-renders
-- Upgrade to next10
 - Image optimization with next10
+<!-- Warning: You have opted-out of Automatic Static Optimization due to `getInitialProps` in `pages/_app`. This does not opt-out pages with `getStaticProps`
+Read more: https://err.sh/next.js/opt-out-auto-static-optimization -->
 
 #### UI
 - Show goalsFor and goalsAgainst

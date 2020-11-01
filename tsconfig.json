@@ -4,6 +4,7 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/services/*": ["services/*"],
+      "@/icons/*": ["icons/*"],
       "@/hooks/*": ["hooks/*"]
     },
     "target": "es5",
