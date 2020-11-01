@@ -1,9 +1,10 @@
 import React from 'react';
 
 import useBets from '@/hooks/useBets';
-import IconSadFace from '@/icons/IconSadFace';
 import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
+
+import IconSadFace from '../../icons/IconSadFace';
 
 import { FixtureWithBets } from '../../types';
 import FixtureListItem from './components/fixtureListItem/FixtureListItem';

@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import IconBall from '@/icons/IconBall';
 import {
   BetItemDetail,
   GoalsDistinctionItem,
@@ -12,6 +11,7 @@ import FlexContainer from '@/components//flexContainer/FlexContainer';
 import Text from '@/components/text/Text';
 
 import styles from './GoalsDistinctions.module.scss';
+import IconBall from '../../../../../../icons/IconBall';
 
 interface Props {
   team: Team;

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import IconClose from '@/icons/IconClose';
 import Link, { LinkProps } from '@/components/link/Link';
 import Button from '@/components/button/Button';
 
 import styles from './NavigationMenu.module.scss';
+import IconClose from '../../icons/IconClose';
 
 interface Props {
   onClose(): void;

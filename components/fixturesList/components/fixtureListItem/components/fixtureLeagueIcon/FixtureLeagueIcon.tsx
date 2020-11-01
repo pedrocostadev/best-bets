@@ -1,8 +1,8 @@
 import React from 'react';
 
-import IconPremierLeague from '@/icons/IconPremierLeague';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
+import IconPremierLeague from '../../../../../../icons/IconPremierLeague';
 import { FixtureWithBets } from '../../../../../../types';
 
 interface Props {

@@ -1,10 +1,11 @@
 import React from 'react';
 
-import IconGoldenBall from '@/icons/IconGoldenBall';
 import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 import { BetItemDetail } from '@/services/bets/types';
 import { Team } from '@/services/fixtures/types';
+
+import IconGoldenBall from '../../../../../../icons/IconGoldenBall';
 
 interface Props {
   team: Team;

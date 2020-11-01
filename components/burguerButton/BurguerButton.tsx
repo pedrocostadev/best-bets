@@ -1,8 +1,8 @@
 import React from 'react';
 
-import IconBurguer from '@/icons/IconBurguer';
 import Button from '@/components/button/Button';
 
+import IconBurguer from '../../icons/IconBurguer';
 import styles from './BurguerButton.module.scss';
 
 interface Props {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import IconStar from '@/icons/IconStar';
-import IconHalfStar from '@/icons/IconHalfStar';
+import IconStar from '../../../../../icons/IconStar';
+import IconHalfStar from '../../../../../icons/IconHalfStar';
 
 interface Props {
   stars: number;
