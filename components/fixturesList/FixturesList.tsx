@@ -3,7 +3,7 @@ import React from 'react';
 import useBets from '@/hooks/useBets';
 import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
-import IconSadFace from '@/icons/IconSadFace';
+import IconSadFace from '@/svgs/IconSadFace';
 
 import { FixtureWithBets } from '../../types';
 import FixtureListItem from './components/fixtureListItem/FixtureListItem';

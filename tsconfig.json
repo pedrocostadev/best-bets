@@ -4,7 +4,7 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/services/*": ["services/*"],
-      "@/icons/*": ["icons/*"],
+      "@/svgs/*": ["svgs/*"],
       "@/hooks/*": ["hooks/*"]
     },
     "target": "es5",
@@ -30,7 +30,6 @@
   ],
   "include": [
     "next-env.d.ts",
-    "patches.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]

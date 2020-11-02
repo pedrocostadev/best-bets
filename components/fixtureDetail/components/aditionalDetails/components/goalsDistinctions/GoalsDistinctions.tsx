@@ -9,7 +9,7 @@ import {
 import { Team } from '@/services/fixtures/types';
 import FlexContainer from '@/components//flexContainer/FlexContainer';
 import Text from '@/components/text/Text';
-import IconBall from '@/icons/IconBall';
+import IconBall from '@/svgs/IconBall';
 
 import styles from './GoalsDistinctions.module.scss';
 

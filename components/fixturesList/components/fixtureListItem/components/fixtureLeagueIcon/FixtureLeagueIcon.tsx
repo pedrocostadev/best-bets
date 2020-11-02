@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FlexContainer from '@/components/flexContainer/FlexContainer';
-import IconPremierLeague from '@/icons/IconPremierLeague';
+import IconPremierLeague from '@/svgs/IconPremierLeague';
 
 import { FixtureWithBets } from '../../../../../../types';
 
