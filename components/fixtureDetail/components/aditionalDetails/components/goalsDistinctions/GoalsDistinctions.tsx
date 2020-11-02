@@ -9,9 +9,9 @@ import {
 import { Team } from '@/services/fixtures/types';
 import FlexContainer from '@/components//flexContainer/FlexContainer';
 import Text from '@/components/text/Text';
+import IconBall from '@/icons/IconBall';
 
 import styles from './GoalsDistinctions.module.scss';
-import IconBall from '../../../../../../icons/IconBall';
 
 interface Props {
   team: Team;

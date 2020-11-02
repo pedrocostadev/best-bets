@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Button from '@/components/button/Button';
+import IconBurguer from '@/icons/IconBurguer';
 
-// import IconBurguer from '../../icons/IconBurguer';
 import styles from './BurguerButton.module.scss';
 
 interface Props {
@@ -15,7 +15,7 @@ const BurguerButton: React.FC<Props> = ({ onClick }: Props) => (
     className={styles.burguerButton}
     aria-label="Menu button"
   >
-    {/* <IconBurguer /> */}
+    <IconBurguer />
   </Button>
 );
 
