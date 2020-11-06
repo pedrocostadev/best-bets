@@ -1,4 +1,4 @@
-import { Config, FixtureWithBets } from '../../types';
+import { Config, ConfigLeague, FixtureWithBets } from '../../types';
 import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
@@ -89,18 +89,17 @@ const getWeightedPoints = (teamBet: BetDetail, isHomeTeam?: boolean) =>
       teamBet.fifaBestWorldPlayers.points,
   );
 
-const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
+const getLeaguesBets = async (config: Config): Promise<FixtureWithBets[]> => {
   const { leagues: leaguesToGetBets } = config;
   const fixturesWithBets = [];
 
   for (const league of leaguesToGetBets) {
-    // TODO: Use same interface for all services
-    const [{ fixtures }] = await fixturesService.getFixtures([league]);
+    const { fixtures } = await fixturesService.getLeagueFixtures(league);
 
-    const [{ standings }] = await standingsService.getStandings([league]);
+    const { standings } = await standingsService.getLeagueStandings(league);
 
-    const [{ reputations }] = await reputationsService.getReputations({
-      leaguesIds: [league.id],
+    const { reputations } = await reputationsService.getLeagueReputations({
+      league,
       season: config.season,
     });
 
@@ -109,26 +108,21 @@ const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
     const bets = fixtures.map((fixture) => {
       const { homeTeam, awayTeam } = fixture;
 
-      const betDetails = {
-        homeTeam: getBetDetail(
-          homeTeam,
-          reputations,
-          standings,
-          fifaBestWorldPlayers,
-        ),
-        awayTeam: getBetDetail(
-          awayTeam,
-          reputations,
-          standings,
-          fifaBestWorldPlayers,
-        ),
-      };
+      const [homeTeamBetDetailss, awayTeamBetDetails] = [
+        homeTeam,
+        awayTeam,
+      ].map((team) =>
+        getBetDetail(team, reputations, standings, fifaBestWorldPlayers),
+      );
 
       return {
         ...fixture,
-        betDetails,
-        homeTeamPoints: getWeightedPoints(betDetails.homeTeam, true),
-        awayTeamPoints: getWeightedPoints(betDetails.awayTeam),
+        betDetails: {
+          homeTeam: homeTeamBetDetailss,
+          awayTeam: awayTeamBetDetails,
+        },
+        homeTeamPoints: getWeightedPoints(homeTeamBetDetailss, true),
+        awayTeamPoints: getWeightedPoints(awayTeamBetDetails),
       };
     });
 
@@ -138,7 +132,44 @@ const getBets = async (config: Config): Promise<FixtureWithBets[]> => {
   return fixturesWithBets.flat();
 };
 
+const getFixtureBet = async (
+  league: ConfigLeague,
+  season: string,
+  fixtureId: number,
+): Promise<FixtureWithBets> => {
+  const fixture = await fixturesService.getLeagueFixture(league, fixtureId);
+
+  const { standings } = await standingsService.getLeagueStandings(league);
+
+  const { reputations } = await reputationsService.getLeagueReputations({
+    league,
+    season,
+  });
+
+  const fifaBestWorldPlayers = await fifaBestWorldPlayersService.getBestWorldFifaPlayers();
+
+  const { homeTeam, awayTeam } = fixture;
+
+  const [homeTeamBetDetailss, awayTeamBetDetails] = [
+    homeTeam,
+    awayTeam,
+  ].map((team) =>
+    getBetDetail(team, reputations, standings, fifaBestWorldPlayers),
+  );
+
+  return {
+    ...fixture,
+    betDetails: {
+      homeTeam: homeTeamBetDetailss,
+      awayTeam: awayTeamBetDetails,
+    },
+    homeTeamPoints: getWeightedPoints(homeTeamBetDetailss, true),
+    awayTeamPoints: getWeightedPoints(awayTeamBetDetails),
+  };
+};
+
 export default {
-  getBets,
+  getFixtureBet,
+  getLeaguesBets,
   getBestBet,
 };

@@ -1,23 +1,16 @@
 import React from 'react';
-import App from 'next/app';
 import Head from 'next/head';
-import type { AppProps, AppContext } from 'next/app';
-
-import { UseBetsContext } from '@/hooks/useBets';
-import betsApi from '@/services/bets';
+import type { AppProps } from 'next/app';
 
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import Main from '@/components/main/Main';
 
 import config from '../config.json';
-import { FixtureWithBets } from '../types';
 import './styles.css';
 
-type BestBetsProps = AppProps & { fixtures: FixtureWithBets[] };
-
-const BestBetsApp = (props: BestBetsProps): React.ReactElement => {
-  const { Component, pageProps, fixtures } = props;
+const BestBetsApp = (props: AppProps): React.ReactElement => {
+  const { Component, pageProps } = props;
   return (
     <>
       <Head>
@@ -27,19 +20,11 @@ const BestBetsApp = (props: BestBetsProps): React.ReactElement => {
       </Head>
       <Header />
       <Main>
-        <UseBetsContext.Provider value={{ fixtures }}>
-          <Component {...pageProps} />
-        </UseBetsContext.Provider>
+        <Component {...pageProps} />
       </Main>
       <Footer />
     </>
   );
-};
-
-BestBetsApp.getInitialProps = async (appContext: AppContext) => {
-  const appProps = await App.getInitialProps(appContext);
-  const fixtures = await betsApi.getBets(config);
-  return { ...appProps, fixtures };
 };
 
 export default BestBetsApp;

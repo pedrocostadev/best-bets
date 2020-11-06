@@ -16,7 +16,7 @@ interface Props {
 const FixtureListItem: React.FC<Props> = ({ fixture }: Props) => {
   const router = useRouter();
   const goToFixtureDetailPage = () =>
-    router.push(`/fixture/${fixture.fixtureId}`);
+    router.push(`/${fixture.leagueId}/${fixture.fixtureId}`);
   return (
     <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
       <FixtureLeagueIcon fixture={fixture} />

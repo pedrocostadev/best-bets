@@ -1,14 +1,15 @@
+import { ConfigLeague } from 'types.js';
 import { LeagueReputation } from './types.js';
 
-const getReputations = async ({
-  leaguesIds,
+const getLeaguesReputations = async ({
+  leagues,
   season,
 }: {
-  leaguesIds: number[];
+  leagues: ConfigLeague[];
   season: string;
 }): Promise<LeagueReputation[]> => {
-  const filesPromises = leaguesIds.map((leagueId: number) =>
-    require(`./data/${season}/league_${leagueId}.json`),
+  const filesPromises = leagues.map((league: ConfigLeague) =>
+    getLeagueReputations({ league, season }),
   );
 
   const allLeaguesReputations = await Promise.all(filesPromises);
@@ -16,6 +17,18 @@ const getReputations = async ({
   return allLeaguesReputations;
 };
 
+const getLeagueReputations = async ({
+  league,
+  season,
+}: {
+  league: ConfigLeague;
+  season: string;
+}): Promise<LeagueReputation> => {
+  const reputations = await require(`./data/${season}/league_${league.id}.json`);
+  return reputations;
+};
+
 export default {
-  getReputations,
+  getLeaguesReputations,
+  getLeagueReputations,
 };

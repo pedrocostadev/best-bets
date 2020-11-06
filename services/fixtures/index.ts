@@ -1,7 +1,6 @@
 import { ConfigLeague } from '../../types';
 import rapidApiClient from '../rapidApi';
-import { LeagueFixtures } from './types';
-import nextFixturesMock from './mocks/fixtures.json';
+import { Fixture, LeagueFixtures } from './types';
 import parser from './parser';
 import { USER_MOCKED_DATA } from '../../utils';
 
@@ -13,7 +12,7 @@ const getLeagueFixtures = async (
 
   if (USER_MOCKED_DATA) {
     console.info('Using next fixtures mocked data...');
-    fixturesData = nextFixturesMock;
+    fixturesData = await require('./mocks/fixtures.json');
   } else {
     fixturesData = await rapidApiClient.get(
       `fixtures/league/${league.rapidApiId}/next/10`,
@@ -25,7 +24,7 @@ const getLeagueFixtures = async (
   };
 };
 
-const getFixtures = async (
+const getLeaguesFixtures = async (
   leagues: ConfigLeague[],
 ): Promise<LeagueFixtures[]> => {
   const allFixturesPromises = leagues.map((league) =>
@@ -35,4 +34,16 @@ const getFixtures = async (
   return allFixtures;
 };
 
-export default { getFixtures };
+const getLeagueFixture = async (
+  league: ConfigLeague,
+  fixtureId: number,
+): Promise<Fixture> => {
+  const fixturesData = await rapidApiClient.get(`fixtures/id/${fixtureId}`);
+  const [fixture] = parser.parseFixtures({
+    fixturesData,
+    league,
+  });
+  return fixture;
+};
+
+export default { getLeaguesFixtures, getLeagueFixtures, getLeagueFixture };

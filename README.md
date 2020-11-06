@@ -29,7 +29,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 #### Arquitectural
 - Move data to DB
 - Find team by name method?, alias?...
-- Dynamic load on mocks
 
 #### Others
 - Best bet on front page

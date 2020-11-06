@@ -14,4 +14,10 @@ export interface Config {
   leagues: ConfigLeague[];
 }
 
+export interface TeamId {
+  teamId: number;
+  teamName: string;
+  alias: string[];
+}
+
 export type FixtureWithBets = Fixture & Bet;

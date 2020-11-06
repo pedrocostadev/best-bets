@@ -153,22 +153,20 @@ const fixtures: Fixture[] = [
   },
 ];
 
-const getStandingsMockResult: LeagueStandings[] = [{ leagueId: 1, standings }];
-const getFixturesMockResult: LeagueFixtures[] = [{ leagueId: 1, fixtures }];
-const getReputationsMockResult: LeagueReputation[] = [
-  {
-    id: 1,
-    name: 'Premier League',
-    country: 'England',
-    season: '2020-21',
-    reputations: [
-      { teamId: 50, name: 'Arsenal', reputation: 5 },
-      { teamId: 47, name: 'Chelsea', reputation: 3.5 },
-      { teamId: 1, name: 'West Ham', reputation: 4 },
-      { teamId: 40, name: 'Manchester City', reputation: 5 },
-    ],
-  },
-];
+const getStandingsMockResult: LeagueStandings = { leagueId: 1, standings };
+const getFixturesMockResult: LeagueFixtures = { leagueId: 1, fixtures };
+const getReputationsMockResult: LeagueReputation = {
+  id: 1,
+  name: 'Premier League',
+  country: 'England',
+  season: '2020-21',
+  reputations: [
+    { teamId: 50, name: 'Arsenal', reputation: 5 },
+    { teamId: 47, name: 'Chelsea', reputation: 3.5 },
+    { teamId: 1, name: 'West Ham', reputation: 4 },
+    { teamId: 40, name: 'Manchester City', reputation: 5 },
+  ],
+};
 
 const configMock: Config = {
   appName: 'Best bets',
@@ -184,24 +182,24 @@ const configMock: Config = {
 };
 
 jest.mock('../reputations', () => ({
-  getReputations: () =>
+  getLeagueReputations: () =>
     new Promise((resolutionFunc) => resolutionFunc(getReputationsMockResult)),
 }));
 
 jest.mock('../standings', () => ({
-  getStandings: () =>
+  getLeagueStandings: () =>
     new Promise((resolutionFunc) => resolutionFunc(getStandingsMockResult)),
 }));
 
 jest.mock('../fixtures', () => ({
-  getFixtures: () =>
+  getLeagueFixtures: () =>
     new Promise((resolutionFunc) => resolutionFunc(getFixturesMockResult)),
 }));
 
 describe('Bets', () => {
   describe('getBets', () => {
     test('should return the right points for each team', async () => {
-      const result = await bets.getBets(configMock);
+      const result = await bets.getLeaguesBets(configMock);
       const firstGame = result[0];
       const secondGame = result[1];
 

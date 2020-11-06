@@ -1,7 +1,6 @@
 import { ConfigLeague } from '../../types';
 import { USER_MOCKED_DATA } from '../../utils';
 import rapidApiClient from '../rapidApi/';
-import standingsMock from './mocks/standings.json';
 import parser from './parser';
 import { LeagueStandings } from './types';
 
@@ -12,7 +11,7 @@ const getLeagueStandings = async (
 
   if (USER_MOCKED_DATA) {
     console.info('Using standings mocked data...');
-    standingsData = standingsMock;
+    standingsData = await require('./mocks/standings.json');
   } else {
     standingsData = await rapidApiClient.get(
       `leagueTable/${league.rapidApiId}`,
@@ -24,7 +23,7 @@ const getLeagueStandings = async (
   };
 };
 
-const getStandings = async (
+const getLeaguesStandings = async (
   leagues: ConfigLeague[],
 ): Promise<LeagueStandings[]> => {
   const allStandingsPromises = leagues.map((league) =>
@@ -36,5 +35,6 @@ const getStandings = async (
 };
 
 export default {
-  getStandings,
+  getLeaguesStandings,
+  getLeagueStandings,
 };

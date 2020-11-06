@@ -1,7 +1,24 @@
 import React from 'react';
-import FixturesList from '@/components/fixturesList/FixturesList';
 
-const Home: React.FC = () => {
+import FixturesList from '@/components/fixturesList/FixturesList';
+import { UseBetsContext } from '@/hooks/useBets';
+import betsApi from '@/services/bets';
+
+import config from '../config.json';
+import { FixtureWithBets } from 'types';
+
+interface Props {
+  fixtures: FixtureWithBets[];
+}
+
+export async function getStaticProps(): Promise<{ props: Props }> {
+  const fixtures = await betsApi.getLeaguesBets(config);
+  return {
+    props: { fixtures },
+  };
+}
+
+const Home: React.FC<Props> = ({ fixtures }) => {
   // useEffect(() => {
   //   if ('serviceWorker' in navigator) {
   //     navigator.serviceWorker
@@ -14,7 +31,11 @@ const Home: React.FC = () => {
   //   }
   // }, []);
 
-  return <FixturesList />;
+  return (
+    <UseBetsContext.Provider value={{ fixtures }}>
+      <FixturesList />
+    </UseBetsContext.Provider>
+  );
 };
 
 export default Home;
