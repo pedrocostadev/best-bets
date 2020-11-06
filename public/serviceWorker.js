@@ -1,4 +1,4 @@
-const CACHE_NAME = "best-bets-cache-v3";
+const CACHE_NAME = "best-bets-cache-v4";
 const urlsToCache = ["/", "/about"];
 
 self.addEventListener("install", event => {

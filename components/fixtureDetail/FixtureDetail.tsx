@@ -6,7 +6,7 @@ import Rank from './components/rank/Rank';
 import Shape from './components/shape/Shape';
 import DetailItem from './components/detailItem/DetailItem';
 import AditionalDetails from './components/aditionalDetails/AditionalDetails';
-import Points from './components/points/Points';
+import Points from '../points/Points';
 
 interface Props {
   fixture: FixtureWithBets;

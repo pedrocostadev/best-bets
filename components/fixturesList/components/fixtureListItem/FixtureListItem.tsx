@@ -8,6 +8,7 @@ import styles from './FixtureListItem.module.scss';
 import FixtureLeagueIcon from './components/fixtureLeagueIcon/FixtureLeagueIcon';
 import FixtureDate from './components/fixtureDate/FixtureDate';
 import FixtureTeams from './components/fixtureTeams/FixtureTeams';
+import FixturePoints from './components/fixturePoints/FixturePoints';
 
 interface Props {
   fixture: FixtureWithBets;
@@ -20,10 +21,11 @@ const FixtureListItem: React.FC<Props> = ({ fixture }: Props) => {
   return (
     <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
       <FixtureLeagueIcon fixture={fixture} />
-      <div>
+      <FlexContainer directionColumn>
         <FixtureTeams fixture={fixture} />
+        <FixturePoints fixture={fixture} />
         <FixtureDate fixture={fixture} />
-      </div>
+      </FlexContainer>
     </FlexContainer>
   );
 };

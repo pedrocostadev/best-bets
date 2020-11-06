@@ -8,7 +8,7 @@ type VARIANT = 'caption' | 'body2' | 'body1';
 interface Props {
   as?: 'span' | 'p';
   className?: string;
-  text?: string;
+  text?: string | number;
   variant: VARIANT;
   ellipsis?: boolean;
   textAlignCenter?: boolean;

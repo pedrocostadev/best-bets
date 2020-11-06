@@ -33,6 +33,7 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 #### Others
 - Best bet on front page
 - Update react import 
+- Use index on components
 
 #### Performance
 - Initial re-renders
