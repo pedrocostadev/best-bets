@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import { Team } from '@/services/fixtures/types';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
@@ -12,7 +13,9 @@ interface Props {
 
 const TeamWithLogo: React.FC<Props> = ({ team }) => (
   <FlexContainer directionColumn alignCenter>
-    <img
+    <Image
+      width={30}
+      height={30}
       className={styles.logo}
       src={team.logo}
       alt={`${team.teamName} logo`}

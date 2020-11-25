@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import BurguerButton from '@/components/burguerButton/BurguerButton';
 import NavigationMenu from '@/components/navigationMenu/NavigationMenu';
@@ -17,11 +18,15 @@ const Header: React.FC = () => {
     setState({ showNavigationMenu: !state.showNavigationMenu });
   const router = useRouter();
   const goToHomePage = () => router.push('/');
-  //TODO: logo png to svg?
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer} onClick={goToHomePage}>
-        <img src="/pictures/boot.small.png" alt="boot picture" />
+        <Image
+          width={55}
+          height={30}
+          src="/pictures/boot.small.png"
+          alt="boot picture"
+        />
         <Heading variant="h1" text="Best Bets" />
         <Heading variant="h3" text="PL" />
       </div>

@@ -35,11 +35,6 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 - Update react import 
 - Use index on components
 
-#### Performance
-- Initial re-renders
-- Image optimization with next10
-<!-- Warning: You have opted-out of Automatic Static Optimization due to `getInitialProps` in `pages/_app`. This does not opt-out pages with `getStaticProps`
-Read more: https://err.sh/next.js/opt-out-auto-static-optimization -->
 
 #### UI
 - Show goalsFor and goalsAgainst

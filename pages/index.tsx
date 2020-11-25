@@ -19,17 +19,17 @@ export async function getStaticProps(): Promise<{ props: Props }> {
 }
 
 const Home: React.FC<Props> = ({ fixtures }) => {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/serviceWorker.js')
-        .catch((err) =>
-          console.error('Service worker registration failed', err),
-        );
-    } else {
-      console.log('Service worker not supported');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if ('serviceWorker' in navigator) {
+  //     navigator.serviceWorker
+  //       .register('/serviceWorker.js')
+  //       .catch((err) =>
+  //         console.error('Service worker registration failed', err),
+  //       );
+  //   } else {
+  //     console.log('Service worker not supported');
+  //   }
+  // }, []);
 
   return (
     <UseBetsContext.Provider value={{ fixtures }}>
