@@ -1,5 +1,6 @@
 import { Bet } from './services/bets/types';
 import { Fixture } from './services/fixtures/types';
+import { LeagueStats } from './services/standings/types';
 
 export interface ConfigLeague {
   id: number;
@@ -20,4 +21,18 @@ export interface TeamId {
   alias: string[];
 }
 
-export type FixtureWithBets = Fixture & Bet;
+export type Stats = LeagueStats;
+
+export interface StatsByPlace {
+  home: Stats;
+  away: Stats;
+}
+
+export interface FixtureInfo {
+  bet: Bet;
+  fixture: Fixture;
+  stats: {
+    homeTeam: StatsByPlace;
+    awayTeam: StatsByPlace;
+  };
+}

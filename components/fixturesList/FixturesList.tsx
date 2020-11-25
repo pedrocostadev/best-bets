@@ -5,12 +5,13 @@ import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 import IconSadFace from '@/icons/IconSadFace';
 
-import { FixtureWithBets } from '../../types';
+import { FixtureInfo } from '../../types';
 import FixtureListItem from './components/fixtureListItem/FixtureListItem';
 
 const FixturesList: React.FC = () => {
-  const { fixtures } = useBets();
-  const noFixtures = !fixtures || fixtures.length === 0;
+  const { fixturesInfo } = useBets();
+  const noFixtures = !fixturesInfo || fixturesInfo.length === 0;
+  console.log('fixturesInfo', fixturesInfo);
 
   if (noFixtures) {
     return (
@@ -23,8 +24,11 @@ const FixturesList: React.FC = () => {
 
   return (
     <>
-      {fixtures.map((fixture: FixtureWithBets) => (
-        <FixtureListItem key={fixture.fixtureId} fixture={fixture} />
+      {fixturesInfo.map((fixtureInfo: FixtureInfo) => (
+        <FixtureListItem
+          key={fixtureInfo.fixture.fixtureId}
+          fixtureInfo={fixtureInfo}
+        />
       ))}
     </>
   );

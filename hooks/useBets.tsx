@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 
-import { FixtureWithBets } from '../types';
+import { FixtureInfo } from '../types';
 
 interface Bets {
-  fixtures: FixtureWithBets[];
+  fixturesInfo: FixtureInfo[];
 }
 
 const initialValue = {
-  fixtures: [],
+  fixturesInfo: [],
 };
 
 export const UseBetsContext = React.createContext<Bets>(initialValue);

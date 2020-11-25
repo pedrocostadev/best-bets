@@ -5,10 +5,10 @@ import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
 import styles from './Bet.module.scss';
-import { FixtureWithBets } from '../../types';
+import { FixtureInfo } from '../../types';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixture: FixtureInfo;
 }
 
 const Bet: React.FC<Props> = ({ fixture }: Props) => (

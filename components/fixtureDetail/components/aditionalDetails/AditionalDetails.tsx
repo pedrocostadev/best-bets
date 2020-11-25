@@ -3,55 +3,55 @@ import React from 'react';
 import Heading from '@/components/heading/Heading';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
-import { FixtureWithBets } from '../../../../types';
+import { FixtureInfo } from '../../../../types';
 import GoalsDistinctions from './components/goalsDistinctions/GoalsDistinctions';
 import PlayersDistinctions from './components/playersDistinctions/PlayersDistinctions';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixtureInfo: FixtureInfo;
 }
 
-const noAditialDetailsToShow = ({ fixture }: Props) => {
+const noAditialDetailsToShow = ({ fixtureInfo }: Props) => {
   const {
-    betDetails: { homeTeam, awayTeam },
-  } = fixture;
+    bet: { homeTeam, awayTeam },
+  } = fixtureInfo;
   return (
     [
-      ...(homeTeam.goalsDistinctions.value as []),
-      ...(awayTeam.goalsDistinctions.value as []),
-      ...(homeTeam.fifaBestWorldPlayers.value as []),
-      ...(awayTeam.fifaBestWorldPlayers.value as []),
+      ...(homeTeam.detail.goalsDistinctions.value as []),
+      ...(awayTeam.detail.goalsDistinctions.value as []),
+      ...(homeTeam.detail.fifaBestWorldPlayers.value as []),
+      ...(awayTeam.detail.fifaBestWorldPlayers.value as []),
     ].length === 0
   );
 };
 
-const AditionalDetails: React.FC<Props> = ({ fixture }) => {
-  if (noAditialDetailsToShow({ fixture })) {
+const AditionalDetails: React.FC<Props> = ({ fixtureInfo }) => {
+  if (noAditialDetailsToShow({ fixtureInfo })) {
     return null;
   }
 
   const {
-    betDetails: { homeTeam, awayTeam },
-  } = fixture;
+    bet: { homeTeam, awayTeam },
+  } = fixtureInfo;
 
   return (
     <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
       <Heading variant="h3" text="Aditional info" />
       <GoalsDistinctions
-        team={fixture.homeTeam}
-        goalsDistinctions={homeTeam.goalsDistinctions}
+        team={fixtureInfo.fixture.homeTeam}
+        goalsDistinctions={homeTeam.detail.goalsDistinctions}
       />
       <PlayersDistinctions
-        team={fixture.homeTeam}
-        bestPlayers={homeTeam.fifaBestWorldPlayers}
+        team={fixtureInfo.fixture.homeTeam}
+        bestPlayers={homeTeam.detail.fifaBestWorldPlayers}
       />
       <GoalsDistinctions
-        team={fixture.awayTeam}
-        goalsDistinctions={awayTeam.goalsDistinctions}
+        team={fixtureInfo.fixture.awayTeam}
+        goalsDistinctions={awayTeam.detail.goalsDistinctions}
       />
       <PlayersDistinctions
-        team={fixture.awayTeam}
-        bestPlayers={awayTeam.fifaBestWorldPlayers}
+        team={fixtureInfo.fixture.awayTeam}
+        bestPlayers={awayTeam.detail.fifaBestWorldPlayers}
       />
     </FlexContainer>
   );

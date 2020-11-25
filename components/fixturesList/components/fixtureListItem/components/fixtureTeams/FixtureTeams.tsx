@@ -3,26 +3,33 @@ import React from 'react';
 import Text from '@/components/text/Text';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
-import { FixtureWithBets } from '../../../../../../types';
+import { FixtureInfo } from '../../../../../../types';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixtureInfo: FixtureInfo;
 }
 
-const getBestBetTeam = (fixture: FixtureWithBets): string => {
-  if (fixture.homeTeamPoints > fixture.awayTeamPoints) {
+const getBestBetTeam = (fixtureInfo: FixtureInfo): string => {
+  const {
+    bet: { homeTeam, awayTeam },
+    fixture,
+  } = fixtureInfo;
+
+  if (homeTeam.points > awayTeam.points) {
     return fixture.homeTeam.teamName;
   }
 
-  if (fixture.awayTeamPoints > fixture.homeTeamPoints) {
+  if (awayTeam.points > homeTeam.points) {
     return fixture.awayTeam.teamName;
   }
   return undefined;
 };
 
-const FixtureTeams: React.FC<Props> = ({ fixture }: Props) => {
-  const { homeTeam, awayTeam } = fixture;
-  const bestBetTeamName = getBestBetTeam(fixture);
+const FixtureTeams: React.FC<Props> = ({ fixtureInfo }: Props) => {
+  const {
+    fixture: { homeTeam, awayTeam },
+  } = fixtureInfo;
+  const bestBetTeamName = getBestBetTeam(fixtureInfo);
   return (
     <FlexContainer alignCenter columnGap>
       <Text

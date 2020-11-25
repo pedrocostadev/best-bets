@@ -1,4 +1,4 @@
-import { Config, ConfigLeague, FixtureWithBets } from '../../types';
+import { Config, ConfigLeague, FixtureInfo } from '../../types';
 import { getTeamReputationPoints, getTeamReputationValue } from './reputation';
 import { getTeamRankingPoints } from './ranking';
 import { getTeamShapePoints } from './shape';
@@ -28,14 +28,18 @@ import reputationsService from '../reputations';
 import fifaBestWorldPlayersService from '../fifaBestPlayers';
 import { BestFifaPlayersByYear } from '../fifaBestPlayers/types';
 
-const getBestBet = (fixture: FixtureWithBets): string => {
-  const drawMargin = getConfindenceMargin(fixture);
+const getBestBet = (fixtureInfo: FixtureInfo): string => {
+  const drawMargin = getConfindenceMargin(fixtureInfo);
+  const {
+    bet: { homeTeam, awayTeam },
+    fixture,
+  } = fixtureInfo;
 
-  if (fixture.homeTeamPoints > fixture.awayTeamPoints + drawMargin) {
+  if (homeTeam.points > awayTeam.points + drawMargin) {
     return `${fixture.homeTeam.teamName} wins!`;
   }
 
-  if (fixture.awayTeamPoints > fixture.homeTeamPoints + drawMargin) {
+  if (awayTeam.points > homeTeam.points + drawMargin) {
     return `${fixture.awayTeam.teamName} wins!`;
   }
   return 'DRAW!';
@@ -89,7 +93,7 @@ const getWeightedPoints = (teamBet: BetDetail, isHomeTeam?: boolean) =>
       teamBet.fifaBestWorldPlayers.points,
   );
 
-const getLeaguesBets = async (config: Config): Promise<FixtureWithBets[]> => {
+const getLeaguesBets = async (config: Config): Promise<FixtureInfo[]> => {
   const { leagues: leaguesToGetBets } = config;
   const fixturesWithBets = [];
 
@@ -108,7 +112,14 @@ const getLeaguesBets = async (config: Config): Promise<FixtureWithBets[]> => {
     const bets = fixtures.map((fixture) => {
       const { homeTeam, awayTeam } = fixture;
 
-      const [homeTeamBetDetailss, awayTeamBetDetails] = [
+      const homeTeamStandings = standings.find(
+        (standing) => standing.teamName === homeTeam.teamName,
+      );
+      const awayTeamStandings = standings.find(
+        (standing) => standing.teamName === awayTeam.teamName,
+      );
+
+      const [homeTeamBetDetails, awayTeamBetDetails] = [
         homeTeam,
         awayTeam,
       ].map((team) =>
@@ -116,13 +127,27 @@ const getLeaguesBets = async (config: Config): Promise<FixtureWithBets[]> => {
       );
 
       return {
-        ...fixture,
-        betDetails: {
-          homeTeam: homeTeamBetDetailss,
-          awayTeam: awayTeamBetDetails,
+        fixture,
+        bet: {
+          homeTeam: {
+            points: getWeightedPoints(homeTeamBetDetails, true),
+            detail: homeTeamBetDetails,
+          },
+          awayTeam: {
+            points: getWeightedPoints(awayTeamBetDetails),
+            detail: awayTeamBetDetails,
+          },
         },
-        homeTeamPoints: getWeightedPoints(homeTeamBetDetailss, true),
-        awayTeamPoints: getWeightedPoints(awayTeamBetDetails),
+        stats: {
+          homeTeam: {
+            home: homeTeamStandings.leagueHomeStats,
+            away: homeTeamStandings.leagueAwayStats,
+          },
+          awayTeam: {
+            home: awayTeamStandings.leagueHomeStats,
+            away: awayTeamStandings.leagueAwayStats,
+          },
+        },
       };
     });
 
@@ -136,7 +161,7 @@ const getFixtureBet = async (
   league: ConfigLeague,
   season: string,
   fixtureId: number,
-): Promise<FixtureWithBets> => {
+): Promise<FixtureInfo> => {
   const fixture = await fixturesService.getLeagueFixture(league, fixtureId);
 
   const { standings } = await standingsService.getLeagueStandings(league);
@@ -157,14 +182,35 @@ const getFixtureBet = async (
     getBetDetail(team, reputations, standings, fifaBestWorldPlayers),
   );
 
+  const homeTeamStandings = standings.find(
+    (standing) => standing.teamName === homeTeam.teamName,
+  );
+  const awayTeamStandings = standings.find(
+    (standing) => standing.teamName === awayTeam.teamName,
+  );
+
   return {
-    ...fixture,
-    betDetails: {
-      homeTeam: homeTeamBetDetailss,
-      awayTeam: awayTeamBetDetails,
+    bet: {
+      homeTeam: {
+        points: getWeightedPoints(homeTeamBetDetailss, true),
+        detail: homeTeamBetDetailss,
+      },
+      awayTeam: {
+        points: getWeightedPoints(awayTeamBetDetails),
+        detail: awayTeamBetDetails,
+      },
     },
-    homeTeamPoints: getWeightedPoints(homeTeamBetDetailss, true),
-    awayTeamPoints: getWeightedPoints(awayTeamBetDetails),
+    fixture: fixture,
+    stats: {
+      homeTeam: {
+        home: homeTeamStandings.leagueHomeStats,
+        away: homeTeamStandings.leagueAwayStats,
+      },
+      awayTeam: {
+        home: awayTeamStandings.leagueHomeStats,
+        away: awayTeamStandings.leagueAwayStats,
+      },
+    },
   };
 };
 

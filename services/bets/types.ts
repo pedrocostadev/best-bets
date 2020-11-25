@@ -47,10 +47,12 @@ export interface BetDetail {
 }
 
 export interface Bet {
-  homeTeamPoints: number;
-  awayTeamPoints: number;
-  betDetails: {
-    homeTeam: BetDetail;
-    awayTeam: BetDetail;
+  homeTeam: {
+    points: number;
+    detail: BetDetail;
+  };
+  awayTeam: {
+    points: number;
+    detail: BetDetail;
   };
 }

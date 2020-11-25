@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 
-import { FixtureWithBets } from '../../../../types';
+import { FixtureInfo } from '../../../../types';
 import styles from './FixtureListItem.module.scss';
 import FixtureLeagueIcon from './components/fixtureLeagueIcon/FixtureLeagueIcon';
 import FixtureDate from './components/fixtureDate/FixtureDate';
@@ -11,20 +11,22 @@ import FixtureTeams from './components/fixtureTeams/FixtureTeams';
 import FixturePoints from './components/fixturePoints/FixturePoints';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixtureInfo: FixtureInfo;
 }
 
-const FixtureListItem: React.FC<Props> = ({ fixture }: Props) => {
+const FixtureListItem: React.FC<Props> = ({ fixtureInfo }: Props) => {
   const router = useRouter();
   const goToFixtureDetailPage = () =>
-    router.push(`/${fixture.leagueId}/${fixture.fixtureId}`);
+    router.push(
+      `/${fixtureInfo.fixture.leagueId}/${fixtureInfo.fixture.fixtureId}`,
+    );
   return (
     <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
-      <FixtureLeagueIcon fixture={fixture} />
+      <FixtureLeagueIcon fixtureInfo={fixtureInfo} />
       <FlexContainer directionColumn>
-        <FixtureTeams fixture={fixture} />
-        <FixturePoints fixture={fixture} />
-        <FixtureDate fixture={fixture} />
+        <FixtureTeams fixtureInfo={fixtureInfo} />
+        <FixturePoints fixtureInfo={fixtureInfo} />
+        <FixtureDate fixtureInfo={fixtureInfo} />
       </FlexContainer>
     </FlexContainer>
   );

@@ -1,5 +1,5 @@
 import bets from './bets';
-import { FixtureWithBets, Config } from '../../types';
+import { FixtureInfo, Config } from '../../types';
 import { LeagueReputation } from '../reputations/types';
 import { LeagueStandings, Standing } from '../standings/types';
 import { Fixture, LeagueFixtures } from '../fixtures/types';
@@ -200,81 +200,133 @@ describe('Bets', () => {
   describe('getBets', () => {
     test('should return the right points for each team', async () => {
       const result = await bets.getLeaguesBets(configMock);
-      const firstGame = result[0];
-      const secondGame = result[1];
+      const [game1, game2] = result;
 
-      expect(firstGame).toHaveProperty('homeTeamPoints', 0.688);
-      expect(firstGame).toHaveProperty('homeTeam.teamName', 'West Ham');
-      expect(firstGame).toHaveProperty('awayTeamPoints', 0.827);
-      expect(firstGame).toHaveProperty('awayTeam.teamName', 'Arsenal');
-      expect(firstGame).toHaveProperty('betDetails');
+      expect(game1.bet.homeTeam).toHaveProperty('points', 0.688);
+      expect(game1.fixture.homeTeam).toHaveProperty('teamName', 'West Ham');
+      expect(game1.bet.awayTeam).toHaveProperty('points', 0.827);
+      expect(game1.fixture.awayTeam).toHaveProperty('teamName', 'Arsenal');
 
-      expect(secondGame).toHaveProperty('homeTeamPoints', 0.694);
-      expect(secondGame).toHaveProperty('homeTeam.teamName', 'Chelsea');
-      expect(secondGame).toHaveProperty('awayTeamPoints', 0.777);
-      expect(secondGame).toHaveProperty('awayTeam.teamName', 'Manchester City');
-      expect(secondGame).toHaveProperty('betDetails');
+      expect(game2.bet.homeTeam).toHaveProperty('points', 0.694);
+      expect(game2.fixture.homeTeam).toHaveProperty('teamName', 'Chelsea');
+      expect(game2.bet.awayTeam).toHaveProperty('points', 0.777);
+      expect(game2.fixture.awayTeam).toHaveProperty(
+        'teamName',
+        'Manchester City',
+      );
     });
   });
   describe('getBets', () => {
-    const fixtureMock: FixtureWithBets = {
-      homeTeam: {
-        teamId: 46,
-        teamName: 'Leicester',
-        logo: 'https://media.api-sports.io/football/teams/46.png',
-      },
-      awayTeam: {
-        teamId: 51,
-        teamName: 'Brighton',
-        logo: 'https://media.api-sports.io/football/teams/51.png',
-      },
-      venue: 'King Power Stadium',
-      eventDate: '2020-06-23T17:00:00+00:00',
-      leagueId: 524,
-      homeTeamPoints: 0.802,
-      awayTeamPoints: 0.498,
-      fixtureId: 1,
-      betDetails: {
+    const mockStats = {
+      matchsPlayed: 0,
+      win: 0,
+      draw: 0,
+      lose: 0,
+      goalsAgainst: 0,
+      goalsFor: 0,
+    };
+
+    const fixtureInfoMock: FixtureInfo = {
+      fixture: {
         homeTeam: {
-          reputation: { value: 4.5, points: 0.889 },
-          standing: { value: 3, points: 0.6 },
-          shape: { value: 'DWLLD', points: 0.333 },
-          goalsDistinctions: {
-            value: [
-              { label: 'oneOf3BestAttacks', type: GoalsDistinctionType.GOOD },
-              { label: 'oneOf3BestDefenses', type: GoalsDistinctionType.GOOD },
-            ],
-            points: 0.1,
-          },
-          fifaBestWorldPlayers: { value: undefined, points: 0 },
+          teamId: 46,
+          teamName: 'Leicester',
+          logo: 'https://media.api-sports.io/football/teams/46.png',
         },
         awayTeam: {
-          reputation: { value: 4, points: 0.778 },
-          standing: { value: 15, points: 0.356 },
-          shape: { value: 'WDLDD', points: 0.4 },
-          goalsDistinctions: { value: [], points: 0 },
-          fifaBestWorldPlayers: { value: undefined, points: 0 },
+          teamId: 51,
+          teamName: 'Brighton',
+          logo: 'https://media.api-sports.io/football/teams/51.png',
+        },
+        venue: 'King Power Stadium',
+        eventDate: '2020-06-23T17:00:00+00:00',
+        leagueId: 524,
+        fixtureId: 1,
+      },
+      bet: {
+        homeTeam: {
+          points: 0.802,
+          detail: {
+            reputation: { value: 4.5, points: 0.889 },
+            standing: { value: 3, points: 0.6 },
+            shape: { value: 'DWLLD', points: 0.333 },
+            goalsDistinctions: {
+              value: [
+                { label: 'oneOf3BestAttacks', type: GoalsDistinctionType.GOOD },
+                {
+                  label: 'oneOf3BestDefenses',
+                  type: GoalsDistinctionType.GOOD,
+                },
+              ],
+              points: 0.1,
+            },
+            fifaBestWorldPlayers: { value: undefined, points: 0 },
+          },
+        },
+        awayTeam: {
+          points: 0.498,
+          detail: {
+            reputation: { value: 4, points: 0.778 },
+            standing: { value: 15, points: 0.356 },
+            shape: { value: 'WDLDD', points: 0.4 },
+            goalsDistinctions: { value: [], points: 0 },
+            fifaBestWorldPlayers: { value: undefined, points: 0 },
+          },
+        },
+      },
+      stats: {
+        homeTeam: {
+          home: mockStats,
+          away: mockStats,
+        },
+        awayTeam: {
+          home: mockStats,
+          away: mockStats,
         },
       },
     };
 
     test('should return the right best bet', async () => {
       const fixture1 = {
-        ...fixtureMock,
-        homeTeamPoints: 0.802,
-        awayTeamPoints: 0.498,
+        ...fixtureInfoMock,
+        bet: {
+          homeTeam: {
+            ...fixtureInfoMock.bet.homeTeam,
+            points: 0.802,
+          },
+          awayTeam: {
+            ...fixtureInfoMock.bet.awayTeam,
+            points: 0.498,
+          },
+        },
       };
 
       const fixture2 = {
-        ...fixtureMock,
-        homeTeamPoints: 0.802,
-        awayTeamPoints: 0.804,
+        ...fixtureInfoMock,
+        bet: {
+          homeTeam: {
+            ...fixtureInfoMock.bet.homeTeam,
+            points: 0.802,
+          },
+          awayTeam: {
+            ...fixtureInfoMock.bet.awayTeam,
+            points: 0.804,
+          },
+        },
       };
 
       const fixture3 = {
-        ...fixtureMock,
-        homeTeamPoints: 0.802,
-        awayTeamPoints: 1.498,
+        ...fixtureInfoMock,
+        bet: {
+          homeTeam: {
+            ...fixtureInfoMock.bet.homeTeam,
+            points: 0.802,
+          },
+          awayTeam: {
+            ...fixtureInfoMock.bet.awayTeam,
+            points: 1.498,
+          },
+        },
       };
 
       expect(bets.getBestBet(fixture1)).toBe('Leicester wins!');

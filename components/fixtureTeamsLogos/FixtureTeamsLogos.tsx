@@ -2,16 +2,18 @@ import React from 'react';
 
 import Text from '@/components/text/Text';
 
-import { FixtureWithBets } from '../../types';
+import { FixtureInfo } from '../../types';
 import TeamWithLogo from './components/teamWithLogo/TeamWithLogo';
 import styles from './FixtureTeamsLogos.module.scss';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixtureInfo: FixtureInfo;
 }
 
-const FixtureTeamsLogos: React.FC<Props> = ({ fixture }) => {
-  const { homeTeam, awayTeam } = fixture;
+const FixtureTeamsLogos: React.FC<Props> = ({ fixtureInfo }) => {
+  const {
+    fixture: { homeTeam, awayTeam },
+  } = fixtureInfo;
   return (
     <div className={styles.container}>
       <TeamWithLogo team={homeTeam} />

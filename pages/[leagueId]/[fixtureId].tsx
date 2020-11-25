@@ -6,11 +6,11 @@ import FixtureTeamsLogos from '@/components/fixtureTeamsLogos/FixtureTeamsLogos'
 import Bet from '@/components/bet/Bet';
 import betsApi from '@/services/bets';
 
-import { FixtureWithBets } from 'types';
+import { FixtureInfo } from 'types';
 import config from '../../config.json';
 
 interface Props {
-  fixture: FixtureWithBets;
+  fixture: FixtureInfo;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,8 +40,8 @@ const Fixture: React.FC<Props> = ({ fixture }) => {
       {!fixture && <p>Not a valid fixture</p>}
       {fixture && (
         <>
-          <FixtureTeamsLogos fixture={fixture} />
-          <FixtureDetail fixture={fixture} />
+          <FixtureTeamsLogos fixtureInfo={fixture} />
+          <FixtureDetail fixtureInfo={fixture} />
           <Bet fixture={fixture} />
         </>
       )}
