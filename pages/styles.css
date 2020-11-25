@@ -19,3 +19,13 @@ h4,
 div {
 	margin: 0;
 }
+
+:root {
+	--viewPortFactor: 1.8vw;
+}
+
+@media only screen and (min-width: 576px) {
+	:root {
+		--viewPortFactor: 0.7vw;
+	}
+}

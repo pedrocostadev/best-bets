@@ -11,7 +11,6 @@ import FixtureListItem from './components/fixtureListItem/FixtureListItem';
 const FixturesList: React.FC = () => {
   const { fixturesInfo } = useBets();
   const noFixtures = !fixturesInfo || fixturesInfo.length === 0;
-  console.log('fixturesInfo', fixturesInfo);
 
   if (noFixtures) {
     return (

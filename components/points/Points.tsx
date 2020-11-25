@@ -8,13 +8,14 @@ import styles from './Points.module.scss';
 interface Props {
   points: number;
   className?: string;
+  variant?: 'small' | 'big';
 }
 
 const getFormattedPoints = (points: number) => points * 1000;
 
-const Points: React.FC<Props> = ({ points, className }: Props) => (
+const Points: React.FC<Props> = ({ points, className, variant }: Props) => (
   <Text
-    variant="body2"
+    variant={variant && variant === 'big' ? 'body1' : 'body2'}
     className={classnames(styles.points, className)}
     text={`${getFormattedPoints(points)} PTS`}
   />

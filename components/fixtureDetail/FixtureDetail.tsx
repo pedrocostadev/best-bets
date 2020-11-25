@@ -28,6 +28,12 @@ const FixtureDetail: React.FC<Props> = ({ fixtureInfo }) => {
   return (
     <>
       <DetailItem
+        extraBottomPadding
+        title=""
+        homeTeam={<Points variant="big" points={homeTeam.points} />}
+        awayTeam={<Points variant="big" points={awayTeam.points} />}
+      />
+      <DetailItem
         title="Rank"
         homeTeam={<Rank rank={homeTeam.detail.standing} />}
         awayTeam={<Rank rank={awayTeam.detail.standing} />}
@@ -56,11 +62,6 @@ const FixtureDetail: React.FC<Props> = ({ fixtureInfo }) => {
         awayTeam={
           <Text variant="body2" text={getGoalsAgainst(stats.awayTeam)} />
         }
-      />
-      <DetailItem
-        title="Points"
-        homeTeam={<Points points={homeTeam.points} />}
-        awayTeam={<Points points={awayTeam.points} />}
       />
       <AditionalDetails fixtureInfo={fixtureInfo} />
     </>

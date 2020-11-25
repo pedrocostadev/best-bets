@@ -6,6 +6,7 @@ import FlexContainer from '@/components/flexContainer/FlexContainer';
 import { FixtureInfo } from '../../../../types';
 import GoalsDistinctions from './components/goalsDistinctions/GoalsDistinctions';
 import PlayersDistinctions from './components/playersDistinctions/PlayersDistinctions';
+import styles from './AditionalDetails.module.scss';
 
 interface Props {
   fixtureInfo: FixtureInfo;
@@ -35,7 +36,14 @@ const AditionalDetails: React.FC<Props> = ({ fixtureInfo }) => {
   } = fixtureInfo;
 
   return (
-    <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
+    <FlexContainer
+      className={styles.container}
+      directionColumn
+      columnGap
+      rowGap
+      paddingTop
+      paddingBottom
+    >
       <Heading variant="h3" text="Aditional info" />
       <GoalsDistinctions
         team={fixtureInfo.fixture.homeTeam}

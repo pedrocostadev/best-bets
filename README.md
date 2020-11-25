@@ -1,6 +1,7 @@
 # BestBets App
 
-BestBets App uses NextJS to give you an ultra fast PWA.
+BestBets uses NextJS to give you an ultra fast app!
+It was developed using a mobile-first approach!
 
 It uses data from [RapidApi](https://rapidapi.com/).
 
@@ -8,8 +9,8 @@ Demo [here](https://best-bets.vercel.app/).
 
 ### Iphone X Screenshot
 
-![IphoneX Screen Shot](./screenshots/iPhoneX_v1.png)
-![IphoneX Screen Shot Collapsed](./screenshots/iPhoneX_v1_collapsed.png)
+![IphoneX Screen Shot](./screenshots/iPhoneX_v2_list.png)
+![IphoneX Screen Shot Collapsed](./screenshots/iPhoneX_v2_detail.png)
 
 ### How to run
 
@@ -28,13 +29,11 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 
 #### Arquitectural
 - Move data to DB
-- Find team by name method?, alias?...
+- Find team by name method strategy. (use alias)...
 
 #### Others
 - Best bet on front page
 - Update react import 
-- Use index on components
-
 
 #### UI
-- Show goalsFor and goalsAgainst
+- Improve!!!! Special for desktop!!!
