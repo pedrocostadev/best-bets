@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import Link, { LinkProps } from '@/components/link/Link';
 import Button from '@/components/button/Button';
@@ -17,29 +18,36 @@ const ListLink: React.FC<LinkProps> = (props: LinkProps) => (
   </li>
 );
 
-const NavigationMenu: React.FC<Props> = ({ onClose, show }) => (
-  <>
-    <div className={`${styles.mobileContainer} ${show ? '' : styles.hide}`}>
-      <Button
-        variant="icon"
-        className={styles.closeButton}
-        onClick={onClose}
-        aria-label="Close navigation menu"
+const NavigationMenu: React.FC<Props> = ({ onClose, show }) => {
+  const ListLinkClick = (props) => <ListLink {...props} onClick={onClose} />;
+  return (
+    <>
+      <div
+        className={classnames(styles.mobileContainer, {
+          [styles.hide]: !show,
+        })}
       >
-        <IconClose />
-      </Button>
-      <ul className={styles.mobileLinksList}>
-        <ListLink name="Home" path="/" />
-        <ListLink name="About" path="/about" />
-      </ul>
-    </div>
-    <div className={styles.desktopContainer}>
-      <ul className={styles.desktopLinksList}>
-        <ListLink name="Home" path="/" />
-        <ListLink name="About" path="/about" />
-      </ul>
-    </div>
-  </>
-);
+        <Button
+          variant="icon"
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close navigation menu"
+        >
+          <IconClose />
+        </Button>
+        <ul className={styles.mobileLinksList}>
+          <ListLinkClick name="Home" path="/" />
+          <ListLinkClick name="About" path="/about" />
+        </ul>
+      </div>
+      <div className={styles.desktopContainer}>
+        <ul className={styles.desktopLinksList}>
+          <ListLinkClick name="Home" path="/" />
+          <ListLinkClick name="About" path="/about" />
+        </ul>
+      </div>
+    </>
+  );
+};
 
 export default React.memo(NavigationMenu);

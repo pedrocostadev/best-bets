@@ -7,11 +7,17 @@ export interface LinkProps {
   name: string;
   path: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const Link: React.FC<LinkProps> = ({ name, path, className }: LinkProps) => (
+const Link: React.FC<LinkProps> = ({
+  name,
+  path,
+  className,
+  onClick = () => undefined,
+}: LinkProps) => (
   <NextLink href={path}>
-    <a className={className}>
+    <a className={className} onClick={onClick}>
       <Text variant="body1" text={name} />
     </a>
   </NextLink>

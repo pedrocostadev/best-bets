@@ -15,7 +15,9 @@ interface State {
 const Header: React.FC = () => {
   const [state, setState] = useState<State>({ showNavigationMenu: false });
   const toggleNavigationMenu = () =>
-    setState({ showNavigationMenu: !state.showNavigationMenu });
+    setState((currentState) => ({
+      showNavigationMenu: !currentState.showNavigationMenu,
+    }));
   const router = useRouter();
   const goToHomePage = () => router.push('/');
   return (
