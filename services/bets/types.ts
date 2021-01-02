@@ -16,19 +16,19 @@ export interface GoalsDistinctionItem {
 
 export const GOALS_DISTINCTION_TYPES = {
   oneOfBestDefenses: {
-    label: 'oneOfThe3BestDefenses',
+    label: 'one Of the 3 best defenses',
     type: GoalsDistinctionType.GOOD,
   },
   oneOfBestAttacks: {
-    label: 'oneOfThe3BestAttacks',
+    label: 'one of the 3 best attacks',
     type: GoalsDistinctionType.GOOD,
   },
   oneOfWorstAttacks: {
-    label: 'oneOfThe3WorstAttacks',
+    label: 'one of the 3 worst attacks',
     type: GoalsDistinctionType.BAD,
   },
   oneOfWorstDefenses: {
-    label: 'oneOfThe3WorstDefenses',
+    label: 'one of the 3 worst defenses',
     type: GoalsDistinctionType.BAD,
   },
 };

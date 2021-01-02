@@ -32,16 +32,15 @@ const GoalsDistinctions: React.FC<Props> = ({ team, goalsDistinctions }) => {
       {tags.map((tag: GoalsDistinctionItem, index: number) => (
         <FlexContainer key={index} alignCenter columnGap>
           <IconBall />
-          <Text variant="body1">
+          <Text variant="body2">
             <>
               {`${team.teamName} has `}
               <Text
-                variant="body1"
+                variant="body2"
                 as="span"
                 text={tag.label}
                 className={classnames(styles.tag, getSpecialPointStyle(tag))}
               />
-              {' in league.'}
             </>
           </Text>
         </FlexContainer>

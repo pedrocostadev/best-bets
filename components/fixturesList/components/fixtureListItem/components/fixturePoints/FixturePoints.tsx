@@ -12,6 +12,16 @@ interface Props {
   fixtureInfo: FixtureInfo;
 }
 
+const getPointsStyle = (teamPoints: number, otherTeamPoints: number) => {
+  if (teamPoints > otherTeamPoints) {
+    return styles.green;
+  }
+  if (teamPoints < otherTeamPoints) {
+    return styles.red;
+  }
+  return styles.yellow;
+};
+
 const FixturePoints: React.FC<Props> = ({ fixtureInfo }: Props) => {
   const {
     bet: { homeTeam, awayTeam },
@@ -19,16 +29,18 @@ const FixturePoints: React.FC<Props> = ({ fixtureInfo }: Props) => {
   return (
     <FlexContainer paddingRight alignCenter>
       <Points
-        className={classnames({
-          [styles.bestBet]: homeTeam.points > awayTeam.points,
-        })}
+        className={classnames(
+          styles.bet,
+          getPointsStyle(homeTeam.points, awayTeam.points),
+        )}
         points={homeTeam.points}
       />
       <Text variant="caption" text="x" />
       <Points
-        className={classnames({
-          [styles.bestBet]: awayTeam.points > homeTeam.points,
-        })}
+        className={classnames(
+          styles.bet,
+          getPointsStyle(awayTeam.points, homeTeam.points),
+        )}
         points={awayTeam.points}
       />
     </FlexContainer>
