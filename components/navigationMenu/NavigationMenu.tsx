@@ -21,6 +21,7 @@ const NavigationMenu: React.FC<Props> = ({ onClose, show }) => (
   <>
     <div className={`${styles.mobileContainer} ${show ? '' : styles.hide}`}>
       <Button
+        variant="icon"
         className={styles.closeButton}
         onClick={onClose}
         aria-label="Close navigation menu"
