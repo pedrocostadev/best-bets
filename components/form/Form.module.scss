@@ -1,6 +1,13 @@
 @import 'sizes';
+@import 'breakpoints';
 
 .submitButton {
   width: 100%;
   margin-top: $spacing-l;
+
+  @include breakpoint_m {
+    width: auto;
+    margin: $spacing-l auto;
+    display: block;
+  }
 }

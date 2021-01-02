@@ -5,7 +5,7 @@ import styles from './Button.module.scss';
 
 interface Props extends React.ComponentProps<'button'> {
   children: React.ReactElement;
-  variant: 'contained' | 'outlined';
+  variant?: 'contained' | 'outlined';
 }
 
 const Button: React.FC<Props> = ({
