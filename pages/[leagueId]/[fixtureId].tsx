@@ -5,6 +5,7 @@ import FixtureDetail from '@/components/fixtureDetail/FixtureDetail';
 import FixtureTeamsLogos from '@/components/fixtureTeamsLogos/FixtureTeamsLogos';
 import Bet from '@/components/bet/Bet';
 import betsApi from '@/services/bets';
+import usePrivatePage from '@/hooks/usePrivatePage';
 
 import { FixtureInfo } from 'types';
 import config from '../../config.json';
@@ -35,6 +36,7 @@ export async function getServerSideProps(
 }
 
 const Fixture: React.FC<Props> = ({ fixture }) => {
+  usePrivatePage();
   return (
     <>
       {!fixture && <p>Not a valid fixture</p>}

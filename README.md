@@ -34,6 +34,8 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 #### Others
 - Best bet on front page
 - Update react import 
+- Avoid need for login after reload
 
 #### UI
 - Improve!!!! Special for desktop!!!
+- Improve Login page style

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import FixturesList from '@/components/fixturesList/FixturesList';
 import { UseBetsContext } from '@/hooks/useBets';
+import usePrivatePage from '@/hooks/usePrivatePage';
 import betsApi from '@/services/bets';
 
 import config from '../config.json';
@@ -19,18 +20,7 @@ export async function getStaticProps(): Promise<{ props: Props }> {
 }
 
 const Home: React.FC<Props> = ({ fixturesInfo }) => {
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/serviceWorker.js')
-        .catch((err) =>
-          console.error('Service worker registration failed', err),
-        );
-    } else {
-      console.log('Service worker not supported');
-    }
-  }, []);
-
+  usePrivatePage();
   return (
     <UseBetsContext.Provider value={{ fixturesInfo }}>
       <FixturesList />

@@ -1,5 +1,7 @@
-const useMockedData = (): boolean =>
-  process.env.NEXT_PUBLIC_MOCKED_DATA === 'true';
+const useMockedData = (): boolean => {
+  console.log('Use mocked data:', process.env.NEXT_PUBLIC_MOCKED_DATA);
+  return process.env.NEXT_PUBLIC_MOCKED_DATA === 'true';
+};
 
 const USER_MOCKED_DATA = useMockedData();
 
