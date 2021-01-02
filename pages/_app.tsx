@@ -19,6 +19,10 @@ const BestBetsApp = (props: AppProps): React.ReactElement => {
           <title>{config.appName}</title>
           <link rel="icon" href="/pictures/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+          />
         </Head>
         <Header />
         <Main>

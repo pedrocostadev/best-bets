@@ -43,7 +43,11 @@ const Form: React.FC<FormProps> = ({
         }}
       >
         {React.Children.toArray(children)}
-        <Button className={styles.submitButton} value="submit">
+        <Button
+          variant="contained"
+          className={styles.submitButton}
+          value="submit"
+        >
           <Text
             as="span"
             bold

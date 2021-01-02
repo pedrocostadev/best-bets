@@ -14,9 +14,7 @@ const Login: React.FC = () => {
     router.push((router?.query?.redirectTo || '/') as string);
 
   const shouldSignIn = async (data) => {
-    console.log('data', data);
     const areCredentialsRight = await signIn(data);
-    console.log('areCredentialsRight', areCredentialsRight);
     if (areCredentialsRight) {
       goToPage();
     } else {

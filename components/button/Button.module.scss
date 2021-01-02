@@ -1,11 +1,43 @@
 @import 'colors';
+@import 'sizes';
 
 .button {
   color: $brown;
   cursor: pointer;
-  background-color: transparent;
-  border: none;
+  border: 1px solid $orange;
+  border-radius: $spacing-s;
+  padding: $spacing-m;
+  background-position: center;
+  transition: background 0.8s;
   outline: none;
-  box-shadow: none;
-  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.outlined {
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+
+    &:active {
+      background-color: $orange-light;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
+
+  &.contained {
+    background-color: $orange;
+
+    &:hover {
+      background: $orange radial-gradient(circle, transparent 1%, $orange 1%)
+        center/15000%;
+    }
+
+    &:active {
+      background-color: $orange-light;
+      background-size: 100%;
+      transition: background 0s;
+    }
+  }
 }

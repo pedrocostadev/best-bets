@@ -7,4 +7,18 @@
   background-color: $white;
   border-radius: $spacing-s;
   cursor: pointer;
+  background-position: center;
+  transition: background 0.8s;
+  outline: none;
+
+  &:hover {
+    background: $orange radial-gradient(circle, transparent 1%, $orange 1%)
+      center/15000%;
+  }
+
+  &:active {
+    background-color: $orange-light;
+    background-size: 100%;
+    transition: background 0s;
+  }
 }
