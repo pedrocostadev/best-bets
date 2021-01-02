@@ -16,6 +16,7 @@ Demo [here](https://best-bets.vercel.app/).
 
 Create a `.env.local` file at your route folder and set `NEXT_PUBLIC_MOCKED_DATA` to `true` if you want to run with mock data
 or add a `RAPIDAPI_KEY` to run with real data. Run `yarn dev`to start the app in dev mode.
+For login you should set two env vars: `NEXT_PUBLIC_USERNAME` and `NEXT_PUBLIC_PASSWORD`.
 
 ### Contributions
 
@@ -38,5 +39,3 @@ Contributions are welcome. Just open a PR and feel free to contact me :-).
 
 #### UI
 - Improve!!!! Special for desktop!!!
-- Improve Login page style
-- Give login feedback
