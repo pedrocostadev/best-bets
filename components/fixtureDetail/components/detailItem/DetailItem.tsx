@@ -24,7 +24,7 @@ const DetailItem: React.FC<ItemProps> = ({
     })}
   >
     {homeTeam}
-    <Text variant="caption" text={title} />
+    <Text variant="caption" text={title} textAlignCenter />
     {awayTeam}
   </div>
 );

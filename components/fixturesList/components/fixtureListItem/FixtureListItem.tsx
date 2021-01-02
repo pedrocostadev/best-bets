@@ -23,7 +23,7 @@ const FixtureListItem: React.FC<Props> = ({ fixtureInfo }: Props) => {
   return (
     <FlexContainer className={styles.container} onClick={goToFixtureDetailPage}>
       <FixtureLeagueIcon fixtureInfo={fixtureInfo} />
-      <FlexContainer directionColumn>
+      <FlexContainer directionColumn className={styles.fixtureText}>
         <FixtureTeams fixtureInfo={fixtureInfo} />
         <FixturePoints fixtureInfo={fixtureInfo} />
         <FixtureDate fixtureInfo={fixtureInfo} />
