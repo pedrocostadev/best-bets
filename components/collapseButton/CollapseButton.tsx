@@ -13,6 +13,7 @@ interface Props {
 
 const CollapseButton: React.FC<Props> = ({ onClick, isCollapsed }: Props) => (
   <Button
+    variant="icon"
     className={styles.collapseButton}
     onClick={onClick}
     aria-label="Collapse button"
