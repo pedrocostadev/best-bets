@@ -3,7 +3,7 @@ import React from 'react';
 import FlexContainer from '@/components/flexContainer/FlexContainer';
 import Text from '@/components/text/Text';
 
-import styles from './field.module.scss';
+import styles from './FormField.module.scss';
 
 interface Props extends React.ComponentProps<'input'> {
   type: 'text' | 'password';

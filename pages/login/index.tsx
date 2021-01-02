@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import useAuth from '@/hooks/useAuth';
-import Field from '@/components/field/Field';
+import FormField from '@/components/formField/FormField';
 import Form from '@/components/form/Form';
 
 const Login: React.FC = () => {
@@ -26,8 +26,8 @@ const Login: React.FC = () => {
 
   return (
     <Form submitLabel="Login" onConfirm={shouldSignIn}>
-      <Field required label="Username" type="text" name="userName" />
-      <Field required label="Password" type="password" name="password" />
+      <FormField required label="Username" type="text" name="userName" />
+      <FormField required label="Password" type="password" name="password" />
     </Form>
   );
 };
