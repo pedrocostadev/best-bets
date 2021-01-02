@@ -11,6 +11,7 @@ interface Props {
 
 const BurguerButton: React.FC<Props> = ({ onClick }: Props) => (
   <Button
+    variant="icon"
     onClick={onClick}
     className={styles.burguerButton}
     aria-label="Menu button"

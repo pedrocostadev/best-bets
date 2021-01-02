@@ -40,4 +40,11 @@
       transition: background 0s;
     }
   }
+
+  &.icon {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
