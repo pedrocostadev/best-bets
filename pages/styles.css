@@ -29,3 +29,7 @@ div {
 		--viewPortFactor: 0.7vw;
 	}
 }
+
+#nprogress .bar {
+	background: #ef8729 !important;
+}
