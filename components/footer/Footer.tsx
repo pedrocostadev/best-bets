@@ -8,7 +8,7 @@ const Footer: React.FC = () => (
   <footer className={styles.footer}>
     <Text
       variant="caption"
-      text="Copyright © 2020 Best Bets. All rights reserved."
+      text="Copyright © 2021 Best Bets. All rights reserved."
     />
   </footer>
 );
