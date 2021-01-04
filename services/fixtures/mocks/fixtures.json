@@ -12,7 +12,7 @@
 						"logo": "https://media.api-sports.io/football/leagues/39.png",
 						"flag": "https://media.api-sports.io/flags/gb.svg"
 					},
-					"event_date": "2020-06-23T17:00:00+00:00",
+					"event_date": "2021-01-04T17:00:00+00:00",
 					"event_timestamp": 1592931600,
 					"firstHalfStart": null,
 					"secondHalfStart": null,
@@ -34,7 +34,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157323,
@@ -45,7 +50,7 @@
 						"logo": "https://media.api-sports.io/football/leagues/39.png",
 						"flag": "https://media.api-sports.io/flags/gb.svg"
 					},
-					"event_date": "2020-06-23T19:15:00+00:00",
+					"event_date": "2021-01-05T19:15:00+00:00",
 					"event_timestamp": 1592939700,
 					"firstHalfStart": null,
 					"secondHalfStart": null,
@@ -67,7 +72,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157319,
@@ -78,7 +88,7 @@
 						"logo": "https://media.api-sports.io/football/leagues/39.png",
 						"flag": "https://media.api-sports.io/flags/gb.svg"
 					},
-					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_date": "2021-06-24T17:00:00+00:00",
 					"event_timestamp": 1593018000,
 					"firstHalfStart": null,
 					"secondHalfStart": null,
@@ -100,7 +110,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157320,
@@ -111,7 +126,7 @@
 						"logo": "https://media.api-sports.io/football/leagues/39.png",
 						"flag": "https://media.api-sports.io/flags/gb.svg"
 					},
-					"event_date": "2020-06-24T17:00:00+00:00",
+					"event_date": "2021-01-10T17:00:00+00:00",
 					"event_timestamp": 1593018000,
 					"firstHalfStart": null,
 					"secondHalfStart": null,
@@ -133,7 +148,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157321,
@@ -166,7 +186,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157324,
@@ -199,7 +224,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157318,
@@ -232,7 +262,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157315,
@@ -265,7 +300,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157322,
@@ -298,7 +338,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				},
 				{
 					"fixture_id": 157316,
@@ -331,7 +376,12 @@
 					},
 					"goalsHomeTeam": null,
 					"goalsAwayTeam": null,
-					"score": { "halftime": null, "fulltime": null, "extratime": null, "penalty": null }
+					"score": {
+						"halftime": null,
+						"fulltime": null,
+						"extratime": null,
+						"penalty": null
+					}
 				}
 			]
 		}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { format, formatDistance } from 'date-fns';
+import formatRelative from 'date-fns/formatRelative';
 
 import Text from '@/components/text/Text';
 
@@ -12,13 +12,11 @@ interface Props {
 
 const FixtureDate: React.FC<Props> = ({ fixtureInfo, ...restProps }: Props) => {
   const eventDate = new Date(fixtureInfo.fixture.eventDate);
-  const inXdays = formatDistance(eventDate, new Date());
-  const date = `${format(eventDate, 'd/MM/yyyy')} (${inXdays})`;
-  const time = `${format(eventDate, 'hh:mm')}H`;
+  const today = new Date();
+  const date = formatRelative(eventDate, today);
   return (
     <>
       <Text {...restProps} variant="body2" text={date} />
-      <Text {...restProps} variant="body2" text={time} />
     </>
   );
 };
