@@ -11,3 +11,9 @@
     display: block;
   }
 }
+
+.container {
+  @include breakpoint_m {
+    align-items: center;
+  }
+}

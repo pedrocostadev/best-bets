@@ -34,7 +34,14 @@ const Form: React.FC<FormProps> = ({
   ...otherFormProps
 }) => {
   return (
-    <FlexContainer directionColumn columnGap rowGap paddingTop paddingBottom>
+    <FlexContainer
+      className={styles.container}
+      directionColumn
+      columnGap
+      rowGap
+      paddingTop
+      paddingBottom
+    >
       <form
         {...otherFormProps}
         onSubmit={(ev) => {

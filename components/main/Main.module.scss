@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'sizes';
+@import 'breakpoints';
 
 .mainContainer {
   top: 10vh;
@@ -12,4 +13,8 @@
 
 .content {
   margin: $spacing-m;
+
+  @include breakpoint_m {
+    margin: $font-size-xl;
+  }
 }
