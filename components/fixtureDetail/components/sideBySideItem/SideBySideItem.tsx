@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import Text from '@/components/text/Text';
 
-import styles from './DetailItem.module.scss';
+import styles from './SideBySideItem.module.scss';
 
 interface ItemProps {
   homeTeam: React.ReactElement;
@@ -12,7 +12,7 @@ interface ItemProps {
   extraBottomPadding?: boolean;
 }
 
-const DetailItem: React.FC<ItemProps> = ({
+const SideBySideItem: React.FC<ItemProps> = ({
   title,
   homeTeam,
   awayTeam,
@@ -29,4 +29,4 @@ const DetailItem: React.FC<ItemProps> = ({
   </div>
 );
 
-export default DetailItem;
+export default SideBySideItem;

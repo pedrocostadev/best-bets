@@ -2,11 +2,12 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import FlexContainer from '@/components/flexContainer/FlexContainer';
+import FixtureDate from '@/components/fixtureDate/FixtureDate';
 
 import { FixtureInfo } from '../../../../types';
 import styles from './FixtureListItem.module.scss';
 import FixtureLeagueIcon from './components/fixtureLeagueIcon/FixtureLeagueIcon';
-import FixtureDate from './components/fixtureDate/FixtureDate';
+
 import FixtureTeams from './components/fixtureTeams/FixtureTeams';
 import FixturePoints from './components/fixturePoints/FixturePoints';
 

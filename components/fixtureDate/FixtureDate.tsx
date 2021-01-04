@@ -3,11 +3,11 @@ import { format, formatDistance } from 'date-fns';
 
 import Text from '@/components/text/Text';
 
-import { FixtureInfo } from '../../../../../../types';
+import { FixtureInfo } from '../../types';
 
 interface Props {
   fixtureInfo: FixtureInfo;
-  textAlignCenter: boolean;
+  textAlignCenter?: boolean;
 }
 
 const FixtureDate: React.FC<Props> = ({ fixtureInfo, ...restProps }: Props) => {

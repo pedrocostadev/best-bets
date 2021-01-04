@@ -2,15 +2,15 @@ import React from 'react';
 
 import Text from '@/components/text/Text';
 import Heading from '@/components/heading/Heading';
+import FixtureDate from '@/components/fixtureDate/FixtureDate';
 
 import { FixtureInfo, StatsByPlace } from '../../types';
 import Reputation from './components/reputation/Reputation';
 import Rank from './components/rank/Rank';
 import Shape from './components/shape/Shape';
-import DetailItem from './components/detailItem/DetailItem';
+import SideBySideItem from './components/sideBySideItem/SideBySideItem';
 import AditionalDetails from './components/aditionalDetails/AditionalDetails';
 import Points from '../points/Points';
-import FixtureDate from '../fixturesList/components/fixtureListItem/components/fixtureDate/FixtureDate';
 
 const getGoalsFor = (team: StatsByPlace) =>
   team.home.goalsFor + team.away.goalsFor;
@@ -29,7 +29,7 @@ const FixtureDetail: React.FC<Props> = ({ fixtureInfo }) => {
   } = fixtureInfo;
   return (
     <>
-      <DetailItem
+      <SideBySideItem
         extraBottomPadding
         title=""
         homeTeam={<Points variant="big" points={homeTeam.points} />}
@@ -38,28 +38,28 @@ const FixtureDetail: React.FC<Props> = ({ fixtureInfo }) => {
       <Text textAlignCenter variant="body2" text={fixtureInfo.fixture.venue} />
       <FixtureDate textAlignCenter fixtureInfo={fixtureInfo} />
       <Heading variant="h3" text="Side by Side" />
-      <DetailItem
+      <SideBySideItem
         title="Rank"
         homeTeam={<Rank rank={homeTeam.detail.standing} />}
         awayTeam={<Rank rank={awayTeam.detail.standing} />}
       />
 
-      <DetailItem
+      <SideBySideItem
         title="Reputation"
         homeTeam={<Reputation reputation={homeTeam.detail.reputation} />}
         awayTeam={<Reputation reputation={awayTeam.detail.reputation} />}
       />
-      <DetailItem
+      <SideBySideItem
         title="Shape"
         homeTeam={<Shape shape={homeTeam.detail.shape} />}
         awayTeam={<Shape shape={awayTeam.detail.shape} />}
       />
-      <DetailItem
+      <SideBySideItem
         title="Goals Scored"
         homeTeam={<Text variant="body2" text={getGoalsFor(stats.homeTeam)} />}
         awayTeam={<Text variant="body2" text={getGoalsFor(stats.awayTeam)} />}
       />
-      <DetailItem
+      <SideBySideItem
         title="Goals Conceded"
         homeTeam={
           <Text variant="body2" text={getGoalsAgainst(stats.homeTeam)} />
