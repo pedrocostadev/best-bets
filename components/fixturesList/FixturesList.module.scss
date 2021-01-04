@@ -1,0 +1,7 @@
+@import 'breakpoints';
+
+.container {
+  @include breakpoint_m {
+    grid-template-columns: 50% 50%;
+  }
+}

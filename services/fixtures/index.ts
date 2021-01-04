@@ -15,7 +15,7 @@ const getLeagueFixtures = async (
     fixturesData = await require('./mocks/fixtures.json');
   } else {
     fixturesData = await rapidApiClient.get(
-      `fixtures/league/${league.rapidApiId}/next/10`,
+      `fixtures/league/${league.rapidApiId}/next/20`,
     );
   }
   return {

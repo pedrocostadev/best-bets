@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'sizes';
+@import 'breakpoints';
 
 .container {
   padding: $spacing-m;
@@ -10,6 +11,11 @@
   background-position: center;
   transition: background 0.8s;
   outline: none;
+  overflow: hidden;
+
+  @include breakpoint_m {
+    margin-left: $spacing-m;
+  }
 
   &:active {
     background-color: $orange-light;
