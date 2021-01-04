@@ -5,7 +5,7 @@ import styles from './Text.module.scss';
 
 type VARIANT = 'caption' | 'body2' | 'body1';
 
-interface Props {
+interface TextProps {
   as?: 'span' | 'p';
   className?: string;
   text?: string | number;
@@ -17,7 +17,7 @@ interface Props {
   children?: ReactElement | ReactElement[];
 }
 
-const Text: React.FC<Props> = ({
+const Text: React.FC<TextProps> = ({
   text,
   variant,
   className,

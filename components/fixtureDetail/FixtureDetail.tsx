@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Text from '@/components/text/Text';
+import Heading from '@/components/heading/Heading';
 
 import { FixtureInfo, StatsByPlace } from '../../types';
 import Reputation from './components/reputation/Reputation';
@@ -9,6 +10,7 @@ import Shape from './components/shape/Shape';
 import DetailItem from './components/detailItem/DetailItem';
 import AditionalDetails from './components/aditionalDetails/AditionalDetails';
 import Points from '../points/Points';
+import FixtureDate from '../fixturesList/components/fixtureListItem/components/fixtureDate/FixtureDate';
 
 const getGoalsFor = (team: StatsByPlace) =>
   team.home.goalsFor + team.away.goalsFor;
@@ -33,6 +35,9 @@ const FixtureDetail: React.FC<Props> = ({ fixtureInfo }) => {
         homeTeam={<Points variant="big" points={homeTeam.points} />}
         awayTeam={<Points variant="big" points={awayTeam.points} />}
       />
+      <Text textAlignCenter variant="body2" text={fixtureInfo.fixture.venue} />
+      <FixtureDate textAlignCenter fixtureInfo={fixtureInfo} />
+      <Heading variant="h3" text="Side by Side" />
       <DetailItem
         title="Rank"
         homeTeam={<Rank rank={homeTeam.detail.standing} />}
