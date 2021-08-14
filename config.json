@@ -4,9 +4,10 @@
     "leagues": [
         {
             "id": 1,
-            "rapidApiId": 2790,
+            "rapidApiId": 3456,
             "name": "Premier League",
-            "country": "England"
+            "country": "England",
+            "rapidApiVersion": "v2"
         }
     ]
 }
