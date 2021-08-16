@@ -1,0 +1,108 @@
+{
+	"id": 1,
+	"name": "Premier League",
+	"country": "England",
+	"season": "2020-21",
+	"reputations": [
+		{
+			"teamId": 40,
+			"name": "Liverpool",
+			"reputation": 5
+		},
+		{
+			"teamId": 48,
+			"name": "West Ham",
+			"reputation": 3
+		},
+		{
+			"teamId": 50,
+			"name": "Manchester City",
+			"reputation": 5
+		},
+		{
+			"teamId": 71,
+			"name": "Norwich",
+			"reputation": 2
+		},
+		{
+			"teamId": 44,
+			"name": "Burnley",
+			"reputation": 2
+		},
+		{
+			"teamId": 41,
+			"name": "Southampton",
+			"reputation": 3
+		},
+		{
+			"teamId": 52,
+			"name": "Crystal Palace",
+			"reputation": 3
+		},
+		{
+			"teamId": 45,
+			"name": "Everton",
+			"reputation": 3.5
+		},
+		{
+			"teamId": 46,
+			"name": "Leicester",
+			"reputation": 4
+		},
+		{
+			"teamId": 39,
+			"name": "Wolves",
+			"reputation": 3
+		},
+		{
+			"teamId": 51,
+			"name": "Brighton",
+			"reputation": 2
+		},
+		{
+			"teamId": 47,
+			"name": "Tottenham",
+			"reputation": 4.5
+		},
+		{
+			"teamId": 66,
+			"name": "Aston Villa",
+			"reputation": 2
+		},
+		{
+			"teamId": 34,
+			"name": "Newcastle",
+			"reputation": 3
+		},
+		{
+			"teamId": 42,
+			"name": "Arsenal",
+			"reputation": 4
+		},
+		{
+			"teamId": 33,
+			"name": "Manchester United",
+			"reputation": 4.5
+		},
+		{
+			"teamId": 49,
+			"name": "Chelsea",
+			"reputation": 4.5
+		},
+		{
+			"teamId": 38,
+			"name": "Watford",
+			"reputation": 2
+		},
+		{
+			"teamId": 55,
+			"name": "Brentford",
+			"reputation": 2
+		},
+		{
+			"teamId": 63,
+			"name": "Leeds",
+			"reputation": 2
+		}
+	]
+}

@@ -1,6 +1,31 @@
 {
     "lastUpdate": "2020-10-20",
     "best3FifaPlayers": {
+        "2020": {
+            "players": [
+                {
+                    "name": "Robert Lewandowski",
+                    "awardTeamName": "Bayern de Munique",
+                    "place": 1,
+                    "currentTeam": "Bayern de Munique",
+                    "retired": false
+                },
+                {
+                    "name": "Cristiano Ronaldo",
+                    "awardTeamName": "Juventus",
+                    "place": 2,
+                    "currentTeam": "Juventus",
+                    "retired": false
+                },
+                {
+                    "name": "Lionel Messi",
+                    "awardTeamName": "Barcelona",
+                    "place": 3,
+                    "currentTeam": "Paris Saint-Germain",
+                    "retired": false
+                }
+            ]
+        },
         "2019": {
             "players": [
                 {
