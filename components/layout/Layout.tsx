@@ -5,7 +5,7 @@ import Footer from '@/components/footer/Footer';
 import Main from '@/components/main/Main';
 import NavigationMenu from '@/components/navigationMenu/NavigationMenu';
 import BurguerButton from '@/components/burguerButton/BurguerButton';
-import Backdrop from '@/components/backdrop/Backdrop2';
+import Backdrop from '@/components/backdrop/Backdrop';
 
 import useBackdrop from '@/hooks/useBackdrop';
 import useOnClickOutside from '@/hooks/useOnClickOutside';
