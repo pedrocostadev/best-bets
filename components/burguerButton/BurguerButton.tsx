@@ -6,7 +6,7 @@ import IconBurguer from '@/icons/IconBurguer';
 import styles from './BurguerButton.module.scss';
 
 interface Props {
-  onClick(): void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const BurguerButton: React.FC<Props> = ({ onClick }: Props) => (

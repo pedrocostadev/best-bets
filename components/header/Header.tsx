@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
-import BurguerButton from '@/components/burguerButton/BurguerButton';
-import NavigationMenu from '@/components/navigationMenu/NavigationMenu';
 import Heading from '@/components/heading/Heading';
 
 import styles from './Header.module.scss';
 
-interface State {
-  showNavigationMenu: boolean;
+interface Props {
+  children: React.ReactElement;
 }
 
-const Header: React.FC = () => {
-  const [state, setState] = useState<State>({ showNavigationMenu: false });
-  const toggleNavigationMenu = () =>
-    setState((currentState) => ({
-      showNavigationMenu: !currentState.showNavigationMenu,
-    }));
+const Header: React.FC<Props> = ({ children }) => {
   const router = useRouter();
   const goToHomePage = () => router.push('/');
+
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer} onClick={goToHomePage}>
@@ -32,13 +26,11 @@ const Header: React.FC = () => {
         <Heading variant="h1" text="Best Bets" />
         <Heading variant="h3" text="PL" />
       </div>
-      <BurguerButton onClick={toggleNavigationMenu} />
-      <NavigationMenu
-        onClose={toggleNavigationMenu}
-        show={state.showNavigationMenu}
-      />
+      {children}
     </header>
   );
 };
+
+Header.displayName = 'Header';
 
 export default Header;

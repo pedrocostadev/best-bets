@@ -20,7 +20,7 @@ const initiaAuth: AuthProvider = {
 const AuthContext = React.createContext<AuthProvider>(initiaAuth);
 
 interface Props {
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 const useAuthProvider = (): AuthProvider => {

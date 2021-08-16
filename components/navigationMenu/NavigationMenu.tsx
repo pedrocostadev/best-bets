@@ -8,7 +8,7 @@ import styles from './NavigationMenu.module.scss';
 import IconClose from '@/icons/IconClose';
 
 interface Props {
-  onClose(): void;
+  onClose: (e: React.MouseEvent<HTMLButtonElement>) => void;
   show: boolean;
 }
 

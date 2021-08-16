@@ -5,9 +5,9 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
-import Header from '@/components/header/Header';
-import Footer from '@/components/footer/Footer';
-import Main from '@/components/main/Main';
+import Layout from '@/components/layout/Layout';
+import BackdropProvider from '@/components/backdrop/BackdropProvider';
+
 import { AuthProvider } from '@/hooks/useAuth';
 
 import config from '../config.json';
@@ -21,7 +21,7 @@ const BestBetsApp = (props: AppProps): React.ReactElement => {
   const { Component, pageProps } = props;
   return (
     <AuthProvider>
-      <>
+      <BackdropProvider>
         <Head>
           <title>{config.appName}</title>
           <link rel="icon" href="/pictures/favicon.ico" />
@@ -31,12 +31,10 @@ const BestBetsApp = (props: AppProps): React.ReactElement => {
             content="width=device-width, initial-scale=1, maximum-scale=1"
           />
         </Head>
-        <Header />
-        <Main>
+        <Layout>
           <Component {...pageProps} />
-        </Main>
-        <Footer />
-      </>
+        </Layout>
+      </BackdropProvider>
     </AuthProvider>
   );
 };
