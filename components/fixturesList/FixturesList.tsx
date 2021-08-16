@@ -16,7 +16,7 @@ const FixturesList: React.FC = () => {
 
   if (noFixtures) {
     return (
-      <FlexContainer>
+      <FlexContainer directionColumn alignCenter className={styles.emptyList}>
         <IconSadFace />
         <Text variant="body1" text="No games available" />
       </FlexContainer>
